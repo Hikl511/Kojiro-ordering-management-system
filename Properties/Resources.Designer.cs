@@ -83,6 +83,16 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap denglu2 {
+            get {
+                object obj = ResourceManager.GetObject("denglu2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap XioaoCiLang {
             get {
                 object obj = ResourceManager.GetObject("XioaoCiLang", resourceCulture);
@@ -113,9 +123,49 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 小 {
+            get {
+                object obj = ResourceManager.GetObject("小", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 小次郎 {
+            get {
+                object obj = ResourceManager.GetObject("小次郎", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 小次郎_白 {
             get {
                 object obj = ResourceManager.GetObject("小次郎 白", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 小次郎logo {
+            get {
+                object obj = ResourceManager.GetObject("小次郎logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 未标题_1 {
+            get {
+                object obj = ResourceManager.GetObject("未标题-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

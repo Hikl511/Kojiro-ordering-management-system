@@ -117,5 +117,14 @@
   <ItemGroup>
     <None Include="Resources\小次郎 白.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\小次郎logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\denglu2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未标题-1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
