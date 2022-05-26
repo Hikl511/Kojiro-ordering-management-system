@@ -173,6 +173,16 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 欢迎 {
+            get {
+                object obj = ResourceManager.GetObject("欢迎", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 用户_拷贝 {
             get {
                 object obj = ResourceManager.GetObject("用户 拷贝", resourceCulture);
@@ -186,6 +196,16 @@ namespace Kojiro_ordering_management_system.Properties {
         internal static System.Drawing.Bitmap 用户_拷贝1 {
             get {
                 object obj = ResourceManager.GetObject("用户 拷贝1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 用户_拷贝png {
+            get {
+                object obj = ResourceManager.GetObject("用户 拷贝png", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

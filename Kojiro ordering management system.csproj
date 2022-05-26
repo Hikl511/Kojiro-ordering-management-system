@@ -126,5 +126,11 @@
   <ItemGroup>
     <None Include="Resources\未标题-1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\欢迎.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户 拷贝png.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
