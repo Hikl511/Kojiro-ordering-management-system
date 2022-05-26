@@ -67,7 +67,6 @@ namespace Kojiro_ordering_management_system
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form2 enroll = new Form2();
-            Hide();
             enroll.Show();
         }
 
