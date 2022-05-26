@@ -28,12 +28,14 @@ namespace Kojiro_ordering_management_system
                 conn.Open();
             }
         }
+        //查
         public static SqlDataReader GDR(string sql)
         {
             connt();
             SqlCommand cmd = new SqlCommand(sql, conn);
             return cmd.ExecuteReader(CommandBehavior.CloseConnection);
         }
+        //增删改
         public static bool ENQ(string sql)
         {
             connt();
@@ -42,6 +44,7 @@ namespace Kojiro_ordering_management_system
             conn.Close();
             return result>0;
         }
+        //聚合函数
         public static object ES(string sql)
         {
             connt();
