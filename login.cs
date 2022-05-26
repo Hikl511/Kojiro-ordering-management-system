@@ -43,8 +43,7 @@ namespace Kojiro_ordering_management_system
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
+           
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -64,7 +63,8 @@ namespace Kojiro_ordering_management_system
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Form2 enroll = new Form2();
+            enroll.Show();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

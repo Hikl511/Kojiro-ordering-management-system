@@ -132,5 +132,41 @@
   <ItemGroup>
     <None Include="Resources\用户 拷贝png.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\电话.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\姓名.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\姓名1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\姓名2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\地址.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\验证码.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\获取验证码.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\获取验证码1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\获取验证码2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\注册.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\验证码1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\姓名3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

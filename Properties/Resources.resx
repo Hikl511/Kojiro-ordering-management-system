@@ -118,52 +118,88 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="小" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\小.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="用户 拷贝1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\用户 拷贝1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="denglu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\denglu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="获取验证码1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\获取验证码1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="注册" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\注册.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="yonghu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yonghu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="小次郎logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\小次郎logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="姓名1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\姓名1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="XioaoCiLang" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\XioaoCiLang.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="地址" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\地址.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="用户2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\用户2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="用户 拷贝1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\用户 拷贝1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="小次郎 白" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\小次郎 白.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="小" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\小.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="密码" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\密码.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="用户 拷贝" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\用户 拷贝.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="未标题-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\未标题-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="欢迎" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\欢迎.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="验证码1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\验证码1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="小次郎" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\小次郎.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="小次郎logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\小次郎logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="denglu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\denglu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="未标题-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\未标题-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="获取验证码" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\获取验证码.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="获取验证码2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\获取验证码2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="用户 拷贝" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\用户 拷贝.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="用户2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\用户2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="denglu2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\denglu2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="电话" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\电话.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="验证码" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\验证码.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="姓名2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\姓名2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="用户 拷贝png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\用户 拷贝png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="小次郎" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\小次郎.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XioaoCiLang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\XioaoCiLang.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="欢迎" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\欢迎.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="小次郎 白" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\小次郎 白.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="姓名" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\姓名.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="姓名3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\姓名3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
