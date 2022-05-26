@@ -25,6 +25,11 @@ namespace Kojiro_ordering_management_system
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Text = "小次郎点餐系统";
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
 
         }
     }

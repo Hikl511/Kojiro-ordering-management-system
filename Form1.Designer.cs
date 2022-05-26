@@ -36,9 +36,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Kojiro_ordering_management_system.Properties.Resources.XioaoCiLang;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(832, 546);
+            this.pictureBox1.Size = new System.Drawing.Size(832, 522);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
