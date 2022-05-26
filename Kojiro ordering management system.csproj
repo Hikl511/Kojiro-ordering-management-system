@@ -93,5 +93,8 @@
   <ItemGroup>
     <None Include="Resources\XioaoCiLang.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\denglu.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

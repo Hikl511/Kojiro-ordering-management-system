@@ -63,6 +63,16 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap denglu {
+            get {
+                object obj = ResourceManager.GetObject("denglu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap XioaoCiLang {
             get {
                 object obj = ResourceManager.GetObject("XioaoCiLang", resourceCulture);
