@@ -158,7 +158,6 @@
             this.textBox4.Location = new System.Drawing.Point(366, 186);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '*';
             this.textBox4.Size = new System.Drawing.Size(224, 31);
             this.textBox4.TabIndex = 25;
             // 
@@ -188,7 +187,6 @@
             this.textBox6.Location = new System.Drawing.Point(362, 282);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.PasswordChar = '*';
             this.textBox6.Size = new System.Drawing.Size(224, 31);
             this.textBox6.TabIndex = 28;
             // 
@@ -320,7 +318,6 @@
             this.textBox7.Location = new System.Drawing.Point(362, 328);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
-            this.textBox7.PasswordChar = '*';
             this.textBox7.Size = new System.Drawing.Size(152, 31);
             this.textBox7.TabIndex = 36;
             // 
@@ -388,6 +385,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

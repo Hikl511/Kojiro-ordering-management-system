@@ -40,6 +40,7 @@ namespace Kojiro_ordering_management_system
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
+         
             form2.ShowDialog();
         }
 
