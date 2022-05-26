@@ -25,6 +25,8 @@ namespace Kojiro_ordering_management_system
         private void Form1_Load(object sender, EventArgs e)
         {
             Text = "小次郎点餐系统";
+            linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;//两个超链接文本去除下划线
+            linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -36,6 +38,22 @@ namespace Kojiro_ordering_management_system
         {
             Form2 form2 = new Form2();
             form2.ShowDialog();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -113,6 +113,16 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 小次郎_白 {
+            get {
+                object obj = ResourceManager.GetObject("小次郎 白", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 用户_拷贝 {
             get {
                 object obj = ResourceManager.GetObject("用户 拷贝", resourceCulture);
