@@ -187,7 +187,7 @@
             this.textBox6.Location = new System.Drawing.Point(362, 282);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(224, 31);
+            this.textBox6.Size = new System.Drawing.Size(228, 31);
             this.textBox6.TabIndex = 28;
             // 
             // linkLabel2
@@ -205,7 +205,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Kojiro_ordering_management_system.Properties.Resources.验证码1;
-            this.pictureBox1.Location = new System.Drawing.Point(520, 336);
+            this.pictureBox1.Location = new System.Drawing.Point(517, 335);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(71, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -226,7 +226,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::Kojiro_ordering_management_system.Properties.Resources.验证码;
-            this.pictureBox8.Location = new System.Drawing.Point(275, 336);
+            this.pictureBox8.Location = new System.Drawing.Point(274, 336);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(23, 24);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -236,7 +236,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::Kojiro_ordering_management_system.Properties.Resources.地址;
-            this.pictureBox7.Location = new System.Drawing.Point(274, 232);
+            this.pictureBox7.Location = new System.Drawing.Point(275, 232);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(23, 24);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -246,7 +246,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::Kojiro_ordering_management_system.Properties.Resources.姓名3;
-            this.pictureBox6.Location = new System.Drawing.Point(271, 182);
+            this.pictureBox6.Location = new System.Drawing.Point(269, 182);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(36, 36);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -275,7 +275,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Kojiro_ordering_management_system.Properties.Resources.用户_拷贝png;
-            this.pictureBox3.Location = new System.Drawing.Point(271, 49);
+            this.pictureBox3.Location = new System.Drawing.Point(272, 49);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(31, 22);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -285,7 +285,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::Kojiro_ordering_management_system.Properties.Resources.电话;
-            this.pictureBox5.Location = new System.Drawing.Point(274, 285);
+            this.pictureBox5.Location = new System.Drawing.Point(275, 285);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(23, 26);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

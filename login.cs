@@ -46,7 +46,8 @@ namespace Kojiro_ordering_management_system
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-           
+            Retrieve_pwd retrieve = new Retrieve_pwd();//实例化密码框
+            retrieve.Show();//打开密码框
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
