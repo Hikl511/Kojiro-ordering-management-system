@@ -121,7 +121,25 @@
   <data name="XioaoCiLang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\XioaoCiLang.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="用户 拷贝" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\用户 拷贝.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="用户 拷贝1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\用户 拷贝1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="denglu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\denglu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yonghu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yonghu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="denglu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\denglu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="用户2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\用户2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="密码" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\密码.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -96,5 +96,23 @@
   <ItemGroup>
     <None Include="Resources\denglu.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\denglu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yonghu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户 拷贝1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\密码.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
