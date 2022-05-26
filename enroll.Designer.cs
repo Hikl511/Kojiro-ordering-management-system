@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -51,6 +52,13 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -60,12 +68,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.Location = new System.Drawing.Point(357, 87);
+            this.textBox2.Location = new System.Drawing.Point(366, 91);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
@@ -75,7 +85,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("新宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(357, 45);
+            this.textBox1.Location = new System.Drawing.Point(366, 45);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(224, 31);
@@ -84,7 +94,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(360, 288);
+            this.textBox5.Location = new System.Drawing.Point(366, 331);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(144, 29);
@@ -93,11 +103,11 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox3.Location = new System.Drawing.Point(360, 139);
+            this.textBox3.Location = new System.Drawing.Point(366, 282);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(221, 32);
+            this.textBox3.Size = new System.Drawing.Size(225, 32);
             this.textBox3.TabIndex = 19;
             // 
             // label1
@@ -105,7 +115,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(304, 52);
+            this.label1.Location = new System.Drawing.Point(313, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 16);
             this.label1.TabIndex = 20;
@@ -115,7 +125,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(304, 96);
+            this.label2.Location = new System.Drawing.Point(313, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 16);
             this.label2.TabIndex = 21;
@@ -125,7 +135,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(304, 146);
+            this.label3.Location = new System.Drawing.Point(313, 289);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 16);
             this.label3.TabIndex = 22;
@@ -135,7 +145,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(304, 193);
+            this.label4.Location = new System.Drawing.Point(313, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 16);
             this.label4.TabIndex = 23;
@@ -144,18 +154,18 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox4.Location = new System.Drawing.Point(361, 186);
+            this.textBox4.Location = new System.Drawing.Point(366, 186);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(221, 32);
+            this.textBox4.Size = new System.Drawing.Size(224, 32);
             this.textBox4.TabIndex = 25;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(304, 248);
+            this.label5.Location = new System.Drawing.Point(313, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 16);
             this.label5.TabIndex = 26;
@@ -165,7 +175,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(304, 295);
+            this.label6.Location = new System.Drawing.Point(314, 339);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 16);
             this.label6.TabIndex = 29;
@@ -174,18 +184,18 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox6.Location = new System.Drawing.Point(361, 241);
+            this.textBox6.Location = new System.Drawing.Point(366, 232);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.PasswordChar = '*';
-            this.textBox6.Size = new System.Drawing.Size(221, 32);
+            this.textBox6.Size = new System.Drawing.Size(225, 32);
             this.textBox6.TabIndex = 28;
             // 
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.LinkColor = System.Drawing.Color.Blue;
-            this.linkLabel2.Location = new System.Drawing.Point(554, 409);
+            this.linkLabel2.Location = new System.Drawing.Point(549, 458);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(53, 12);
             this.linkLabel2.TabIndex = 32;
@@ -195,7 +205,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Kojiro_ordering_management_system.Properties.Resources.验证码1;
-            this.pictureBox1.Location = new System.Drawing.Point(510, 292);
+            this.pictureBox1.Location = new System.Drawing.Point(520, 336);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(71, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -205,7 +215,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::Kojiro_ordering_management_system.Properties.Resources.注册;
-            this.pictureBox9.Location = new System.Drawing.Point(325, 349);
+            this.pictureBox9.Location = new System.Drawing.Point(327, 401);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(223, 34);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -215,7 +225,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::Kojiro_ordering_management_system.Properties.Resources.验证码;
-            this.pictureBox8.Location = new System.Drawing.Point(270, 292);
+            this.pictureBox8.Location = new System.Drawing.Point(275, 336);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(23, 24);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -225,7 +235,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::Kojiro_ordering_management_system.Properties.Resources.地址;
-            this.pictureBox7.Location = new System.Drawing.Point(270, 245);
+            this.pictureBox7.Location = new System.Drawing.Point(274, 232);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(23, 24);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -235,9 +245,9 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::Kojiro_ordering_management_system.Properties.Resources.姓名3;
-            this.pictureBox6.Location = new System.Drawing.Point(262, 181);
+            this.pictureBox6.Location = new System.Drawing.Point(271, 182);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(41, 41);
+            this.pictureBox6.Size = new System.Drawing.Size(36, 36);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 24;
             this.pictureBox6.TabStop = false;
@@ -245,16 +255,16 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Kojiro_ordering_management_system.Properties.Resources.XioaoCiLang;
-            this.pictureBox2.Location = new System.Drawing.Point(-18, -34);
+            this.pictureBox2.Location = new System.Drawing.Point(-16, -4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(252, 477);
+            this.pictureBox2.Size = new System.Drawing.Size(252, 510);
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Kojiro_ordering_management_system.Properties.Resources.密码;
-            this.pictureBox4.Location = new System.Drawing.Point(270, 92);
+            this.pictureBox4.Location = new System.Drawing.Point(274, 96);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(28, 25);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -264,7 +274,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Kojiro_ordering_management_system.Properties.Resources.用户_拷贝png;
-            this.pictureBox3.Location = new System.Drawing.Point(267, 49);
+            this.pictureBox3.Location = new System.Drawing.Point(271, 49);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(31, 22);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -274,19 +284,80 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::Kojiro_ordering_management_system.Properties.Resources.电话;
-            this.pictureBox5.Location = new System.Drawing.Point(270, 142);
+            this.pictureBox5.Location = new System.Drawing.Point(274, 285);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(23, 26);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 18;
             this.pictureBox5.TabStop = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(309, 147);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 16);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "确认密码";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::Kojiro_ordering_management_system.Properties.Resources.密码;
+            this.pictureBox10.Location = new System.Drawing.Point(274, 143);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(28, 25);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 35;
+            this.pictureBox10.TabStop = false;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox7.Location = new System.Drawing.Point(366, 140);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.PasswordChar = '*';
+            this.textBox7.Size = new System.Drawing.Size(224, 32);
+            this.textBox7.TabIndex = 36;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 481);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(625, 22);
+            this.statusStrip1.TabIndex = 38;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(480, 17);
+            this.toolStripStatusLabel1.Text = "                                                                                 " +
+    "                                     ";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(618, 428);
+            this.ClientSize = new System.Drawing.Size(625, 503);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.linkLabel2);
@@ -309,8 +380,10 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.textBox3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -323,6 +396,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,5 +427,12 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

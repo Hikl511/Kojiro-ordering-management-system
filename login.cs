@@ -28,6 +28,8 @@ namespace Kojiro_ordering_management_system
             linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;//两个超链接文本去除下划线
             linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;
             statusStrip1.BackColor = Color.Transparent;
+
+
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
