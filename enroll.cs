@@ -72,8 +72,16 @@ namespace Kojiro_ordering_management_system
                                             {
                                                 if (textBox7.Text.Equals(code))//判断验证码是否正确
                                                 {
-
-
+                                                    int i = 1;
+                                                    i++;
+                                                    int ID = i;
+                                                    string Uid = textBox1.Text;//用户名
+                                                    string Pwd = textBox2.Text;//密码
+                                                    string Name = textBox4.Text;//姓名
+                                                    string Addres = textBox5.Text;//地址
+                                                    string Phone = textBox6.Text;//手机
+                                                    System.DateTime currentTime = new System.DateTime();
+                                                    string Addtime = DateTime.Now.ToString("yyyy-MM-dd"); //获取当前日期 年 - 月 - 日显示
 
                                                 }
                                             }
