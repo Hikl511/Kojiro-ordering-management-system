@@ -87,24 +87,28 @@ namespace Kojiro_ordering_management_system
                                                     string sql2 = string.Format("select* from Ustable where Uid = {0}",Uid);
                                                     string sql3 = string.Format("select* from Ustable where Phone = {0}", Phone);
                                                     SqlDataReader dr2 = DBHelper.GDR(sql2);
-                                                    SqlDataReader dr3 = DBHelper.GDR(sql3);
                                                     if (dr2.HasRows)//验证账户是否已注册
                                                     {
                                                         label8.Text = "该账户已注册，无法再次注册！";
                                                         label8.Visible = true;//验证码错误时 显示错误文本
+                                                        dr2.Close();//查询之后关闭
                                                     }
                                                     else
                                                     {
+                                                        dr2.Close();//查询之后关闭
+                                                        SqlDataReader dr3 = DBHelper.GDR(sql3);
                                                         if (dr3.HasRows)//验证手机是否注册
                                                         {
                                                             label8.Text = "该手机号已注册，无法再次注册！";
                                                             label8.Visible = true;//验证码错误时 显示错误文本
+                                                            dr3.Close();
                                                         }
                                                         else
                                                         {
                                                             if (DBHelper.ENQ(sql))//条件都满足就添加数据 提示注册成功
                                                             {
                                                                 MessageBox.Show("注册成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                                dr3.Close();//注册成功后关闭
                                                             }
                                                         }
                                                     }
@@ -303,16 +307,18 @@ namespace Kojiro_ordering_management_system
 
         string code;
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            code = GenerateCheckCode();//生成4位数字符串
-            Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
-            pictureBox11.Image = image;//给控件赋值
-        }
+ 
 
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            code = GenerateCheckCode();//生成4位数字符串
+            Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
+            pictureBox11.Image = image;//给控件赋值
         }
     }
 }
