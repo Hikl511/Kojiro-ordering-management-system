@@ -177,5 +177,11 @@
   <ItemGroup>
     <None Include="Resources\姓名3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\确认.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\刷新.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

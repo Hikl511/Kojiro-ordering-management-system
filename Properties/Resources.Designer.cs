@@ -113,6 +113,16 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 刷新 {
+            get {
+                object obj = ResourceManager.GetObject("刷新", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 地址 {
             get {
                 object obj = ResourceManager.GetObject("地址", resourceCulture);
@@ -286,6 +296,16 @@ namespace Kojiro_ordering_management_system.Properties {
         internal static System.Drawing.Bitmap 电话 {
             get {
                 object obj = ResourceManager.GetObject("电话", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 确认 {
+            get {
+                object obj = ResourceManager.GetObject("确认", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
