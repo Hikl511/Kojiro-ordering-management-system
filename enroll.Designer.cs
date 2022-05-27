@@ -219,7 +219,7 @@
             this.textBox7.Location = new System.Drawing.Point(366, 334);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(91, 28);
+            this.textBox7.Size = new System.Drawing.Size(124, 28);
             this.textBox7.TabIndex = 36;
             // 
             // statusStrip1
@@ -341,9 +341,9 @@
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Location = new System.Drawing.Point(463, 335);
+            this.pictureBox11.Location = new System.Drawing.Point(496, 334);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(66, 28);
+            this.pictureBox11.Size = new System.Drawing.Size(81, 28);
             this.pictureBox11.TabIndex = 39;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
