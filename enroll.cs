@@ -54,68 +54,76 @@ namespace Kojiro_ordering_management_system
         {
             if (textBox1.Text != "")
             {
-                if (textBox2.Text != "")
+                if (textBox2.Text != "")//判断密码框
                 {
                     if (textBox3.Text != "")
                     {
-                        if (textBox4.Text != "")
+                        if (textBox2.Text==textBox3.Text)
                         {
-                            if (textBox5.Text != "")
+                            if (textBox4.Text != "")
                             {
-                                if (textBox6.Text != "")
+                                if (textBox5.Text != "")
                                 {
-                                    if (textBox6.Text.Length==11)//判断长度是否等于11
+                                    if (textBox6.Text != "")
                                     {
-                                        if (textBox7.Text != "")//判断验证码框是否为空
+                                        if (textBox6.Text.Length == 11)//判断长度是否等于11
                                         {
-                                            if (textBox7.Text.Equals(code))//判断验证码是否正确
+                                            if (textBox7.Text != "")//判断验证码框是否为空
                                             {
-                                               
+                                                if (textBox7.Text.Equals(code))//判断验证码是否正确
+                                                {
 
 
+
+                                                }
                                             }
+                                            else
+                                            {
+                                                label8.Text = "请输入验证码！";
+                                                label8.Visible = true;//验证码错误时 显示错误文本
+                                                textBox7.Text = "";//清空文本框
+
+                                                //然后刷新验证码
+                                                code = GenerateCheckCode();//生成4位数字符串
+                                                Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
+                                                pictureBox11.Image = image;//给控件赋值
+                                                textBox7.GotFocus += new EventHandler((obj, ex) => { label8.Visible = false; });//成为焦点时把错误文本隐藏
+                                            }
+
                                         }
                                         else
                                         {
-                                            label8.Text = "请输入验证码！";
-                                            label8.Visible = true;//验证码错误时 显示错误文本
-                                            textBox7.Text = "";//清空文本框
-
-                                            //然后刷新验证码
-                                            code = GenerateCheckCode();//生成4位数字符串
-                                            Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
-                                            pictureBox11.Image = image;//给控件赋值
-                                            textBox7.GotFocus += new EventHandler((obj, ex) => { label8.Visible = false; });//成为焦点时把错误文本隐藏
+                                            label8.Text = "请输入正确的11位手机号!";
+                                            label8.Visible = true;//显示提示输入文本
                                         }
-
                                     }
                                     else
                                     {
-                                        label8.Text = "请输入正确的11位手机号!";
+                                        label8.Text = "请输入手机号!";
                                         label8.Visible = true;//显示提示输入文本
                                     }
                                 }
                                 else
                                 {
-                                    label8.Text = "请输入手机号!";
+                                    label8.Text = "请输入地址!";
                                     label8.Visible = true;//显示提示输入文本
                                 }
                             }
                             else
                             {
-                                label8.Text = "请输入地址!";
+                                label8.Text = "请输入姓名!";
                                 label8.Visible = true;//显示提示输入文本
                             }
                         }
                         else
                         {
-                            label8.Text = "请输入姓名!";
+                            label8.Text = "密码不一致!";
                             label8.Visible = true;//显示提示输入文本
                         }
                     }
                     else
                     {
-                        label8.Text = "请确认密码!!";
+                        label8.Text = "请确认密码!";
                         label8.Visible = true;//显示提示输入文本
                     }
                 }
