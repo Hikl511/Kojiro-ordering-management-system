@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kojiro_ordering_management_system
@@ -43,12 +37,12 @@ namespace Kojiro_ordering_management_system
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-           toolStripStatusLabel2.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            toolStripStatusLabel2.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -58,27 +52,84 @@ namespace Kojiro_ordering_management_system
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox7.Text))//判断验证码框是否为空
+            if (textBox1.Text != "")
             {
-                MessageBox.Show("请输入验证码");
-                return;
-            }
-            if (textBox7.Text.Equals(code))
-            {
-                MessageBox.Show("成功");
-                label8.Visible = false;
+                if (textBox2.Text != "")
+                {
+                    if (textBox3.Text != "")
+                    {
+                        if (textBox4.Text != "")
+                        {
+                            if (textBox5.Text != "")
+                            {
+                                if (textBox6.Text != "")
+                                {
+                                    if (textBox6.Text.Length==11)//判断长度是否等于11
+                                    {
+                                        if (textBox7.Text != "")//判断验证码框是否为空
+                                        {
+                                            if (textBox7.Text.Equals(code))//判断验证码是否正确
+                                            {
+                                               
+
+
+                                            }
+                                        }
+                                        else
+                                        {
+                                            label8.Text = "请输入验证码！";
+                                            label8.Visible = true;//验证码错误时 显示错误文本
+                                            textBox7.Text = "";//清空文本框
+
+                                            //然后刷新验证码
+                                            code = GenerateCheckCode();//生成4位数字符串
+                                            Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
+                                            pictureBox11.Image = image;//给控件赋值
+                                            textBox7.GotFocus += new EventHandler((obj, ex) => { label8.Visible = false; });//成为焦点时把错误文本隐藏
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        label8.Text = "请输入正确的11位手机号!";
+                                        label8.Visible = true;//显示提示输入文本
+                                    }
+                                }
+                                else
+                                {
+                                    label8.Text = "请输入手机号!";
+                                    label8.Visible = true;//显示提示输入文本
+                                }
+                            }
+                            else
+                            {
+                                label8.Text = "请输入地址!";
+                                label8.Visible = true;//显示提示输入文本
+                            }
+                        }
+                        else
+                        {
+                            label8.Text = "请输入姓名!";
+                            label8.Visible = true;//显示提示输入文本
+                        }
+                    }
+                    else
+                    {
+                        label8.Text = "请确认密码!!";
+                        label8.Visible = true;//显示提示输入文本
+                    }
+                }
+                else
+                {
+                    label8.Text = "请输入密码!";
+                    label8.Visible = true;//显示提示输入文本
+                }
             }
             else
             {
-                label8.Visible = true;//验证码错误时 显示错误文本
-                textBox7.Text = "";//清空文本框
-                //然后刷新验证码
-                code = GenerateCheckCode();//生成4位数字符串
-                Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
-                pictureBox11.Image = image;//给控件赋值
-
-                textBox7.GotFocus += new EventHandler((obj, ex) => { label8.Visible = false; });//成为焦点时把错误文本隐藏
-                }
+                label8.Text = "请输入用户名!";
+                label8.Visible = true;//显示提示输入文本
+            }
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -159,7 +210,7 @@ namespace Kojiro_ordering_management_system
             g.DrawRectangle(new Pen(Color.Black, 0), 0, 0, image.Width - 1, image.Height - 1);
             return image;
         }
-        
+
 
         private const double PI = 3.1415926535897932384626433832795;
         private const double PI2 = 6.283185307179586476925286766559;
@@ -215,7 +266,12 @@ namespace Kojiro_ordering_management_system
         {
             code = GenerateCheckCode();//生成4位数字符串
             Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
-            pictureBox11.Image=image;//给控件赋值
+            pictureBox11.Image = image;//给控件赋值
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
