@@ -36,5 +36,15 @@ namespace Kojiro_ordering_management_system
         {
             Close();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

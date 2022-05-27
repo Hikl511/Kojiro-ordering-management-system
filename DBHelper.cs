@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 namespace Kojiro_ordering_management_system
@@ -11,18 +6,18 @@ namespace Kojiro_ordering_management_system
     internal class DBHelper
     {
         public static string CoonString = "server=.;database=Kojiror;uid=sa;pwd=1234";
-        public static SqlConnection conn = null; 
+        public static SqlConnection conn = null;
         public static void connt()
         {
             if (conn == null)
             {
                 conn = new SqlConnection(CoonString);
             }
-            if (conn.State==ConnectionState.Closed)
+            if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
             }
-            if (conn.State==ConnectionState.Broken)
+            if (conn.State == ConnectionState.Broken)
             {
                 conn.Close();
                 conn.Open();
@@ -39,17 +34,17 @@ namespace Kojiro_ordering_management_system
         public static bool ENQ(string sql)
         {
             connt();
-            SqlCommand cmd=new SqlCommand(sql, conn);
-            int result= cmd.ExecuteNonQuery();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            int result = cmd.ExecuteNonQuery();
             conn.Close();
-            return result>0;
+            return result > 0;
         }
         //聚合函数
         public static object ES(string sql)
         {
             connt();
-            SqlCommand cmd= new SqlCommand(sql, conn);
-            object result= cmd.ExecuteScalar();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            object result = cmd.ExecuteScalar();
             conn.Close();
             return result;
         }

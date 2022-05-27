@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Kojiro_ordering_management_system
 {
@@ -72,17 +74,40 @@ namespace Kojiro_ordering_management_system
                                             {
                                                 if (textBox7.Text.Equals(code))//判断验证码是否正确
                                                 {
-                                                    int i = 1;
-                                                    i++;
+                                                    int i = 2;
                                                     int ID = i;
+                                                    i++;
                                                     string Uid = textBox1.Text;//用户名
                                                     string Pwd = textBox2.Text;//密码
                                                     string Name = textBox4.Text;//姓名
                                                     string Addres = textBox5.Text;//地址
                                                     string Phone = textBox6.Text;//手机
-                                                    System.DateTime currentTime = new System.DateTime();
                                                     string Addtime = DateTime.Now.ToString("yyyy-MM-dd"); //获取当前日期 年 - 月 - 日显示
-
+                                                    string sql = string.Format("insert Ustable values({0},'{1}','{2}',{3},'{4}','{5}','{6}')",ID,Name,Phone,Uid,Pwd,Addres,Addtime);
+                                                    string sql2 = string.Format("select* from Ustable where Uid = {0}",Uid);
+                                                    string sql3 = string.Format("select* from Ustable where Phone = {0}", Phone);
+                                                    SqlDataReader dr2 = DBHelper.GDR(sql2);
+                                                    SqlDataReader dr3 = DBHelper.GDR(sql3);
+                                                    if (dr2.HasRows)//验证账户是否已注册
+                                                    {
+                                                        label8.Text = "该账户已注册，无法再次注册！";
+                                                        label8.Visible = true;//验证码错误时 显示错误文本
+                                                    }
+                                                    else
+                                                    {
+                                                        if (dr3.HasRows)//验证手机是否注册
+                                                        {
+                                                            label8.Text = "该手机号已注册，无法再次注册！";
+                                                            label8.Visible = true;//验证码错误时 显示错误文本
+                                                        }
+                                                        else
+                                                        {
+                                                            if (DBHelper.ENQ(sql))//条件都满足就添加数据 提示注册成功
+                                                            {
+                                                                MessageBox.Show("注册成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                            }
+                                                        }
+                                                    }
                                                 }
                                             }
                                             else
