@@ -75,42 +75,43 @@
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.Location = new System.Drawing.Point(366, 93);
+            this.textBox2.Font = new System.Drawing.Font("宋体", 13F);
+            this.textBox2.Location = new System.Drawing.Point(366, 96);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(224, 28);
+            this.textBox2.Size = new System.Drawing.Size(224, 24);
             this.textBox2.TabIndex = 12;
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("宋体", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(366, 47);
+            this.textBox1.Font = new System.Drawing.Font("宋体", 10F);
+            this.textBox1.Location = new System.Drawing.Point(366, 49);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 28);
+            this.textBox1.Size = new System.Drawing.Size(224, 24);
             this.textBox1.TabIndex = 11;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(365, 231);
+            this.textBox5.Font = new System.Drawing.Font("宋体", 10F);
+            this.textBox5.Location = new System.Drawing.Point(365, 234);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(224, 28);
+            this.textBox5.Size = new System.Drawing.Size(224, 24);
             this.textBox5.TabIndex = 15;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox3
             // 
-            this.textBox3.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox3.Location = new System.Drawing.Point(365, 141);
+            this.textBox3.Font = new System.Drawing.Font("宋体", 13F);
+            this.textBox3.Location = new System.Drawing.Point(365, 144);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(224, 28);
-            this.textBox3.TabIndex = 19;
+            this.textBox3.Size = new System.Drawing.Size(224, 24);
+            this.textBox3.TabIndex = 13;
             // 
             // label1
             // 
@@ -155,12 +156,12 @@
             // 
             // textBox4
             // 
-            this.textBox4.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox4.Location = new System.Drawing.Point(366, 188);
+            this.textBox4.Font = new System.Drawing.Font("宋体", 10F);
+            this.textBox4.Location = new System.Drawing.Point(366, 191);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(224, 28);
-            this.textBox4.TabIndex = 25;
+            this.textBox4.Size = new System.Drawing.Size(224, 24);
+            this.textBox4.TabIndex = 14;
             // 
             // label5
             // 
@@ -184,12 +185,12 @@
             // 
             // textBox6
             // 
-            this.textBox6.Font = new System.Drawing.Font("华文细黑", 12F);
-            this.textBox6.Location = new System.Drawing.Point(366, 284);
+            this.textBox6.Font = new System.Drawing.Font("宋体", 10F);
+            this.textBox6.Location = new System.Drawing.Point(366, 287);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(224, 28);
-            this.textBox6.TabIndex = 28;
+            this.textBox6.Size = new System.Drawing.Size(224, 24);
+            this.textBox6.TabIndex = 16;
             // 
             // linkLabel2
             // 
@@ -198,7 +199,7 @@
             this.linkLabel2.Location = new System.Drawing.Point(549, 458);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(53, 12);
-            this.linkLabel2.TabIndex = 32;
+            this.linkLabel2.TabIndex = 18;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "返回登录";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
@@ -215,12 +216,12 @@
             // 
             // textBox7
             // 
-            this.textBox7.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox7.Location = new System.Drawing.Point(366, 334);
+            this.textBox7.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(366, 337);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(124, 28);
-            this.textBox7.TabIndex = 36;
+            this.textBox7.Size = new System.Drawing.Size(124, 24);
+            this.textBox7.TabIndex = 17;
             // 
             // statusStrip1
             // 
