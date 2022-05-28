@@ -5,7 +5,12 @@ namespace Kojiro_ordering_management_system
 {
     internal class DBHelper
     {
-        public static string CoonString = "server=.;database=Kojiror;uid=sa;pwd=1234";
+
+        //MultipleActiveResultSets=true
+        //SQL Server数据库默认的只有一个活动的SqlDataReader
+        //如果想要一个连接允许多个SqlDataReader,那就需要将MultipleActiveResultSets设置为true
+        //其意义为：将数据库连接设置可复用，即可供多个SqlCommand同时使用。
+        public static string CoonString = "server=.;database=Kojiror;uid=sa;pwd=1234;MultipleActiveResultSets=true";
         public static SqlConnection conn = null;
         public static void connt()
         {

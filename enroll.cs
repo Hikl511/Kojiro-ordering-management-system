@@ -1,9 +1,7 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Data;
-using System.Data.SqlClient;
-
 namespace Kojiro_ordering_management_system
 {
     public partial class Form2 : Form
@@ -60,7 +58,7 @@ namespace Kojiro_ordering_management_system
                 {
                     if (textBox3.Text != "")
                     {
-                        if (textBox2.Text==textBox3.Text)
+                        if (textBox2.Text == textBox3.Text)
                         {
                             if (textBox4.Text != "")
                             {
@@ -74,29 +72,30 @@ namespace Kojiro_ordering_management_system
                                             {
                                                 if (textBox7.Text.Equals(code))//判断验证码是否正确
                                                 {
-                                                    int i = 2;
-                                                    int ID = i;
-                                                    i++;
+                                                   
                                                     string Uid = textBox1.Text;//用户名
                                                     string Pwd = textBox2.Text;//密码
                                                     string Name = textBox4.Text;//姓名
                                                     string Addres = textBox5.Text;//地址
                                                     string Phone = textBox6.Text;//手机
                                                     string Addtime = DateTime.Now.ToString("yyyy-MM-dd"); //获取当前日期 年 - 月 - 日显示
-                                                    string sql = string.Format("insert Ustable values({0},'{1}','{2}',{3},'{4}','{5}','{6}')",ID,Name,Phone,Uid,Pwd,Addres,Addtime);
-                                                    string sql2 = string.Format("select* from Ustable where Uid = {0}",Uid);
+                                                    string sql = string.Format("insert Ustable values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", Name, Phone, Uid, Pwd, Addres, Addtime);
+                                                    string sql2 = string.Format("select* from Ustable where Uid = {0}", Uid);
                                                     string sql3 = string.Format("select* from Ustable where Phone = {0}", Phone);
-                                                    SqlDataReader dr2 = DBHelper.GDR(sql2);
-                                                    SqlDataReader dr3 = DBHelper.GDR(sql3);
-                                                    if (dr2.HasRows)//验证账户是否已注册
+                                                    SqlDataReader dr1 = DBHelper.GDR(sql2);
+                                                    if (dr1.HasRows)//验证账户是否已注册
                                                     {
+                                                        DBHelper.conn.Close();//查询之后关闭
                                                         label8.Text = "该账户已注册，无法再次注册！";
                                                         label8.Visible = true;//验证码错误时 显示错误文本
                                                     }
                                                     else
                                                     {
-                                                        if (dr3.HasRows)//验证手机是否注册
+                                                        DBHelper.conn.Close();//查询之后关闭
+                                                        SqlDataReader dr2 = DBHelper.GDR(sql3);
+                                                        if (dr2.HasRows)//验证手机是否注册
                                                         {
+                                                            DBHelper.conn.Close();//查询之后关闭
                                                             label8.Text = "该手机号已注册，无法再次注册！";
                                                             label8.Visible = true;//验证码错误时 显示错误文本
                                                         }
@@ -104,10 +103,32 @@ namespace Kojiro_ordering_management_system
                                                         {
                                                             if (DBHelper.ENQ(sql))//条件都满足就添加数据 提示注册成功
                                                             {
+                                                                DBHelper.conn.Close();//查询之后关闭
                                                                 MessageBox.Show("注册成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                                label8.Text = "注册成功 请返回登录！";
+                                                                label8.Visible = true;
+                                                                //注册成功后清空所有框
+                                                                textBox1.Text = "";
+                                                                textBox2.Text = "";
+                                                                textBox3.Text = "";
+                                                                textBox4.Text = "";
+                                                                textBox5.Text = "";
+                                                                textBox6.Text = "";
+                                                                textBox7.Text = "";
                                                             }
                                                         }
                                                     }
+                                                }
+                                                else
+                                                {
+                                                    label8.Text = "验证码错误 请重新输入！";
+                                                    label8.Visible = true;//验证码错误时 显示错误文本
+                                                    textBox7.Text = "";//清空文本框
+                                                    //然后刷新验证码
+                                                    code = GenerateCheckCode();//生成4位数字符串
+                                                    Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
+                                                    pictureBox11.Image = image;//给控件赋值
+                                                    textBox7.GotFocus += new EventHandler((obj, ex) => { label8.Visible = false; });//成为焦点时把错误文本隐藏
                                                 }
                                             }
                                             else
@@ -303,16 +324,18 @@ namespace Kojiro_ordering_management_system
 
         string code;
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            code = GenerateCheckCode();//生成4位数字符串
-            Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
-            pictureBox11.Image = image;//给控件赋值
-        }
+
 
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            code = GenerateCheckCode();//生成4位数字符串
+            Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
+            pictureBox11.Image = image;//给控件赋值
         }
     }
 }
