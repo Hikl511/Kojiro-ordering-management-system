@@ -67,6 +67,7 @@
     <Compile Include="Retrieve pwd.Designer.cs">
       <DependentUpon>Retrieve pwd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Smphone.cs" />
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
