@@ -193,5 +193,17 @@
   <ItemGroup>
     <None Include="Resources\刷新.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\导航1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\导航.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo 小次郎 拷贝.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo 小次郎 拷贝.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -72,7 +72,6 @@ namespace Kojiro_ordering_management_system
         public const int AW_HOR_NEGATIVE = 0x0002;//自右向左显示窗口。该标志可以在滚动动画和滑动动画中使用。当使用AW_CENTER标志时，该标志将被忽略。
 
         public const int AW_VER_NEGATIVE = 0x0008;//自下向上显示窗口。该标志可以在滚动动画和滑动动画中使用。当使用AW_CENTER标志时，该标志将被忽略。
-        //需添加using System.Runtime.InteropServices
         [DllImport("user32.dll")]
 
         public static extern bool ReleaseCapture();
@@ -121,7 +120,7 @@ namespace Kojiro_ordering_management_system
         private void User_side_Load(object sender, EventArgs e)
         {
             //窗体加载动画效果
-            AnimateWindow(this.Handle, 500, AW_BLEND | AW_CENTER);
+            AnimateWindow(this.Handle, 300, AW_BLEND | AW_CENTER);
         }
         /// <summary>
         /// 获取游标位置并改变形状
@@ -205,7 +204,7 @@ namespace Kojiro_ordering_management_system
         private void User_side_FormClosing(object sender, FormClosingEventArgs e)
         {
             //窗体关闭动画效果
-            AnimateWindow(this.Handle, 500, AW_HIDE | AW_BLEND | AW_CENTER);
+            AnimateWindow(this.Handle, 800, AW_HIDE | AW_BLEND | AW_CENTER);
         }
 
         private void User_side_DoubleClick(object sender, EventArgs e)

@@ -36,10 +36,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnProduo = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.butClose = new System.Windows.Forms.Button();
-            this.butMinimize = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.butMinimize = new System.Windows.Forms.Button();
+            this.butClose = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -180,20 +180,12 @@
             this.panelLogo.Size = new System.Drawing.Size(220, 80);
             this.panelLogo.TabIndex = 0;
             // 
-            // butClose
+            // panel1
             // 
-            this.butClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butClose.FlatAppearance.BorderSize = 0;
-            this.butClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butClose.ForeColor = System.Drawing.SystemColors.Window;
-            this.butClose.Location = new System.Drawing.Point(831, 0);
-            this.butClose.Name = "butClose";
-            this.butClose.Size = new System.Drawing.Size(30, 30);
-            this.butClose.TabIndex = 1;
-            this.butClose.Text = "O";
-            this.butClose.UseVisualStyleBackColor = true;
-            this.butClose.Click += new System.EventHandler(this.butClose_Click);
+            this.panel1.Location = new System.Drawing.Point(217, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(865, 80);
+            this.panel1.TabIndex = 5;
             // 
             // butMinimize
             // 
@@ -202,13 +194,28 @@
             this.butMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butMinimize.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butMinimize.ForeColor = System.Drawing.SystemColors.Window;
-            this.butMinimize.Location = new System.Drawing.Point(757, 0);
+            this.butMinimize.Location = new System.Drawing.Point(748, 0);
             this.butMinimize.Name = "butMinimize";
             this.butMinimize.Size = new System.Drawing.Size(30, 30);
             this.butMinimize.TabIndex = 3;
             this.butMinimize.Text = "O";
             this.butMinimize.UseVisualStyleBackColor = true;
             this.butMinimize.Click += new System.EventHandler(this.butMinimize_Click);
+            // 
+            // butClose
+            // 
+            this.butClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butClose.FlatAppearance.BorderSize = 0;
+            this.butClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butClose.ForeColor = System.Drawing.SystemColors.Window;
+            this.butClose.Location = new System.Drawing.Point(822, 0);
+            this.butClose.Name = "butClose";
+            this.butClose.Size = new System.Drawing.Size(30, 30);
+            this.butClose.TabIndex = 1;
+            this.butClose.Text = "O";
+            this.butClose.UseVisualStyleBackColor = true;
+            this.butClose.Click += new System.EventHandler(this.butClose_Click);
             // 
             // button6
             // 
@@ -217,7 +224,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.Window;
-            this.button6.Location = new System.Drawing.Point(795, 0);
+            this.button6.Location = new System.Drawing.Point(784, 0);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(30, 30);
             this.button6.TabIndex = 4;
@@ -225,22 +232,17 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(217, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(865, 80);
-            this.panel1.TabIndex = 5;
-            // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.butClose);
             this.panel2.Controls.Add(this.butMinimize);
             this.panel2.Location = new System.Drawing.Point(220, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(862, 80);
+            this.panel2.Size = new System.Drawing.Size(875, 80);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -278,10 +280,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnProduo;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button butClose;
-        private System.Windows.Forms.Button butMinimize;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button butMinimize;
+        private System.Windows.Forms.Button butClose;
+        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel2;
     }
 }

@@ -93,6 +93,26 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Logo_小次郎_拷贝 {
+            get {
+                object obj = ResourceManager.GetObject("Logo 小次郎 拷贝", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_小次郎_拷贝1 {
+            get {
+                object obj = ResourceManager.GetObject("Logo 小次郎 拷贝1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap XioaoCiLang {
             get {
                 object obj = ResourceManager.GetObject("XioaoCiLang", resourceCulture);
@@ -176,6 +196,26 @@ namespace Kojiro_ordering_management_system.Properties {
         internal static System.Drawing.Bitmap 密码 {
             get {
                 object obj = ResourceManager.GetObject("密码", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 导航 {
+            get {
+                object obj = ResourceManager.GetObject("导航", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 导航1 {
+            get {
+                object obj = ResourceManager.GetObject("导航1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
