@@ -104,14 +104,7 @@ namespace Kojiro_ordering_management_system
 
         private void butClose_Click(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Normal)//如果现在的窗口是默认大小
-            {
-                WindowState = FormWindowState.Maximized;//那就设置成最大化
-            }
-            else
-            {
-                WindowState = FormWindowState.Normal;//否则就默认显示
-            }
+            Application.Exit();
         }
 
         private void butMinimize_Click(object sender, EventArgs e)
