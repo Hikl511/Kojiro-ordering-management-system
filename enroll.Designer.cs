@@ -216,11 +216,11 @@
             // 
             // textBox7
             // 
-            this.textBox7.Font = new System.Drawing.Font("Corbel", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.Location = new System.Drawing.Point(366, 337);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(124, 24);
+            this.textBox7.Size = new System.Drawing.Size(157, 24);
             this.textBox7.TabIndex = 17;
             // 
             // statusStrip1
@@ -342,9 +342,9 @@
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Location = new System.Drawing.Point(496, 334);
+            this.pictureBox11.Location = new System.Drawing.Point(529, 336);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(81, 28);
+            this.pictureBox11.Size = new System.Drawing.Size(60, 24);
             this.pictureBox11.TabIndex = 39;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);

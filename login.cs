@@ -23,7 +23,6 @@ namespace Kojiro_ordering_management_system
             linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;
             statusStrip1.BackColor = Color.Transparent;
             label1.Visible = false;//加载时隐藏提示文本
-
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -103,5 +102,6 @@ namespace Kojiro_ordering_management_system
         {
 
         }
+
     }
 }

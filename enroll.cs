@@ -258,7 +258,7 @@ namespace Kojiro_ordering_management_system
             System.Drawing.Bitmap image = new System.Drawing.Bitmap(w, h);
             Graphics g = Graphics.FromImage(image);
 
-            g.Clear(Color.WhiteSmoke);//清除背景色
+            g.Clear(Color.White);//清除背景色
 
             Color[] c = { Color.Black, Color.Red, Color.DarkBlue, Color.Green, Color.Orange, Color.Brown, Color.DarkCyan, Color.Purple };//定义随机颜色
 
