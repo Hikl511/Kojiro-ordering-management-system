@@ -140,7 +140,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.Blue;
-            this.linkLabel1.Location = new System.Drawing.Point(341, 366);
+            this.linkLabel1.Location = new System.Drawing.Point(319, 358);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(53, 12);
             this.linkLabel1.TabIndex = 52;
@@ -219,7 +219,7 @@
             this.panel1.Controls.Add(this.butMinimize);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(412, 109);
+            this.panel1.Size = new System.Drawing.Size(391, 109);
             this.panel1.TabIndex = 57;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Retrieve_pwd_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Retrieve_pwd_MouseMove);
@@ -242,7 +242,7 @@
             this.butClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butClose.ForeColor = System.Drawing.SystemColors.Window;
-            this.butClose.Location = new System.Drawing.Point(385, 0);
+            this.butClose.Location = new System.Drawing.Point(364, 0);
             this.butClose.Name = "butClose";
             this.butClose.Size = new System.Drawing.Size(22, 28);
             this.butClose.TabIndex = 15;
@@ -257,7 +257,7 @@
             this.butMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butMinimize.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12.75F);
             this.butMinimize.ForeColor = System.Drawing.SystemColors.Window;
-            this.butMinimize.Location = new System.Drawing.Point(352, 0);
+            this.butMinimize.Location = new System.Drawing.Point(331, 0);
             this.butMinimize.Name = "butMinimize";
             this.butMinimize.Size = new System.Drawing.Size(25, 25);
             this.butMinimize.TabIndex = 16;
@@ -271,10 +271,10 @@
             this.uiButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(184)))), ((int)(((byte)(250)))));
             this.uiButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(184)))), ((int)(((byte)(250)))));
             this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.uiButton1.Location = new System.Drawing.Point(156, 320);
+            this.uiButton1.Location = new System.Drawing.Point(145, 320);
             this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(131, 24);
+            this.uiButton1.Size = new System.Drawing.Size(154, 33);
             this.uiButton1.Style = Sunny.UI.UIStyle.Custom;
             this.uiButton1.TabIndex = 58;
             this.uiButton1.Text = "确  认";
@@ -287,7 +287,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(409, 389);
+            this.ClientSize = new System.Drawing.Size(388, 382);
             this.Controls.Add(this.uiButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
