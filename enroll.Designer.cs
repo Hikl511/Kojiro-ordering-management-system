@@ -29,171 +29,31 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.butClose = new System.Windows.Forms.Button();
             this.butMinimize = new System.Windows.Forms.Button();
             this.uiButton1 = new Sunny.UI.UIButton();
+            this.uiTextBox1 = new Sunny.UI.UITextBox();
+            this.uiTextBox2 = new Sunny.UI.UITextBox();
+            this.uiTextBox3 = new Sunny.UI.UITextBox();
+            this.uiTextBox4 = new Sunny.UI.UITextBox();
+            this.uiTextBox5 = new Sunny.UI.UITextBox();
+            this.uiTextBox6 = new Sunny.UI.UITextBox();
+            this.uiTextBox7 = new Sunny.UI.UITextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("宋体", 13F);
-            this.textBox2.Location = new System.Drawing.Point(231, 233);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(224, 24);
-            this.textBox2.TabIndex = 12;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("宋体", 10F);
-            this.textBox1.Location = new System.Drawing.Point(231, 186);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 24);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("宋体", 10F);
-            this.textBox5.Location = new System.Drawing.Point(230, 371);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(224, 24);
-            this.textBox5.TabIndex = 15;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("宋体", 13F);
-            this.textBox3.Location = new System.Drawing.Point(230, 281);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(224, 24);
-            this.textBox3.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(178, 189);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 16);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "用户名";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(178, 237);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 16);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "密    码";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(178, 426);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 16);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "手    机";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(178, 330);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 16);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "姓    名";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("宋体", 10F);
-            this.textBox4.Location = new System.Drawing.Point(231, 328);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(224, 24);
-            this.textBox4.TabIndex = 14;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(178, 372);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 16);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "地    址";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(179, 476);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 16);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "验证码";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("宋体", 10F);
-            this.textBox6.Location = new System.Drawing.Point(231, 424);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(224, 24);
-            this.textBox6.TabIndex = 16;
             // 
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.LinkColor = System.Drawing.Color.Blue;
-            this.linkLabel2.Location = new System.Drawing.Point(535, 582);
+            this.linkLabel2.Location = new System.Drawing.Point(350, 569);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(53, 12);
             this.linkLabel2.TabIndex = 18;
@@ -201,30 +61,11 @@
             this.linkLabel2.Text = "返回登录";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(174, 284);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 16);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "确认密码";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(231, 474);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(157, 24);
-            this.textBox7.TabIndex = 17;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(229, 512);
+            this.label8.Location = new System.Drawing.Point(107, 494);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 12);
             this.label8.TabIndex = 40;
@@ -234,82 +75,12 @@
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Location = new System.Drawing.Point(394, 473);
+            this.pictureBox11.Location = new System.Drawing.Point(280, 445);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(60, 24);
             this.pictureBox11.TabIndex = 39;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::Kojiro_ordering_management_system.Properties.Resources.密码;
-            this.pictureBox10.Location = new System.Drawing.Point(139, 280);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 35;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::Kojiro_ordering_management_system.Properties.Resources.验证码;
-            this.pictureBox8.Location = new System.Drawing.Point(139, 473);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(23, 24);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 30;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::Kojiro_ordering_management_system.Properties.Resources.地址;
-            this.pictureBox7.Location = new System.Drawing.Point(140, 369);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(23, 24);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 27;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::Kojiro_ordering_management_system.Properties.Resources.姓名3;
-            this.pictureBox6.Location = new System.Drawing.Point(134, 319);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(36, 36);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 24;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Kojiro_ordering_management_system.Properties.Resources.密码;
-            this.pictureBox4.Location = new System.Drawing.Point(139, 233);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(28, 25);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Kojiro_ordering_management_system.Properties.Resources.用户_拷贝png;
-            this.pictureBox3.Location = new System.Drawing.Point(137, 186);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(31, 22);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::Kojiro_ordering_management_system.Properties.Resources.电话;
-            this.pictureBox5.Location = new System.Drawing.Point(140, 422);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(23, 26);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 18;
-            this.pictureBox5.TabStop = false;
             // 
             // panel1
             // 
@@ -319,7 +90,7 @@
             this.panel1.Controls.Add(this.butMinimize);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(610, 149);
+            this.panel1.Size = new System.Drawing.Size(466, 149);
             this.panel1.TabIndex = 58;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseMove);
@@ -341,7 +112,7 @@
             this.butClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butClose.ForeColor = System.Drawing.SystemColors.Window;
-            this.butClose.Location = new System.Drawing.Point(583, 0);
+            this.butClose.Location = new System.Drawing.Point(439, 0);
             this.butClose.Name = "butClose";
             this.butClose.Size = new System.Drawing.Size(22, 28);
             this.butClose.TabIndex = 15;
@@ -356,7 +127,7 @@
             this.butMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butMinimize.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12.75F);
             this.butMinimize.ForeColor = System.Drawing.SystemColors.Window;
-            this.butMinimize.Location = new System.Drawing.Point(550, 0);
+            this.butMinimize.Location = new System.Drawing.Point(406, 0);
             this.butMinimize.Name = "butMinimize";
             this.butMinimize.Size = new System.Drawing.Size(25, 25);
             this.butMinimize.TabIndex = 16;
@@ -370,7 +141,7 @@
             this.uiButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(184)))), ((int)(((byte)(250)))));
             this.uiButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(184)))), ((int)(((byte)(250)))));
             this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.uiButton1.Location = new System.Drawing.Point(246, 542);
+            this.uiButton1.Location = new System.Drawing.Point(124, 524);
             this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton1.Name = "uiButton1";
             this.uiButton1.Size = new System.Drawing.Size(170, 32);
@@ -381,38 +152,190 @@
             this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
             // 
+            // uiTextBox1
+            // 
+            this.uiTextBox1.ButtonRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox1.ButtonSymbolSize = 22;
+            this.uiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox1.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.uiTextBox1.Icon = global::Kojiro_ordering_management_system.Properties.Resources.用户_拷贝png;
+            this.uiTextBox1.IconSize = 20;
+            this.uiTextBox1.Location = new System.Drawing.Point(106, 176);
+            this.uiTextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox1.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox1.Name = "uiTextBox1";
+            this.uiTextBox1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox1.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox1.ShowText = false;
+            this.uiTextBox1.Size = new System.Drawing.Size(234, 29);
+            this.uiTextBox1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiTextBox1.Symbol = 1;
+            this.uiTextBox1.TabIndex = 60;
+            this.uiTextBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox1.Watermark = "账号";
+            this.uiTextBox1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiTextBox2
+            // 
+            this.uiTextBox2.ButtonRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox2.ButtonSymbolSize = 22;
+            this.uiTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox2.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.uiTextBox2.Icon = global::Kojiro_ordering_management_system.Properties.Resources.密码;
+            this.uiTextBox2.Location = new System.Drawing.Point(106, 215);
+            this.uiTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox2.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox2.Name = "uiTextBox2";
+            this.uiTextBox2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox2.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox2.ShowText = false;
+            this.uiTextBox2.Size = new System.Drawing.Size(234, 29);
+            this.uiTextBox2.Style = Sunny.UI.UIStyle.Custom;
+            this.uiTextBox2.Symbol = 1;
+            this.uiTextBox2.TabIndex = 61;
+            this.uiTextBox2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox2.Watermark = "密码";
+            this.uiTextBox2.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiTextBox3
+            // 
+            this.uiTextBox3.ButtonRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox3.ButtonSymbolSize = 22;
+            this.uiTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox3.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.uiTextBox3.Icon = global::Kojiro_ordering_management_system.Properties.Resources.密码;
+            this.uiTextBox3.Location = new System.Drawing.Point(106, 262);
+            this.uiTextBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox3.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox3.Name = "uiTextBox3";
+            this.uiTextBox3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox3.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox3.ShowText = false;
+            this.uiTextBox3.Size = new System.Drawing.Size(234, 29);
+            this.uiTextBox3.Style = Sunny.UI.UIStyle.Custom;
+            this.uiTextBox3.Symbol = 1;
+            this.uiTextBox3.TabIndex = 61;
+            this.uiTextBox3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox3.Watermark = "确认密码";
+            this.uiTextBox3.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiTextBox4
+            // 
+            this.uiTextBox4.ButtonRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox4.ButtonSymbolSize = 22;
+            this.uiTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox4.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.uiTextBox4.Icon = global::Kojiro_ordering_management_system.Properties.Resources.姓名;
+            this.uiTextBox4.IconSize = 20;
+            this.uiTextBox4.Location = new System.Drawing.Point(106, 308);
+            this.uiTextBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox4.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox4.Name = "uiTextBox4";
+            this.uiTextBox4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox4.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox4.ShowText = false;
+            this.uiTextBox4.Size = new System.Drawing.Size(234, 29);
+            this.uiTextBox4.Style = Sunny.UI.UIStyle.Custom;
+            this.uiTextBox4.Symbol = 1;
+            this.uiTextBox4.TabIndex = 61;
+            this.uiTextBox4.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox4.Watermark = "姓名";
+            this.uiTextBox4.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiTextBox5
+            // 
+            this.uiTextBox5.ButtonRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox5.ButtonSymbolSize = 22;
+            this.uiTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox5.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox5.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.uiTextBox5.Icon = global::Kojiro_ordering_management_system.Properties.Resources.地址;
+            this.uiTextBox5.IconSize = 20;
+            this.uiTextBox5.Location = new System.Drawing.Point(106, 351);
+            this.uiTextBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox5.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox5.Name = "uiTextBox5";
+            this.uiTextBox5.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox5.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox5.ShowText = false;
+            this.uiTextBox5.Size = new System.Drawing.Size(234, 29);
+            this.uiTextBox5.Style = Sunny.UI.UIStyle.Custom;
+            this.uiTextBox5.Symbol = 1;
+            this.uiTextBox5.TabIndex = 61;
+            this.uiTextBox5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox5.Watermark = "电话";
+            this.uiTextBox5.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiTextBox6
+            // 
+            this.uiTextBox6.ButtonRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox6.ButtonSymbolSize = 22;
+            this.uiTextBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox6.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox6.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.uiTextBox6.Icon = global::Kojiro_ordering_management_system.Properties.Resources.电话;
+            this.uiTextBox6.IconSize = 20;
+            this.uiTextBox6.Location = new System.Drawing.Point(106, 401);
+            this.uiTextBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox6.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox6.Name = "uiTextBox6";
+            this.uiTextBox6.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox6.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox6.ShowText = false;
+            this.uiTextBox6.Size = new System.Drawing.Size(234, 29);
+            this.uiTextBox6.Style = Sunny.UI.UIStyle.Custom;
+            this.uiTextBox6.Symbol = 1;
+            this.uiTextBox6.TabIndex = 61;
+            this.uiTextBox6.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox6.Watermark = "地址";
+            this.uiTextBox6.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
+            // uiTextBox7
+            // 
+            this.uiTextBox7.ButtonRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox7.ButtonSymbolSize = 22;
+            this.uiTextBox7.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.uiTextBox7.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox7.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.uiTextBox7.Icon = global::Kojiro_ordering_management_system.Properties.Resources.验证码;
+            this.uiTextBox7.IconSize = 20;
+            this.uiTextBox7.Location = new System.Drawing.Point(106, 440);
+            this.uiTextBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.uiTextBox7.MinimumSize = new System.Drawing.Size(1, 16);
+            this.uiTextBox7.Name = "uiTextBox7";
+            this.uiTextBox7.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(58)))), ((int)(((byte)(92)))));
+            this.uiTextBox7.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(30)))), ((int)(((byte)(63)))));
+            this.uiTextBox7.ShowText = false;
+            this.uiTextBox7.Size = new System.Drawing.Size(167, 29);
+            this.uiTextBox7.Style = Sunny.UI.UIStyle.Custom;
+            this.uiTextBox7.Symbol = 1;
+            this.uiTextBox7.TabIndex = 62;
+            this.uiTextBox7.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.uiTextBox7.Watermark = "验证码";
+            this.uiTextBox7.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(609, 602);
+            this.ClientSize = new System.Drawing.Size(466, 602);
+            this.Controls.Add(this.uiTextBox7);
+            this.Controls.Add(this.uiTextBox6);
+            this.Controls.Add(this.uiTextBox5);
+            this.Controls.Add(this.uiTextBox4);
+            this.Controls.Add(this.uiTextBox3);
+            this.Controls.Add(this.uiTextBox2);
+            this.Controls.Add(this.uiTextBox1);
             this.Controls.Add(this.uiButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.textBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -425,13 +348,6 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseMove);
             this.Resize += new System.EventHandler(this.Form2_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -440,28 +356,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
@@ -469,5 +364,12 @@
         private System.Windows.Forms.Button butClose;
         private System.Windows.Forms.Button butMinimize;
         private Sunny.UI.UIButton uiButton1;
+        private Sunny.UI.UITextBox uiTextBox1;
+        private Sunny.UI.UITextBox uiTextBox2;
+        private Sunny.UI.UITextBox uiTextBox3;
+        private Sunny.UI.UITextBox uiTextBox4;
+        private Sunny.UI.UITextBox uiTextBox5;
+        private Sunny.UI.UITextBox uiTextBox6;
+        private Sunny.UI.UITextBox uiTextBox7;
     }
 }
