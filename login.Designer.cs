@@ -53,7 +53,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel1.Location = new System.Drawing.Point(115, 173);
+            this.linkLabel1.Location = new System.Drawing.Point(115, 220);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(56, 17);
             this.linkLabel1.TabIndex = 3;
@@ -64,7 +64,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("新宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(118, 69);
+            this.textBox1.Location = new System.Drawing.Point(118, 139);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(189, 28);
@@ -73,7 +73,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.Location = new System.Drawing.Point(118, 131);
+            this.textBox2.Location = new System.Drawing.Point(118, 187);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
@@ -84,7 +84,7 @@
             // 
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.LinkColor = System.Drawing.Color.Blue;
-            this.linkLabel2.Location = new System.Drawing.Point(242, 173);
+            this.linkLabel2.Location = new System.Drawing.Point(242, 223);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(65, 12);
             this.linkLabel2.TabIndex = 4;
@@ -96,7 +96,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(116, 205);
+            this.label1.Location = new System.Drawing.Point(116, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 12);
             this.label1.TabIndex = 13;
@@ -112,15 +112,18 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(401, 54);
+            this.panel1.Size = new System.Drawing.Size(401, 109);
             this.panel1.TabIndex = 14;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::Kojiro_ordering_management_system.Properties.Resources.denglu1;
-            this.pictureBox2.Location = new System.Drawing.Point(117, 238);
+            this.pictureBox2.Location = new System.Drawing.Point(117, 272);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(190, 27);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -130,8 +133,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Kojiro_ordering_management_system.Properties.Resources.Logo_小次郎_拷贝1;
             this.pictureBox1.Location = new System.Drawing.Point(-20, 7);
             this.pictureBox1.Name = "pictureBox1";
@@ -143,7 +144,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Kojiro_ordering_management_system.Properties.Resources.用户_拷贝png;
-            this.pictureBox3.Location = new System.Drawing.Point(78, 70);
+            this.pictureBox3.Location = new System.Drawing.Point(78, 140);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(31, 22);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -153,7 +154,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Kojiro_ordering_management_system.Properties.Resources.密码;
-            this.pictureBox4.Location = new System.Drawing.Point(81, 132);
+            this.pictureBox4.Location = new System.Drawing.Point(81, 188);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(28, 25);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -195,7 +196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(400, 285);
+            this.ClientSize = new System.Drawing.Size(400, 321);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
@@ -212,6 +213,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

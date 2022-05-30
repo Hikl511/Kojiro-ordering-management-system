@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace Kojiro_ordering_management_system
@@ -105,10 +106,6 @@ namespace Kojiro_ordering_management_system
             Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
             pictureBox4.Image = image;//给控件赋值
         }
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Close();
-        }
 
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -116,13 +113,7 @@ namespace Kojiro_ordering_management_system
             Close();
         }
 
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //修改密码代码
         private void pictureBox9_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "")//判断用户名
@@ -201,6 +192,70 @@ namespace Kojiro_ordering_management_system
             }
         }
 
+        private void butClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
 
+        private void butMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;//最小化
+        }
+
+        private Point mPoint = new Point();
+        private void Retrieve_pwd_MouseDown(object sender, MouseEventArgs e)
+        {
+            mPoint.X = e.X;//获取坐标
+            mPoint.Y = e.Y;
+        }
+
+        private void Retrieve_pwd_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)//鼠标左键按住拖拽
+            {
+                Point myPosittion = MousePosition;
+                myPosittion.Offset(-mPoint.X, -mPoint.Y);
+                Location = myPosittion;
+            }
+        }
+
+
+        //设置圆角
+        private void panel1_Resize(object sender, EventArgs e)
+        {
+            SetWindowRegion();
+        }
+        public void SetWindowRegion()
+        {
+            GraphicsPath FormPath;
+            FormPath = new GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, this.Width, this.Height);
+            FormPath = GetRoundedRectPath(rect, 10);
+            this.Region = new Region(FormPath);
+
+        }
+        private GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
+        {
+            int diameter = radius;
+            Rectangle arcRect = new Rectangle(rect.Location, new Size(diameter, diameter));
+            GraphicsPath path = new GraphicsPath();
+
+            // 左上角
+            path.AddArc(arcRect, 180, 90);
+
+            // 右上角
+            arcRect.X = rect.Right - diameter;
+            path.AddArc(arcRect, 270, 90);
+
+            // 右下角
+            arcRect.Y = rect.Bottom - diameter;
+            path.AddArc(arcRect, 0, 90);
+
+            // 左下角
+            arcRect.X = rect.Left;
+            path.AddArc(arcRect, 90, 90);
+            path.CloseFigure();//闭合曲线
+            return path;
+        }
     }
 }

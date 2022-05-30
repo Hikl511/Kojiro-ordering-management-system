@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 namespace Kojiro_ordering_management_system
 {
@@ -20,13 +21,7 @@ namespace Kojiro_ordering_management_system
         private void Form2_Load(object sender, EventArgs e)
         {
             Text = "注册小次郎";
-            statusStrip1.BackColor = Color.Transparent;//控件透明
             linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;//超链接文本去除下划线
-            //显示时间
-            toolStripStatusLabel2.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
-            //对timer1进行设置
-            timer1.Interval = 1000;//1秒
-            this.timer1.Start();//开启计时器
 
             //加载时生成验证码
             code = GenerateCheckCode();//生成4位数字符串
@@ -39,12 +34,6 @@ namespace Kojiro_ordering_management_system
         {
 
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            toolStripStatusLabel2.Text = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
-        }
-
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Close();//关闭当前窗口
@@ -292,9 +281,6 @@ namespace Kojiro_ordering_management_system
             return image;
         }
         string code;
-
-
-
         private void label8_Click(object sender, EventArgs e)
         {
 
@@ -305,6 +291,72 @@ namespace Kojiro_ordering_management_system
             code = GenerateCheckCode();//生成4位数字符串
             Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
             pictureBox11.Image = image;//给控件赋值
+        }
+
+
+        private Point mPoint = new Point();
+        private void Form2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)//鼠标左键按住拖拽
+            {
+                Point myPosittion = MousePosition;
+                myPosittion.Offset(-mPoint.X, -mPoint.Y);
+                Location = myPosittion;
+            }
+        }
+
+        private void Form2_MouseDown(object sender, MouseEventArgs e)
+        {
+            mPoint.X = e.X;
+            mPoint.Y = e.Y;
+        }
+
+        private void butMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;//最小化
+        }
+
+        private void butClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Form2_Resize(object sender, EventArgs e)
+        {
+            SetWindowRegion();
+        }
+        //设置圆角
+        public void SetWindowRegion()
+        {
+            GraphicsPath FormPath;
+            FormPath = new GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, this.Width, this.Height);
+            FormPath = GetRoundedRectPath(rect, 10);
+            this.Region = new Region(FormPath);
+
+        }
+        private GraphicsPath GetRoundedRectPath(Rectangle rect, int radius)
+        {
+            int diameter = radius;
+            Rectangle arcRect = new Rectangle(rect.Location, new Size(diameter, diameter));
+            GraphicsPath path = new GraphicsPath();
+
+            // 左上角
+            path.AddArc(arcRect, 180, 90);
+
+            // 右上角
+            arcRect.X = rect.Right - diameter;
+            path.AddArc(arcRect, 270, 90);
+
+            // 右下角
+            arcRect.Y = rect.Bottom - diameter;
+            path.AddArc(arcRect, 0, 90);
+
+            // 左下角
+            arcRect.X = rect.Left;
+            path.AddArc(arcRect, 90, 90);
+            path.CloseFigure();//闭合曲线
+            return path;
         }
     }
 }
