@@ -47,7 +47,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -58,9 +57,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.butClose = new System.Windows.Forms.Button();
             this.butMinimize = new System.Windows.Forms.Button();
+            this.uiButton1 = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -252,17 +251,6 @@
             this.pictureBox10.TabIndex = 35;
             this.pictureBox10.TabStop = false;
             // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::Kojiro_ordering_management_system.Properties.Resources.注册;
-            this.pictureBox9.Location = new System.Drawing.Point(192, 538);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(223, 34);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 33;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
-            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = global::Kojiro_ordering_management_system.Properties.Resources.验证码;
@@ -376,19 +364,36 @@
             this.butMinimize.UseVisualStyleBackColor = true;
             this.butMinimize.Click += new System.EventHandler(this.butMinimize_Click);
             // 
+            // uiButton1
+            // 
+            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(184)))), ((int)(((byte)(250)))));
+            this.uiButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(184)))), ((int)(((byte)(250)))));
+            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 11F);
+            this.uiButton1.Location = new System.Drawing.Point(246, 542);
+            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton1.Name = "uiButton1";
+            this.uiButton1.Size = new System.Drawing.Size(170, 32);
+            this.uiButton1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiButton1.TabIndex = 59;
+            this.uiButton1.Text = "注  册";
+            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(609, 602);
+            this.Controls.Add(this.uiButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.label6);
@@ -421,7 +426,6 @@
             this.Resize += new System.EventHandler(this.Form2_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -455,7 +459,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.TextBox textBox7;
@@ -465,5 +468,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button butClose;
         private System.Windows.Forms.Button butMinimize;
+        private Sunny.UI.UIButton uiButton1;
     }
 }
