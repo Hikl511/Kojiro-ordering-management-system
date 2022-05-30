@@ -195,8 +195,7 @@ namespace Kojiro_ordering_management_system
             path.CloseFigure();//闭合曲线
             return path;
         }
-
-        private void uiButton1_Click(object sender, EventArgs e)
+        private void pictureBox7_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "")
             {
@@ -235,7 +234,7 @@ namespace Kojiro_ordering_management_system
                                                 label8.Visible = true;//账号已注册时 显示错误文本
                                                 textBox1.Text = "";//清空文本框
                                                 textBox5.Text = "";//清空验证码框
-                                                                     //然后刷新验证码
+                                                                   //然后刷新验证码
                                                 code = GenerateCheckCode();//生成4位数字符串
                                                 Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
                                                 pictureBox11.Image = image;//给控件赋值
@@ -249,7 +248,7 @@ namespace Kojiro_ordering_management_system
                                                     DBHelper.conn.Close();//查询之后关闭
                                                     label8.Text = "该手机号已注册，无法再次注册！";
                                                     label8.Visible = true;//手机号已注册显示错误文本
-                                                     //然后把手机框清空
+                                                                          //然后把手机框清空
                                                     textBox4.Text = "";
                                                     textBox5.Text = "";//清空验证码框
 
@@ -283,7 +282,7 @@ namespace Kojiro_ordering_management_system
                                             label8.Text = "验证码错误 请重新输入！";
                                             label8.Visible = true;//验证码错误时 显示错误文本
                                             textBox5.Text = "";//清空文本框
-                                                                 //然后刷新验证码
+                                                               //然后刷新验证码
                                             code = GenerateCheckCode();//生成4位数字符串
                                             Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
                                             pictureBox11.Image = image;//给控件赋值
@@ -310,7 +309,7 @@ namespace Kojiro_ordering_management_system
                                     label8.Visible = true;//显示提示输入文本
 
                                     textBox5.Text = "";//清空验证码框
-                                                         //然后刷新验证码
+                                                       //然后刷新验证码
                                     code = GenerateCheckCode();//生成4位数字符串
                                     Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
                                     pictureBox11.Image = image;//给控件赋值
@@ -345,12 +344,6 @@ namespace Kojiro_ordering_management_system
                 label8.Text = "请输入用户名!";
                 label8.Visible = true;//显示提示输入文本
             }
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

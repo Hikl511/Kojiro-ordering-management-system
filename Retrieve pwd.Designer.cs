@@ -48,7 +48,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.butClose = new System.Windows.Forms.Button();
             this.butMinimize = new System.Windows.Forms.Button();
-            this.uiButton1 = new Sunny.UI.UIButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -56,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox4
@@ -265,22 +266,16 @@
             this.butMinimize.UseVisualStyleBackColor = true;
             this.butMinimize.Click += new System.EventHandler(this.butMinimize_Click);
             // 
-            // uiButton1
+            // pictureBox2
             // 
-            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.uiButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(184)))), ((int)(((byte)(250)))));
-            this.uiButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(184)))), ((int)(((byte)(250)))));
-            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 11F);
-            this.uiButton1.Location = new System.Drawing.Point(145, 320);
-            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(154, 33);
-            this.uiButton1.Style = Sunny.UI.UIStyle.Custom;
-            this.uiButton1.TabIndex = 58;
-            this.uiButton1.Text = "确  认";
-            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
+            this.pictureBox2.Image = global::Kojiro_ordering_management_system.Properties.Resources.确认;
+            this.pictureBox2.Location = new System.Drawing.Point(136, 317);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(157, 37);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 59;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // Retrieve_pwd
             // 
@@ -288,7 +283,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(388, 382);
-            this.Controls.Add(this.uiButton1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox4);
@@ -321,6 +316,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,6 +342,6 @@
         private System.Windows.Forms.Button butClose;
         private System.Windows.Forms.Button butMinimize;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Sunny.UI.UIButton uiButton1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

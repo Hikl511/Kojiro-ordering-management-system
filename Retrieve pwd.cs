@@ -187,6 +187,11 @@ namespace Kojiro_ordering_management_system
 
         private void uiButton1_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
             if (textBox1.Text != "")//判断用户名
             {
                 if (textBox2.Text != "")//判断手机号不为空

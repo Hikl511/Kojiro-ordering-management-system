@@ -103,6 +103,11 @@ namespace Kojiro_ordering_management_system
 
         private void uiButton1_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
             if (textBox1.Text != "")
             {
                 if (textBox2.Text != "")
