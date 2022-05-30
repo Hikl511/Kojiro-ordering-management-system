@@ -211,5 +211,29 @@
   <ItemGroup>
     <None Include="Resources\Logo 小次郎 拷贝.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户 拷贝png 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\密码 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\密码 拷贝1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\电话 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\验证码 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户 拷贝png 拷贝1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\电话 拷贝1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\验证码 拷贝1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
