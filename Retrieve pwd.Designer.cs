@@ -40,17 +40,16 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.butClose = new System.Windows.Forms.Button();
             this.butMinimize = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.uiButton1 = new Sunny.UI.UIButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -170,17 +169,6 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::Kojiro_ordering_management_system.Properties.Resources.确认;
-            this.pictureBox9.Location = new System.Drawing.Point(131, 321);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(215, 28);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 53;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
-            // 
             // pictureBox10
             // 
             this.pictureBox10.Image = global::Kojiro_ordering_management_system.Properties.Resources.密码;
@@ -237,6 +225,16 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Retrieve_pwd_MouseMove);
             this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Kojiro_ordering_management_system.Properties.Resources.Logo_小次郎_拷贝1;
+            this.pictureBox1.Location = new System.Drawing.Point(-20, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(139, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // butClose
             // 
             this.butClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -267,15 +265,22 @@
             this.butMinimize.UseVisualStyleBackColor = true;
             this.butMinimize.Click += new System.EventHandler(this.butMinimize_Click);
             // 
-            // pictureBox1
+            // uiButton1
             // 
-            this.pictureBox1.Image = global::Kojiro_ordering_management_system.Properties.Resources.Logo_小次郎_拷贝1;
-            this.pictureBox1.Location = new System.Drawing.Point(-20, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 33);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(184)))), ((int)(((byte)(250)))));
+            this.uiButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(184)))), ((int)(((byte)(250)))));
+            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 11F);
+            this.uiButton1.Location = new System.Drawing.Point(156, 320);
+            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton1.Name = "uiButton1";
+            this.uiButton1.Size = new System.Drawing.Size(131, 24);
+            this.uiButton1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiButton1.TabIndex = 58;
+            this.uiButton1.Text = "确  认";
+            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
             // 
             // Retrieve_pwd
             // 
@@ -283,10 +288,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(409, 389);
+            this.Controls.Add(this.uiButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox10);
@@ -310,7 +315,6 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Retrieve_pwd_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Retrieve_pwd_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -336,12 +340,12 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button butClose;
         private System.Windows.Forms.Button butMinimize;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Sunny.UI.UIButton uiButton1;
     }
 }

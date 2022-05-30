@@ -98,7 +98,8 @@ namespace Kojiro_ordering_management_system
                                                             //然后把手机框清空
                                                             textBox6.Text = "";
                                                             textBox7.Text = "";//清空验证码框
-                                                                              //然后刷新验证码
+
+                                                            //然后刷新验证码
                                                             code = GenerateCheckCode();//生成4位数字符串
                                                             Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
                                                             pictureBox11.Image = image;//给控件赋值
