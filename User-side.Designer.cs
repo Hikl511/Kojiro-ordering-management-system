@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@
             this.butClose = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,6 +63,8 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 581);
             this.panelMenu.TabIndex = 0;
+            this.panelMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.panelMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
             // button5
             // 
@@ -79,6 +83,8 @@
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.button5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
             // button4
             // 
@@ -97,6 +103,8 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.button4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
             // button3
             // 
@@ -115,6 +123,8 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.button3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
             // button2
             // 
@@ -133,6 +143,8 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.button2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
             // button1
             // 
@@ -151,6 +163,8 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
             // btnProduo
             // 
@@ -169,6 +183,8 @@
             this.btnProduo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProduo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProduo.UseVisualStyleBackColor = true;
+            this.btnProduo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.btnProduo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
             // panelLogo
             // 
@@ -179,6 +195,8 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(220, 80);
             this.panelLogo.TabIndex = 0;
+            this.panelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.panelLogo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
             // panel1
             // 
@@ -245,6 +263,13 @@
             this.panel2.Size = new System.Drawing.Size(875, 80);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // User_side
             // 
@@ -285,5 +310,6 @@
         private System.Windows.Forms.Button butClose;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

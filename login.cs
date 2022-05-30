@@ -143,5 +143,11 @@ namespace Kojiro_ordering_management_system
                 label1.Visible = true;
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            User_side _Side = new User_side();
+            _Side.Show();
+        }
     }
 }
