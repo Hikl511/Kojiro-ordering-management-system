@@ -41,6 +41,8 @@ namespace Kojiro_ordering_management_system
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
+
+
             if (textBox1.Text != "")
             {
                 if (textBox2.Text != "")//判断密码框

@@ -35,14 +35,13 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.butClose = new System.Windows.Forms.Button();
+            this.butMinimize = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.butClose = new System.Windows.Forms.Button();
-            this.butMinimize = new System.Windows.Forms.Button();
+            this.uiButton1 = new Sunny.UI.UIButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -118,18 +117,35 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             // 
-            // pictureBox2
+            // butClose
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::Kojiro_ordering_management_system.Properties.Resources.denglu1;
-            this.pictureBox2.Location = new System.Drawing.Point(117, 272);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(190, 27);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.butClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butClose.FlatAppearance.BorderSize = 0;
+            this.butClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butClose.ForeColor = System.Drawing.SystemColors.Window;
+            this.butClose.Location = new System.Drawing.Point(375, 0);
+            this.butClose.Name = "butClose";
+            this.butClose.Size = new System.Drawing.Size(22, 28);
+            this.butClose.TabIndex = 15;
+            this.butClose.Text = "O";
+            this.butClose.UseVisualStyleBackColor = true;
+            this.butClose.Click += new System.EventHandler(this.butClose_Click);
+            // 
+            // butMinimize
+            // 
+            this.butMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butMinimize.FlatAppearance.BorderSize = 0;
+            this.butMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butMinimize.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12.75F);
+            this.butMinimize.ForeColor = System.Drawing.SystemColors.Window;
+            this.butMinimize.Location = new System.Drawing.Point(343, 0);
+            this.butMinimize.Name = "butMinimize";
+            this.butMinimize.Size = new System.Drawing.Size(25, 25);
+            this.butMinimize.TabIndex = 16;
+            this.butMinimize.Text = "O";
+            this.butMinimize.UseVisualStyleBackColor = true;
+            this.butMinimize.Click += new System.EventHandler(this.butMinimize_Click);
             // 
             // pictureBox1
             // 
@@ -161,35 +177,22 @@
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 
-            // butClose
+            // uiButton1
             // 
-            this.butClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butClose.FlatAppearance.BorderSize = 0;
-            this.butClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butClose.ForeColor = System.Drawing.SystemColors.Window;
-            this.butClose.Location = new System.Drawing.Point(375, 0);
-            this.butClose.Name = "butClose";
-            this.butClose.Size = new System.Drawing.Size(22, 28);
-            this.butClose.TabIndex = 15;
-            this.butClose.Text = "O";
-            this.butClose.UseVisualStyleBackColor = true;
-            this.butClose.Click += new System.EventHandler(this.butClose_Click);
-            // 
-            // butMinimize
-            // 
-            this.butMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butMinimize.FlatAppearance.BorderSize = 0;
-            this.butMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butMinimize.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12.75F);
-            this.butMinimize.ForeColor = System.Drawing.SystemColors.Window;
-            this.butMinimize.Location = new System.Drawing.Point(343, 0);
-            this.butMinimize.Name = "butMinimize";
-            this.butMinimize.Size = new System.Drawing.Size(25, 25);
-            this.butMinimize.TabIndex = 16;
-            this.butMinimize.Text = "O";
-            this.butMinimize.UseVisualStyleBackColor = true;
-            this.butMinimize.Click += new System.EventHandler(this.butMinimize_Click);
+            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(184)))), ((int)(((byte)(250)))));
+            this.uiButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(184)))), ((int)(((byte)(250)))));
+            this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton1.Location = new System.Drawing.Point(127, 272);
+            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton1.Name = "uiButton1";
+            this.uiButton1.Size = new System.Drawing.Size(159, 24);
+            this.uiButton1.Style = Sunny.UI.UIStyle.Custom;
+            this.uiButton1.TabIndex = 15;
+            this.uiButton1.Text = "登  录";
+            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiButton1.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
             // 
             // Form1
             // 
@@ -197,8 +200,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(400, 321);
+            this.Controls.Add(this.uiButton1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -217,7 +220,6 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -227,7 +229,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.LinkLabel linkLabel1;
@@ -239,6 +240,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button butClose;
         private System.Windows.Forms.Button butMinimize;
+        private Sunny.UI.UIButton uiButton1;
     }
 }
 

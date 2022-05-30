@@ -20,43 +20,6 @@ namespace Kojiro_ordering_management_system
             label1.Visible = false;//加载时隐藏提示文本
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text != "")
-            {
-                if (textBox2.Text!="")
-                {
-                    string Uid = textBox1.Text;
-                    string Pwd = textBox2.Text;
-                    string sql = string.Format("select* from Ustable where Uid = '{0}' and pwd = '{1}'", Uid,Pwd);//验证登录账号和密码是否一致
-                    SqlDataReader dr = DBHelper.GDR(sql);
-                    if (dr.HasRows)
-                    {
-                        DBHelper.conn.Close();//查询之后关闭
-                        MessageBox.Show("成功");
-                        label1.Visible = false;//成功后把错误提示文本隐藏
-                    }
-                    else
-                    {
-                        DBHelper.conn.Close();//查询之后关闭
-                        label1.Text = "账号或密码错误！";
-                        label1.Visible = true;
-                        textBox1.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
-                        textBox2.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
-                    }
-                }
-                else
-                {
-                    label1.Text = "请输入密码！";
-                    label1.Visible = true;
-                }
-            }
-            else
-            {
-                label1.Text = "请输入用户名！";
-                label1.Visible = true;
-            }
-        }
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Retrieve_pwd retrieve = new Retrieve_pwd();//实例化找回密码框
@@ -136,6 +99,44 @@ namespace Kojiro_ordering_management_system
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             //勿删
+        }
+
+        private void uiButton1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+                if (textBox2.Text != "")
+                {
+                    string Uid = textBox1.Text;
+                    string Pwd = textBox2.Text;
+                    string sql = string.Format("select* from Ustable where Uid = '{0}' and pwd = '{1}'", Uid, Pwd);//验证登录账号和密码是否一致
+                    SqlDataReader dr = DBHelper.GDR(sql);
+                    if (dr.HasRows)
+                    {
+                        DBHelper.conn.Close();//查询之后关闭
+                        MessageBox.Show("成功");
+                        label1.Visible = false;//成功后把错误提示文本隐藏
+                    }
+                    else
+                    {
+                        DBHelper.conn.Close();//查询之后关闭
+                        label1.Text = "账号或密码错误！";
+                        label1.Visible = true;
+                        textBox1.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
+                        textBox2.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
+                    }
+                }
+                else
+                {
+                    label1.Text = "请输入密码！";
+                    label1.Visible = true;
+                }
+            }
+            else
+            {
+                label1.Text = "请输入用户名！";
+                label1.Visible = true;
+            }
         }
     }
 }

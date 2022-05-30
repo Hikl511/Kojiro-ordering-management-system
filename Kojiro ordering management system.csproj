@@ -36,6 +36,9 @@
     <Reference Include="MyTextBox">
       <HintPath>C:\Users\guaji\OneDrive\桌面\TextBox无边框\MyTextBox.dll</HintPath>
     </Reference>
+    <Reference Include="SunnyUI">
+      <HintPath>..\SunnyUI\SunnyUI.Demo\Bin\SunnyUI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
