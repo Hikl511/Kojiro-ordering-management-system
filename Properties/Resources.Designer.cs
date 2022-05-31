@@ -223,6 +223,36 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 密码不可见 {
+            get {
+                object obj = ResourceManager.GetObject("密码不可见", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 密码可见 {
+            get {
+                object obj = ResourceManager.GetObject("密码可见", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 密码可见1 {
+            get {
+                object obj = ResourceManager.GetObject("密码可见1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 导航 {
             get {
                 object obj = ResourceManager.GetObject("导航", resourceCulture);
@@ -403,6 +433,26 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 电话_拷贝2 {
+            get {
+                object obj = ResourceManager.GetObject("电话 拷贝2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 直线 {
+            get {
+                object obj = ResourceManager.GetObject("直线", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 确认 {
             get {
                 object obj = ResourceManager.GetObject("确认", resourceCulture);
@@ -466,6 +516,16 @@ namespace Kojiro_ordering_management_system.Properties {
         internal static System.Drawing.Bitmap 验证码_拷贝1 {
             get {
                 object obj = ResourceManager.GetObject("验证码 拷贝1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 验证码_拷贝2 {
+            get {
+                object obj = ResourceManager.GetObject("验证码 拷贝2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

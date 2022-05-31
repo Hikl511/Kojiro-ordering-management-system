@@ -345,5 +345,32 @@ namespace Kojiro_ordering_management_system
                 label8.Visible = true;//显示提示输入文本
             }
         }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                //复选框被勾选，明文显示
+                textBox2.PasswordChar = new char();
+                textBox3.PasswordChar = new char();
+            }
+            else
+            {
+                //复选框被取消勾选，密文显示
+                textBox2.PasswordChar = '*';
+                textBox3.PasswordChar = '*';
+            }
+
+        }
     }
 }

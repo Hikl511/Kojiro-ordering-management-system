@@ -14,9 +14,9 @@ namespace Kojiro_ordering_management_system
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Text = "小次郎点餐系统";
-            linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;//两个超链接文本去除下划线
+            linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;//超链接文本去除下划线
             linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLabel3.LinkBehavior = LinkBehavior.NeverUnderline;
             label1.Visible = false;//加载时隐藏提示文本
         }
 
@@ -144,10 +144,26 @@ namespace Kojiro_ordering_management_system
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            User_side _Side = new User_side();
-            _Side.Show();
+            if (checkBox1.Checked)
+            {
+                //复选框被勾选，明文显示
+                textBox2.PasswordChar = new char();
+               
+            }
+            else
+            {
+                //复选框被取消勾选，密文显示
+                textBox2.PasswordChar = '*';
+            
+            }
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            User_side user = new User_side();
+            user.Show();
         }
     }
 }

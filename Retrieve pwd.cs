@@ -266,5 +266,21 @@ namespace Kojiro_ordering_management_system
                 label5.Visible = true;
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                //复选框被勾选，明文显示
+                textBox3.PasswordChar = new char();
+
+            }
+            else
+            {
+                //复选框被取消勾选，密文显示
+                textBox3.PasswordChar = '*';
+
+            }
+        }
     }
 }

@@ -235,5 +235,23 @@
   <ItemGroup>
     <None Include="Resources\验证码 拷贝1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\直线.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\电话 拷贝2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\验证码 拷贝2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\密码不可见.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\密码可见.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\密码可见1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

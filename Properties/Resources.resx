@@ -136,6 +136,9 @@
   <data name="yonghu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yonghu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="未标题-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\未标题-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="密码 拷贝1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\密码 拷贝1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,8 +157,8 @@
   <data name="密码" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\密码.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="未标题-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\未标题-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="电话 拷贝1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\电话 拷贝1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="验证码1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\验证码1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,14 +172,14 @@
   <data name="denglu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\denglu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="电话 拷贝1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\电话 拷贝1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="密码可见" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\密码可见.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="刷新" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\刷新.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="姓名1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\姓名1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="验证码 拷贝1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\验证码 拷贝1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="获取验证码" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\获取验证码.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,8 +214,14 @@
   <data name="用户 拷贝png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\用户 拷贝png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="验证码 拷贝2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\验证码 拷贝2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="小次郎" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\小次郎.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="密码不可见" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\密码不可见.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="姓名3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\姓名3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,8 +229,14 @@
   <data name="XioaoCiLang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\XioaoCiLang.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="姓名1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\姓名1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="导航1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\导航1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="直线" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\直线.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="导航" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\导航.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,6 +247,9 @@
   <data name="欢迎" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\欢迎.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="电话 拷贝2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\电话 拷贝2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="验证码 拷贝" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\验证码 拷贝.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -241,7 +259,7 @@
   <data name="姓名" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\姓名.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="验证码 拷贝1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\验证码 拷贝1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="密码可见1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\密码可见1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
