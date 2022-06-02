@@ -112,13 +112,6 @@ namespace Kojiro_ordering_management_system
         {
             Close();
         }
-
-        //修改密码代码
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void butClose_Click(object sender, EventArgs e)
         {
             Close();

@@ -165,5 +165,11 @@ namespace Kojiro_ordering_management_system
             User_side user = new User_side();
             user.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            User_side user = new User_side();
+            user.Show();
+        }
     }
 }
