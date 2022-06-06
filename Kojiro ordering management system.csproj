@@ -53,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBHelper.cs" />
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,12 @@
     <Compile Include="Retrieve pwd.Designer.cs">
       <DependentUpon>Retrieve pwd.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShaXian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShaXian.Designer.cs">
+      <DependentUpon>ShaXian.cs</DependentUpon>
+    </Compile>
     <Compile Include="Smphone.cs" />
     <Compile Include="User-side.cs">
       <SubType>Form</SubType>
@@ -104,6 +116,9 @@
     <Compile Include="User-side.Designer.cs">
       <DependentUpon>User-side.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +149,9 @@
     </Compile>
     <EmbeddedResource Include="Retrieve pwd.resx">
       <DependentUpon>Retrieve pwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShaXian.resx">
+      <DependentUpon>ShaXian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User-side.resx">
       <DependentUpon>User-side.cs</DependentUpon>

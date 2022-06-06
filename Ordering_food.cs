@@ -16,5 +16,17 @@ namespace Kojiro_ordering_management_system
         {
             InitializeComponent();
         }
+
+        private void Ordering_food_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            ShaXian shaXian = new ShaXian();
+            shaXian.Show();
+            
+        }
     }
 }

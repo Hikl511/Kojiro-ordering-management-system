@@ -1,6 +1,6 @@
 ﻿namespace Kojiro_ordering_management_system
 {
-    partial class My_information
+    partial class ShaXian
     {
         /// <summary>
         /// Required designer variable.
@@ -33,26 +33,23 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("宋体", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(261, 218);
+            this.label1.Font = new System.Drawing.Font("宋体", 19F);
+            this.label1.Location = new System.Drawing.Point(253, 204);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 48);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "我的";
+            this.label1.Size = new System.Drawing.Size(246, 26);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "沙县小吃！！！！！";
             // 
-            // My_information
+            // ShaXian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 520);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "My_information";
-            this.Text = "My_information";
-            this.Load += new System.EventHandler(this.My_information_Load);
+            this.Name = "ShaXian";
+            this.Text = "ShaXian";
             this.ResumeLayout(false);
             this.PerformLayout();
 

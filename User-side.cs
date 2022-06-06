@@ -16,7 +16,15 @@ namespace Kojiro_ordering_management_system
 
     public partial class User_side : Form
     {
+        //在函数外，命名空间内声明页面的变量，这样子我们可以做到重新加载页面的时候不会出现初始值
+        //而是在打开上次切换前的页面
+        private Ordering_food  ordering_Food = new Ordering_food();
+        private Orders orders = new Orders();
+        private My_information  my_Information = new My_information();
+        private More more = new More();
+        public ShaXian shaxian = new ShaXian();
 
+       
         //窗体边框阴影动画效果移动改变大小
         const int CS_DropSHADOW = 0x20000;
         const int GCL_STYLE = (-26);
@@ -49,7 +57,6 @@ namespace Kojiro_ordering_management_system
 
          * 可能需要在该窗口的窗口过程和它的子窗口的窗口过程中处理WM_PRINT或WM_PRINTCLIENT消息。对话框，控制，及共用控制已处理WM_PRINTCLIENT消息，缺省窗口过程也已处理WM_PRINT消息。
 
-         * 速查：WIDdOWS NT：5.0以上版本：Windows：98以上版本；Windows CE：不支持；头文件：Winuser.h；库文件：user32.lib。
 
          */
 
@@ -114,6 +121,43 @@ namespace Kojiro_ordering_management_system
             ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;//限制最大化的大小
         }
+
+        protected override CreateParams CreateParams  //防止界面闪烁  同时也去除了动画
+        {
+            get
+            {
+                CreateParams paras = base.CreateParams;
+                paras.ExStyle |= 0x02000000;
+                return paras;
+            }
+        }
+
+        public void loadform(object page)
+        {
+            //对panel里面的容器进行一个判定：如果容器里的空间数量大于0那么就清空容器里面的空间
+            //为其腾出空间
+            if (this.mainpanel.Controls.Count > 0)
+            {
+                this.mainpanel.Controls.Clear();
+            }
+            //判断传输进来的page类型是否是Form或其子类
+            if (page is Form form)
+            {
+                //对画面的参数设置
+                form.TopLevel = false;
+                form.Dock = DockStyle.Fill;
+                //将容器的控件进行一个添加
+                this.mainpanel.Controls.Add(form);
+                //把容器的tag设置成我们传输进来的page
+                this.mainpanel.Tag = form;
+                //进行一个page的一个展示
+                form.Show();
+            }
+        }
+
+
+
+
 
 
 
@@ -201,18 +245,6 @@ namespace Kojiro_ordering_management_system
             }
         }
 
-        private void User_side_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //窗体关闭动画效果
-            AnimateWindow(this.Handle, 800, AW_HIDE | AW_BLEND | AW_CENTER);
-        }
-
-        private void User_side_DoubleClick(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-
         private void butClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -240,9 +272,36 @@ namespace Kojiro_ordering_management_system
 
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private void User_side_FormClosing_1(object sender, FormClosingEventArgs e)
         {
+            //窗体关闭动画效果
+            AnimateWindow(this.Handle, 400, AW_HIDE | AW_BLEND | AW_CENTER);
+        }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loadform(ordering_Food);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            loadform(orders);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            loadform(my_Information);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            loadform(more);
         }
     }
 }

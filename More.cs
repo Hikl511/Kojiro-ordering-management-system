@@ -16,5 +16,10 @@ namespace Kojiro_ordering_management_system
         {
             InitializeComponent();
         }
+
+        private void More_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Kojiro_ordering_management_system
 {
-    public partial class My_information : Form
+    public partial class ShaXian : Form
     {
-        public My_information()
+        public ShaXian()
         {
             InitializeComponent();
-        }
-
-        private void My_information_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

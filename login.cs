@@ -168,8 +168,8 @@ namespace Kojiro_ordering_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-            User_side user = new User_side();
-            user.Show();
+            Form3 form3 = new Form3();
+            form3.Show();
         }
     }
 }
