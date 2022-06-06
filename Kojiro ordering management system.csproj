@@ -65,6 +65,30 @@
     <Compile Include="enroll.Designer.cs">
       <DependentUpon>enroll.cs</DependentUpon>
     </Compile>
+    <Compile Include="More.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="More.Designer.cs">
+      <DependentUpon>More.cs</DependentUpon>
+    </Compile>
+    <Compile Include="My_information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My_information.Designer.cs">
+      <DependentUpon>My_information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ordering_food.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ordering_food.Designer.cs">
+      <DependentUpon>Ordering_food.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Retrieve pwd.cs">
@@ -85,6 +109,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="enroll.resx">
       <DependentUpon>enroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="More.resx">
+      <DependentUpon>More.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My_information.resx">
+      <DependentUpon>My_information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ordering_food.resx">
+      <DependentUpon>Ordering_food.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -252,6 +288,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\密码可见1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\外卖 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\订单 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\我的 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\更多 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\外卖 拷贝1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\订单 拷贝1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\订单 拷贝2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\我的 拷贝1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\更多 拷贝1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
