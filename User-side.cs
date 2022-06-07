@@ -16,13 +16,14 @@ namespace Kojiro_ordering_management_system
 
     public partial class User_side : Form
     {
+        public static User_side user_Side;//公开
+
         //在函数外，命名空间内声明页面的变量，这样子我们可以做到重新加载页面的时候不会出现初始值
         //而是在打开上次切换前的页面
         private Ordering_food  ordering_Food = new Ordering_food();
         private Orders orders = new Orders();
         private My_information  my_Information = new My_information();
         private More more = new More();
-        public ShaXian shaxian = new ShaXian();
 
        
         //窗体边框阴影动画效果移动改变大小
@@ -35,7 +36,7 @@ namespace Kojiro_ordering_management_system
         public static extern int GetClassLong(IntPtr hwnd, int nIndex);
 
         [DllImport("user32")]
-        private static extern bool AnimateWindow(IntPtr hwnd, int dwTime, int dwFlags);
+        public static extern bool AnimateWindow(IntPtr hwnd, int dwTime, int dwFlags);
 
         /*
 
@@ -117,6 +118,7 @@ namespace Kojiro_ordering_management_system
         public User_side()
         {
             InitializeComponent();
+            user_Side = this;// 当前窗体对象赋值给上面的窗体对象
             this.Text = "客户端";
             ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;//限制最大化的大小

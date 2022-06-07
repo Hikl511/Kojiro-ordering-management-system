@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.butMinimize = new System.Windows.Forms.Button();
             this.butClose = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.mainpanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.mainpanel = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -59,6 +59,74 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(167, 520);
             this.panelMenu.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("宋体", 10F);
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = global::Kojiro_ordering_management_system.Properties.Resources.更多_拷贝1;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(0, 324);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(161, 101);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "更多";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("宋体", 10F);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::Kojiro_ordering_management_system.Properties.Resources.我的_拷贝1;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 217);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(161, 101);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "我的";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("宋体", 10F);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::Kojiro_ordering_management_system.Properties.Resources.订单_拷贝2;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 110);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(161, 101);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "订单";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("宋体", 10F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::Kojiro_ordering_management_system.Properties.Resources.外卖_拷贝1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(161, 101);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "外卖";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -132,22 +200,6 @@
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
-            // mainpanel
-            // 
-            this.mainpanel.BackColor = System.Drawing.Color.White;
-            this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainpanel.Location = new System.Drawing.Point(0, 80);
-            this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(821, 520);
-            this.mainpanel.TabIndex = 6;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(217, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(865, 80);
-            this.panel1.TabIndex = 5;
-            // 
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -160,73 +212,21 @@
             this.panelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
             this.panelLogo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
-            // button1
+            // panel1
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("宋体", 10F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Kojiro_ordering_management_system.Properties.Resources.外卖_拷贝1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(161, 101);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "外卖";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panel1.Location = new System.Drawing.Point(217, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(865, 80);
+            this.panel1.TabIndex = 5;
             // 
-            // button2
+            // mainpanel
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("宋体", 10F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::Kojiro_ordering_management_system.Properties.Resources.订单_拷贝2;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 110);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(161, 101);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "订单";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("宋体", 10F);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::Kojiro_ordering_management_system.Properties.Resources.我的_拷贝1;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 217);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(161, 101);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "我的";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("宋体", 10F);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::Kojiro_ordering_management_system.Properties.Resources.更多_拷贝1;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 324);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(161, 101);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "更多";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.mainpanel.BackColor = System.Drawing.Color.White;
+            this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainpanel.Location = new System.Drawing.Point(0, 80);
+            this.mainpanel.Name = "mainpanel";
+            this.mainpanel.Size = new System.Drawing.Size(821, 520);
+            this.mainpanel.TabIndex = 6;
             // 
             // User_side
             // 

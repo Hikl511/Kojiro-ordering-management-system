@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace Kojiro_ordering_management_system
 {
+    
     public partial class Ordering_food : Form
     {
+        ShaXian shaXian = new ShaXian();
+
         public Ordering_food()
         {
             InitializeComponent();
@@ -19,14 +22,14 @@ namespace Kojiro_ordering_management_system
 
         private void Ordering_food_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            ShaXian shaXian = new ShaXian();
-            shaXian.Show();
-            
+  
+            User_side.user_Side.loadform(shaXian);//调用父窗体的方法显示当前窗体
+
         }
     }
 }
