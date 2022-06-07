@@ -143,6 +143,16 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 图片1 {
+            get {
+                object obj = ResourceManager.GetObject("图片1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 地址 {
             get {
                 object obj = ResourceManager.GetObject("地址", resourceCulture);
@@ -333,6 +343,16 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 微信图片_20220508002658 {
+            get {
+                object obj = ResourceManager.GetObject("微信图片_20220508002658", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 我的_拷贝 {
             get {
                 object obj = ResourceManager.GetObject("我的 拷贝", resourceCulture);
@@ -383,6 +403,26 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 未标题_11 {
+            get {
+                object obj = ResourceManager.GetObject("未标题-11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 未标题_12 {
+            get {
+                object obj = ResourceManager.GetObject("未标题-12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 欢迎 {
             get {
                 object obj = ResourceManager.GetObject("欢迎", resourceCulture);
@@ -396,6 +436,16 @@ namespace Kojiro_ordering_management_system.Properties {
         internal static System.Drawing.Bitmap 注册 {
             get {
                 object obj = ResourceManager.GetObject("注册", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 用户 {
+            get {
+                object obj = ResourceManager.GetObject("用户", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

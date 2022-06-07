@@ -53,12 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBHelper.cs" />
-    <Compile Include="Form3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +64,12 @@
     </Compile>
     <Compile Include="enroll.Designer.cs">
       <DependentUpon>enroll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main interface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main interface.Designer.cs">
+      <DependentUpon>Main interface.cs</DependentUpon>
     </Compile>
     <Compile Include="More.cs">
       <SubType>Form</SubType>
@@ -116,14 +116,14 @@
     <Compile Include="User-side.Designer.cs">
       <DependentUpon>User-side.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="enroll.resx">
       <DependentUpon>enroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main interface.resx">
+      <DependentUpon>Main interface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="More.resx">
       <DependentUpon>More.cs</DependentUpon>
@@ -333,6 +333,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\更多 拷贝1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\微信图片_20220508002658.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\图片1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未标题-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未标题-12.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

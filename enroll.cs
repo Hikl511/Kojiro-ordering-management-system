@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -12,13 +13,30 @@ namespace Kojiro_ordering_management_system
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+        protected override CreateParams CreateParams  //防止界面闪烁
         {
-            Form1 form1 = new Form1();
-            form1.ShowDialog();
+            get
+            {
+                CreateParams paras = base.CreateParams;
+                paras.ExStyle |= 0x02000000;
+                return paras;
+            }
+        }
+      public string UsName()
+        {
+            Random random = new Random();　　//放循环体外初始化
+            int figure =0;
+            string Name = string.Empty;
+            for (int i = 1; i <=8; i++)  //生成8个随机数
+            {
+                figure = random.Next(1, 10); //随机生成1至1区间中的数字 不包含10
+                Name += figure;
+            }
+            return Name;
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+    private void Form2_Load(object sender, EventArgs e)
         {
             Text = "注册小次郎";
             linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;//超链接文本去除下划线
@@ -27,22 +45,10 @@ namespace Kojiro_ordering_management_system
             code = GenerateCheckCode();//生成4位数字符串
             Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
             pictureBox11.Image = image;//给控件赋值
-
         }
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Close();//关闭当前窗口
-        }
-
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         //验证码
@@ -197,6 +203,8 @@ namespace Kojiro_ordering_management_system
         }
         private void pictureBox7_Click(object sender, EventArgs e)
         {
+
+
             if (textBox1.Text != "")
             {
                 if (textBox2.Text != "")//判断密码框
@@ -205,8 +213,6 @@ namespace Kojiro_ordering_management_system
                     {
                         if (textBox2.Text == textBox3.Text)
                         {
-
-
                             if (textBox4.Text != "")//手机号不为空
                             {
                                 if (textBox4.Text.Length == 11)//判断长度是否等于11
@@ -215,21 +221,22 @@ namespace Kojiro_ordering_management_system
                                     {
                                         if (textBox5.Text.Equals(code))//判断验证码是否正确
                                         {
-
-                                            string Uid = textBox1.Text;//用户名
+                                           
+                                            string Uid = textBox1.Text;//账号
                                             string Pwd = textBox2.Text;//密码
-                                            string Name = null;//姓名
+                                            string Name = "用户"+UsName();//昵称
                                             string Addres = null;//地址
                                             string Phone = textBox4.Text;//手机
                                             string Addtime = DateTime.Now.ToString("yyyy-MM-dd"); //获取当前日期 年 - 月 - 日显示  //注册日期
-                                            string sql = string.Format("insert Ustable values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", Name, Phone, Uid, Pwd, Addres, Addtime);
+                                            string sql = string.Format("insert Ustable values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}','{6}')", Name, Phone, Uid, Pwd, Addres, Addtime,null);
                                             string sql2 = string.Format("select* from Ustable where Uid = {0}", Uid);
 
                                             string sql3 = string.Format("select* from Ustable where Phone = {0}", Phone);
                                             SqlDataReader dr1 = DBHelper.GDR(sql2);
                                             if (dr1.HasRows)//验证账户是否已注册
                                             {
-                                                DBHelper.conn.Close();//查询之后关闭
+                                                //dr1.Close();//查询之后关闭
+                                                //dr1.Dispose();//释放资源
                                                 label8.Text = "该账户已注册，无法再次注册！";
                                                 label8.Visible = true;//账号已注册时 显示错误文本
                                                 textBox1.Text = "";//清空文本框
@@ -241,11 +248,12 @@ namespace Kojiro_ordering_management_system
                                             }
                                             else
                                             {
-                                                DBHelper.conn.Close();//查询之后关闭
+                                                dr1.Close();//查询之后关闭
+                                                dr1.Dispose();//释放资源
                                                 SqlDataReader dr2 = DBHelper.GDR(sql3);
                                                 if (dr2.HasRows)//验证手机是否注册
                                                 {
-                                                    DBHelper.conn.Close();//查询之后关闭
+                                                    
                                                     label8.Text = "该手机号已注册，无法再次注册！";
                                                     label8.Visible = true;//手机号已注册显示错误文本
                                                                           //然后把手机框清空
@@ -259,9 +267,12 @@ namespace Kojiro_ordering_management_system
                                                 }
                                                 else
                                                 {
+                                                    dr2.Close();//查询之后关闭
+                                                    dr2.Dispose();//释放资源
+
                                                     if (DBHelper.ENQ(sql))//条件都满足就添加数据 提示注册成功
                                                     {
-                                                        DBHelper.conn.Close();//查询之后关闭
+                                                        
                                                         MessageBox.Show("注册成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                         label8.Text = "注册成功 请返回登录！";
                                                         label8.Visible = true;
@@ -269,7 +280,6 @@ namespace Kojiro_ordering_management_system
                                                         textBox1.Text = "";
                                                         textBox2.Text = "";
                                                         textBox3.Text = "";
-
                                                         textBox4.Text = "";
                                                         textBox5.Text = "";
                                                         textBox1.GotFocus += new EventHandler((obj, ex) => { label8.Visible = false; });//当用户文本框成为焦点时 隐藏返回登录文本

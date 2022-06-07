@@ -20,10 +20,11 @@ namespace Kojiro_ordering_management_system
 
         //在函数外，命名空间内声明页面的变量，这样子我们可以做到重新加载页面的时候不会出现初始值
         //而是在打开上次切换前的页面
-        private Ordering_food  ordering_Food = new Ordering_food();
-        private Orders orders = new Orders();
-        private My_information  my_Information = new My_information();
-        private More more = new More();
+        public Ordering_food  ordering_Food = new Ordering_food();
+        public Orders orders = new Orders();
+        public My_information  my_Information = new My_information();
+        public More more = new More();
+        public Main_interface main_interface = new Main_interface();
 
        
         //窗体边框阴影动画效果移动改变大小
@@ -119,7 +120,7 @@ namespace Kojiro_ordering_management_system
         {
             InitializeComponent();
             user_Side = this;// 当前窗体对象赋值给上面的窗体对象
-            this.Text = "客户端";
+            this.Text = "小次郎点餐系统客户端";
             ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;//限制最大化的大小
         }
@@ -152,22 +153,86 @@ namespace Kojiro_ordering_management_system
                 this.mainpanel.Controls.Add(form);
                 //把容器的tag设置成我们传输进来的page
                 this.mainpanel.Tag = form;
-                //进行一个page的一个展示
                 form.Show();
             }
         }
 
+       
+      
 
+        private void butClose_Click(object sender, EventArgs e)
+        {
+           // Application.Exit();
+           Close();
+        }
 
+        private void butMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;//最小化
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)//如果现在的窗口是默认大小
+            {
+                WindowState = FormWindowState.Maximized;//那就设置成最大化
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;//否则就默认显示
+            }
+        }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
 
-        private void User_side_Load(object sender, EventArgs e)
+        /*private void User_side_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            //窗体关闭动画效果
+            AnimateWindow(this.Handle, 400, AW_HIDE | AW_BLEND | AW_CENTER);
+        }
+        
+          private void User_side_Load(object sender, EventArgs e)
         {
             //窗体加载动画效果
             AnimateWindow(this.Handle, 300, AW_BLEND | AW_CENTER);
+        }*/
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loadform(ordering_Food);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            loadform(orders);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            loadform(my_Information);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            loadform(more);
+        }
+
+        private void User_side_Load(object sender, EventArgs e)
+        {
+            loadform(main_interface);//加载时显示主页面
+        }
+
+
+
+
         /// <summary>
         /// 获取游标位置并改变形状
         /// </summary>
@@ -245,65 +310,6 @@ namespace Kojiro_ordering_management_system
                 ReleaseCapture();
                 SendMessage(this.Handle, WM_SYSCOMMAND, wParam, IntPtr.Zero.ToInt32());
             }
-        }
-
-        private void butClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void butMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;//最小化
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Normal)//如果现在的窗口是默认大小
-            {
-                WindowState = FormWindowState.Maximized;//那就设置成最大化
-            }
-            else
-            {
-                WindowState = FormWindowState.Normal;//否则就默认显示
-            }
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void User_side_FormClosing_1(object sender, FormClosingEventArgs e)
-        {
-            //窗体关闭动画效果
-            AnimateWindow(this.Handle, 400, AW_HIDE | AW_BLEND | AW_CENTER);
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            loadform(ordering_Food);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            loadform(orders);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            loadform(my_Information);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            loadform(more);
         }
     }
 }

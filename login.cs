@@ -8,9 +8,21 @@ namespace Kojiro_ordering_management_system
 {
     public partial class Form1 : Form
     {
+        public static Form1 form1 = new Form1();//公开实例化这个窗体对象给其他窗体调用
         public Form1()
         {
             InitializeComponent();
+            form1 = this;//当前窗体对象赋值给上面的窗体对象
+        }
+
+        protected override CreateParams CreateParams  //防止界面闪烁
+        {
+            get
+            {
+                CreateParams paras = base.CreateParams;
+                paras.ExStyle |= 0x02000000;
+                return paras;
+            }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -32,7 +44,7 @@ namespace Kojiro_ordering_management_system
         }
         private void butClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();//关闭
         }
         private void butMinimize_Click(object sender, EventArgs e)
         {
@@ -101,35 +113,34 @@ namespace Kojiro_ordering_management_system
             //勿删
         }
 
-        private void uiButton1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            string Uid = textBox1.Text;
+            string Pwd = textBox2.Text;
             if (textBox1.Text != "")
             {
                 if (textBox2.Text != "")
                 {
-                    string Uid = textBox1.Text;
-                    string Pwd = textBox2.Text;
                     string sql = string.Format("select* from Ustable where Uid = '{0}' and pwd = '{1}'", Uid, Pwd);//验证登录账号和密码是否一致
                     SqlDataReader dr = DBHelper.GDR(sql);
                     if (dr.HasRows)
                     {
-                        DBHelper.conn.Close();//查询之后关闭
-                        MessageBox.Show("成功");
+                        User_side user_Side = new User_side();
                         label1.Visible = false;//成功后把错误提示文本隐藏
+                        dr.Close();//查询之后关闭
+                        dr.Dispose();//释放资源
+                        user_Side.Show();//打开窗口
                     }
                     else
                     {
-                        DBHelper.conn.Close();//查询之后关闭
                         label1.Text = "账号或密码错误！";
                         label1.Visible = true;
                         textBox1.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
                         textBox2.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
+                        dr.Close();//查询之后关闭
+                        dr.Dispose();//释放资源
                     }
+
                 }
                 else
                 {
@@ -142,6 +153,8 @@ namespace Kojiro_ordering_management_system
                 label1.Text = "请输入用户名！";
                 label1.Visible = true;
             }
+           
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -164,12 +177,6 @@ namespace Kojiro_ordering_management_system
         {
             User_side user = new User_side();
             user.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form3 form3 = new Form3();
-            form3.Show();
         }
     }
 }
