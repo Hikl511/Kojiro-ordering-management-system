@@ -22,17 +22,19 @@ namespace Kojiro_ordering_management_system
 
         private void Main_interface_Load(object sender, EventArgs e)
         {
+            /*
             string Uid = Form1.form1.textBox1.Text;//获取登录窗口两个文本框的值
             string Pwd = Form1.form1.textBox2.Text;
             
-            /*string sql = string.Format("select Name from Ustable where Uid='{0}' and Pwd = '{1}'",Uid,Pwd);//查询对应用户名
+            string sql = string.Format("select Name from Ustable where Uid='{0}' and Pwd = '{1}'",Uid,Pwd);//查询对应用户名
             SqlDataReader reader = DBHelper.GDR(sql);
             while (reader.Read())
             {
                 label1.Text = reader["Name"].ToString();
             }
             reader.Close();//关闭reader对象
-            reader.Dispose();//释放*/
+            reader.Dispose();//释放
+            */
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
