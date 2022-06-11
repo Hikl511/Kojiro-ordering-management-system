@@ -162,7 +162,11 @@ namespace Kojiro_ordering_management_system
 
         private void butClose_Click(object sender, EventArgs e)
         {
-           // Application.Exit();
+            // Application.Exit();
+            if (Form1.form1.WindowState==FormWindowState.Normal)//因为登录时隐藏了主窗口  所以在本程序关闭前判断一下主窗口是否时默认状态 如果是就关掉 以防有后台下次打不开
+            {
+                Form1.form1.Close();
+            }
            Close();
         }
 
@@ -202,7 +206,7 @@ namespace Kojiro_ordering_management_system
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+            loadform(main_interface);
         }
 
         private void button1_Click(object sender, EventArgs e)

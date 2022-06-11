@@ -42,6 +42,7 @@ namespace Kojiro_ordering_management_system
             SqlCommand cmd = new SqlCommand(sql, conn);
             int result = cmd.ExecuteNonQuery();
             conn.Close();
+            cmd.Dispose();
             return result > 0;
         }
         //聚合函数

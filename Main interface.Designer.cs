@@ -41,15 +41,15 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(133, 2);
+            this.panel1.Location = new System.Drawing.Point(124, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(471, 255);
+            this.panel1.Size = new System.Drawing.Size(471, 417);
             this.panel1.TabIndex = 3;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Kojiro_ordering_management_system.Properties.Resources.未标题_11;
-            this.pictureBox2.Location = new System.Drawing.Point(104, 106);
+            this.pictureBox2.Location = new System.Drawing.Point(104, 214);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(364, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -61,12 +61,13 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Kojiro_ordering_management_system.Properties.Resources.用户;
-            this.pictureBox1.Location = new System.Drawing.Point(239, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(247, 99);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(87, 86);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Main_interface
             // 

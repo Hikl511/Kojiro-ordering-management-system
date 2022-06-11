@@ -40,7 +40,9 @@
       <HintPath>..\SunnyUI\SunnyUI.Demo\Bin\SunnyUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -348,6 +350,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\未标题-12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\地址 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\地址 拷贝 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\订单 拷贝 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户 拷贝png 拷贝 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户 拷贝png 拷贝 21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\密码 拷贝 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\修改密码 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\个人资料.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\个人资料 拷贝.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

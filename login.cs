@@ -129,7 +129,12 @@ namespace Kojiro_ordering_management_system
                         label1.Visible = false;//成功后把错误提示文本隐藏
                         dr.Close();//查询之后关闭
                         dr.Dispose();//释放资源
+                        Hide();//隐藏
+                        textBox1.Text = "";
+                        textBox2.Text = "";
                         user_Side.Show();//打开窗口
+
+                        
                     }
                     else
                     {
