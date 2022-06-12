@@ -19,6 +19,7 @@ namespace Kojiro_ordering_management_system
         public Main_interface()
         {
             InitializeComponent();
+            
         }
 
         private void Main_interface_Load(object sender, EventArgs e)

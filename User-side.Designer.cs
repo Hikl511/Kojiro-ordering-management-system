@@ -30,7 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_side));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,22 +45,18 @@
             this.button6 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mainpanel = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.mainpanel.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -77,6 +77,21 @@
             this.panelMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
             this.panelMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Location = new System.Drawing.Point(148, 1);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(16, 520);
+            this.panel9.TabIndex = 6;
+            // 
+            // panel10
+            // 
+            this.panel10.Location = new System.Drawing.Point(145, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(20, 520);
+            this.panel10.TabIndex = 5;
+            // 
             // panel4
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -88,6 +103,23 @@
             this.panel4.TabIndex = 8;
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
             this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel8);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(20, 520);
+            this.panel3.TabIndex = 4;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            // 
+            // panel8
+            // 
+            this.panel8.Location = new System.Drawing.Point(145, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(20, 520);
+            this.panel8.TabIndex = 5;
             // 
             // button4
             // 
@@ -242,6 +274,13 @@
             this.panelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
             this.panelLogo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(144, 77);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(20, 520);
+            this.panel5.TabIndex = 5;
+            // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(217, 0);
@@ -251,15 +290,29 @@
             // 
             // mainpanel
             // 
+            this.mainpanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainpanel.AutoSize = true;
             this.mainpanel.BackColor = System.Drawing.Color.White;
             this.mainpanel.Controls.Add(this.panel6);
-            this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainpanel.Location = new System.Drawing.Point(0, 80);
+            this.mainpanel.Location = new System.Drawing.Point(167, 80);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(840, 536);
+            this.mainpanel.Size = new System.Drawing.Size(673, 536);
             this.mainpanel.TabIndex = 6;
             this.mainpanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
             this.mainpanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Location = new System.Drawing.Point(3, 526);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(658, 11);
+            this.panel6.TabIndex = 7;
+            this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.panel6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
             // panel7
             // 
@@ -272,56 +325,6 @@
             this.panel7.TabIndex = 8;
             this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
             this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(170, 526);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(658, 11);
-            this.panel6.TabIndex = 7;
-            this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
-            this.panel6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.panel8);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 520);
-            this.panel3.TabIndex = 4;
-            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
-            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
-            // 
-            // panel5
-            // 
-            this.panel5.Location = new System.Drawing.Point(144, 77);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(20, 520);
-            this.panel5.TabIndex = 5;
-            // 
-            // panel8
-            // 
-            this.panel8.Location = new System.Drawing.Point(145, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(20, 520);
-            this.panel8.TabIndex = 5;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.panel10);
-            this.panel9.Location = new System.Drawing.Point(148, 1);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(16, 520);
-            this.panel9.TabIndex = 6;
-            // 
-            // panel10
-            // 
-            this.panel10.Location = new System.Drawing.Point(145, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(20, 520);
-            this.panel10.TabIndex = 5;
             // 
             // User_side
             // 
@@ -343,13 +346,14 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             this.panelMenu.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.mainpanel.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -11,6 +11,7 @@ namespace Kojiro_ordering_management_system
         string photoname = "";
         string Uid = Form1.form1.textBox1.Text;
         string Pwd = Form1.form1.textBox2.Text;
+       // public Main_interface  main_Interface = new Main_interface();
         public My_information()
         {
             InitializeComponent();
@@ -107,6 +108,17 @@ namespace Kojiro_ordering_management_system
         {
             User_side.user_Side.Close();//关闭父窗体
             Form1.form1.Show();//打开登录页
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            //User_side.user_Side.loadform(main_Interface);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Shipping_address shipping_Address = new Shipping_address();
+            User_side.user_Side.loadform(shipping_Address);
         }
     }
 }

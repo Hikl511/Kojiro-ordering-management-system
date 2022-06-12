@@ -111,6 +111,12 @@
     <Compile Include="ShaXian.Designer.cs">
       <DependentUpon>ShaXian.cs</DependentUpon>
     </Compile>
+    <Compile Include="Shipping_address.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipping_address.Designer.cs">
+      <DependentUpon>Shipping_address.cs</DependentUpon>
+    </Compile>
     <Compile Include="Smphone.cs" />
     <Compile Include="User-side.cs">
       <SubType>Form</SubType>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShaXian.resx">
       <DependentUpon>ShaXian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipping_address.resx">
+      <DependentUpon>Shipping_address.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User-side.resx">
       <DependentUpon>User-side.cs</DependentUpon>
@@ -377,6 +386,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\个人资料 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\返回.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
