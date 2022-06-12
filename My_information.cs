@@ -11,16 +11,16 @@ namespace Kojiro_ordering_management_system
         string photoname = "";
         string Uid = Form1.form1.textBox1.Text;
         string Pwd = Form1.form1.textBox2.Text;
-       // public Main_interface  main_Interface = new Main_interface();
+        public static My_information my_Information = new My_information();//实例化当前窗体 把值传进来 防止再打开的时候是空间原始值
         public My_information()
         {
             InitializeComponent();
+            my_Information = this;
         }
 
         private void My_information_Load(object sender, EventArgs e)
         {
-
-            PicShow();//从数据库中查找突破并给控件赋值
+            PicShow();//从数据库中查找图片路径并给控件赋值
             UsName();
         }
 
@@ -39,7 +39,6 @@ namespace Kojiro_ordering_management_system
         }
         public void PicShow()//显示头像
         {
-
             string strconn = "server=.;database=Kojiror;uid=sa;pwd=1234";
             SqlConnection conn = new SqlConnection(strconn);
             string cmdText = string.Format("select UserImag from Ustable where Uid='{0}' and Pwd='{1}'", Uid, Pwd);
@@ -110,15 +109,27 @@ namespace Kojiro_ordering_management_system
             Form1.form1.Show();//打开登录页
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            //User_side.user_Side.loadform(main_Interface);
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Shipping_address shipping_Address = new Shipping_address();
             User_side.user_Side.loadform(shipping_Address);
+            //shipping_Address.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            Main_interface main_Interface = new Main_interface();
+            User_side.user_Side.loadform(main_Interface);//回主界面
         }
     }
 }

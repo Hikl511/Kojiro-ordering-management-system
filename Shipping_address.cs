@@ -17,10 +17,10 @@ namespace Kojiro_ordering_management_system
             InitializeComponent();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        public void pictureBox2_Click(object sender, EventArgs e)
         {
-            My_information  my_Information = new My_information();
-            User_side.user_Side.loadform(my_Information);
+            User_side.user_Side.loadform(My_information.my_Information);//打开窗体
+            
         }
     }
 }
