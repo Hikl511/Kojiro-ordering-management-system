@@ -59,7 +59,7 @@
             this.butMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butMinimize.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butMinimize.ForeColor = System.Drawing.SystemColors.Window;
-            this.butMinimize.Location = new System.Drawing.Point(780, 9);
+            this.butMinimize.Location = new System.Drawing.Point(756, 9);
             this.butMinimize.Name = "butMinimize";
             this.butMinimize.Size = new System.Drawing.Size(16, 24);
             this.butMinimize.TabIndex = 3;
@@ -74,7 +74,7 @@
             this.butClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butClose.ForeColor = System.Drawing.SystemColors.Window;
-            this.butClose.Location = new System.Drawing.Point(803, 8);
+            this.butClose.Location = new System.Drawing.Point(779, 8);
             this.butClose.Name = "butClose";
             this.butClose.Size = new System.Drawing.Size(30, 30);
             this.butClose.TabIndex = 1;
@@ -91,7 +91,7 @@
             this.mainpanel.Controls.Add(this.panel6);
             this.mainpanel.Location = new System.Drawing.Point(167, 80);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(661, 536);
+            this.mainpanel.Size = new System.Drawing.Size(637, 536);
             this.mainpanel.TabIndex = 6;
             this.mainpanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
             this.mainpanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
@@ -100,7 +100,7 @@
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panel6.Location = new System.Drawing.Point(-13, 526);
+            this.panel6.Location = new System.Drawing.Point(-37, 526);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(671, 11);
             this.panel6.TabIndex = 7;
@@ -254,7 +254,7 @@
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panel7.Location = new System.Drawing.Point(827, 80);
+            this.panel7.Location = new System.Drawing.Point(803, 80);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(13, 537);
             this.panel7.TabIndex = 8;
@@ -265,7 +265,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.ClientSize = new System.Drawing.Size(840, 616);
+            this.ClientSize = new System.Drawing.Size(816, 616);
             this.ControlBox = false;
             this.Controls.Add(this.butMinimize);
             this.Controls.Add(this.butClose);
