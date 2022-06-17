@@ -207,7 +207,6 @@ namespace Kojiro_ordering_management_system
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Business.business.Close();
             Ordering_food.ordering_Food.Close();
             loadform(orders);
         }
@@ -215,14 +214,12 @@ namespace Kojiro_ordering_management_system
         private void button3_Click(object sender, EventArgs e)
         {
             loadform(my_Information);
-            Business.business.Close();
             Ordering_food.ordering_Food.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             loadform(more);
-            Business.business.Close();
             Ordering_food.ordering_Food.Close();
         }
 

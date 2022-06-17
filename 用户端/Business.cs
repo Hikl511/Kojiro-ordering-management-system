@@ -7,10 +7,11 @@ namespace Kojiro_ordering_management_system
 {
     public partial class Business : Form
     {
-        public static Business business = new Business();
+       // Ordering_food ordering_Food = new Ordering_food();
+        string name = Ordering_food.ordering_Food.a.ToString();
         public Business()
         {
-            business = this;
+          //  business = this;
             InitializeComponent();
         }
 
@@ -21,7 +22,8 @@ namespace Kojiro_ordering_management_system
             PicLableButtonShow();
             //PicShow();
         }
-        string name = Ordering_food.ordering_Food.a.ToString();
+      
+        
         //190, 41
         public void PicShow()//商家头像名字和介绍
         {
