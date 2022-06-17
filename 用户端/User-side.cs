@@ -123,7 +123,6 @@ namespace Kojiro_ordering_management_system
             this.Text = "小次郎点餐系统客户端";
             ControlBox = false;
             this.DoubleBuffered = true;
-
         }
 
         protected override CreateParams CreateParams  //防止界面闪烁  同时也去除了动画

@@ -1,17 +1,22 @@
-﻿using System;
+﻿
+using Kojiro_ordering_management_system.用户端;
+using System;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Kojiro_ordering_management_system
 {
     public partial class Business : Form
     {
-       // Ordering_food ordering_Food = new Ordering_food();
-        string name = Ordering_food.ordering_Food.a.ToString();
+        // Ordering_food ordering_Food = new Ordering_food();
+        public static Business business = new Business();
+        string name = Ordering_food.ordering_Food.name.ToString();
+        public string DishesName;
         public Business()
         {
-          //  business = this;
+            business = this;
             InitializeComponent();
         }
 
@@ -20,11 +25,25 @@ namespace Kojiro_ordering_management_system
             label1.Text = name;
             PicShow();
             PicLableButtonShow();
+            LabelText();
             //PicShow();
         }
-      
-        
+
+
         //190, 41
+        public void LabelText()
+        {
+            try
+            {
+                string ShopCount = string.Format("select  sum(quantity) from ShoppingCart");//查个数
+                label4.Text = DBHelper.ES(ShopCount).ToString();
+            }
+            catch (Exception e)
+            {
+
+              //  throw;
+            }
+        }
         public void PicShow()//商家头像名字和介绍
         {
             string[] imag = new string[1];
@@ -72,12 +91,12 @@ namespace Kojiro_ordering_management_system
         {//对pic1操作
             try
             {
-                string sql = "select Count(ClassID) from Dishes";//查询行数 
-                int result = (int)DBHelper.ES(sql);
+                string sqlcount = "select Count(ClassID) from Dishes";//查询行数 
+                int result = (int)DBHelper.ES(sqlcount);
                 string[] imag = new string[result];//图片路径
                 string[] lbltxt = new string[result];//菜品名字
                 string[] money = new string[result];//菜品价格
-                PictureBox[] pb = new PictureBox[result];
+                PictureBox[] pb = new PictureBox[result];//图片数组
                 Label[] lbl = new Label[result];
                 Label[] lbl2 = new Label[result];
                 Button[] btu1 = new Button[result];
@@ -95,8 +114,6 @@ namespace Kojiro_ordering_management_system
                     money[i] = dr["dumoney"].ToString();
                     i++;
                 }
-                dr.Close();
-
                 for (i = 0; i < result; i++)
                 {
                     pb[i] = new PictureBox();
@@ -126,16 +143,17 @@ namespace Kojiro_ordering_management_system
                     lbl2[i].Size = new Size(100, 20);
                     lbl2[i].BorderStyle = BorderStyle.None;
                     lbl2[i].Font = new Font("微软雅黑", 7);
-                    lbl2[i].Text = "￥" + money[i].Substring(0, 4);//截取价格字符串 为4为 保留一个小数点
-                                                                  // lbl2[i].Text = money[i];
+                    lbl2[i].Text = "￥" + money[i].Substring(0, 4);//截取价格字符串 为4为 保留一个小数点                                               // lbl2[i].Text = money[i];
                     lbl2[i].ForeColor = Color.Red;
                     btu1[i].Size = new Size(80, 20);
                     btu1[i].FlatAppearance.BorderSize = 0;//无边框
+                    btu1[i].Name = lbltxt[i];
                     btu1[i].Text = "加入购物车";
                     btu1[i].Font = new Font("宋体", 9);
                     btu1[i].FlatStyle = FlatStyle.Flat;
                     System.Drawing.Point p4 = new Point(80 * x, 150 + y);//x宽 y高
                     btu1[i].Location = p4;
+                    btu1[i].Click += new System.EventHandler(btn_click);
                     panel2.Controls.Add(pb[i]);
                     panel2.Controls.Add(lbl[i]);
                     panel2.Controls.Add(lbl2[i]);
@@ -146,13 +164,13 @@ namespace Kojiro_ordering_management_system
                         x = 0;
                         y += 180;
                     }
-                    //dr.Close();
+                    dr.Close();
                 }
             }
-            catch (Exception e)//捕获一异常然后抛出
+            catch (Exception e)
             {
 
-               // throw e;
+                //throw;
             }
             finally
             {
@@ -160,11 +178,63 @@ namespace Kojiro_ordering_management_system
             }
         }
 
+        public object Price;
+        public void btn_click(object sender, System.EventArgs e)
+        {
+            Button b = (Button)sender;
+            DishesName = b.Name.ToString(); //单击时把当前单机按钮的值传给变量 给购物车窗口调用
+            //添加到购物车表
+            string sql = string.Format("select * from Dishes where Name='{0}'", b.Name.ToString());
+            SqlDataReader dr = DBHelper.GDR(sql);
+            string money = "";
+            string Name = "";
+            string image = "";
+            while (dr.Read())
+            {
+                money = dr["dumoney"].ToString();//查单价
+                Name = dr["Name"].ToString();//查单价
+                image = dr["image"].ToString();//查单价  
+            }
+            dr.Close();//关闭DateReader对象
+            string Yesno = string.Format("select * from ShoppingCart where Name='{0}'", b.Name.ToString());//查总价
+            SqlCommand sqlCommand = new SqlCommand(Yesno, DBHelper.conn);
+            SqlDataAdapter dr2 = new SqlDataAdapter(sqlCommand);
+            DataTable dat= new DataTable();
+            dr2.Fill(dat);
+            if (dat.Rows.Count==0)
+            {
+                string sql2 = string.Format("insert ShoppingCart values('{0}','{1}','{2}','{3}')", money, Name, image, 0);//加入购物车表
+                DBHelper.ENQ(sql2);
+            }
+            dr2.Dispose();
+            string update = string.Format("update ShoppingCart set quantity+=1 where Name='{0}'", b.Name.ToString());
+            DBHelper.ENQ(update);
+            string Count = string.Format("select count(*) from ShoppingCart where Name='{0}'", b.Name.ToString());//查数量
+            int quantity = (int)DBHelper.ES(Count);//数量
+            string Sum = string.Format("select sum(quantity* money) from ShoppingCart");//查总价
+            string ShopCount = string.Format("select  sum(quantity) from ShoppingCart");//查个数
+            Price = DBHelper.ES(Sum);
+            label2.Text = Price.ToString();
+            label4.Text =DBHelper.ES(ShopCount).ToString();
+        }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Ordering_food ordering_Food = new Ordering_food();
             User_side.user_Side.loadform(ordering_Food);
             Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ShoppingCart shoppingCart = new ShoppingCart();
+            User_side.user_Side.loadform(shoppingCart);//打开购物车
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            ShoppingCart shoppingCart = new ShoppingCart();
+            User_side.user_Side.loadform(shoppingCart);
         }
     }
 }

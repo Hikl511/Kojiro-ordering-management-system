@@ -503,6 +503,16 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 清空购物车 {
+            get {
+                object obj = ResourceManager.GetObject("清空购物车", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 用户 {
             get {
                 object obj = ResourceManager.GetObject("用户", resourceCulture);
@@ -726,6 +736,26 @@ namespace Kojiro_ordering_management_system.Properties {
         internal static System.Drawing.Bitmap 购物车 {
             get {
                 object obj = ResourceManager.GetObject("购物车", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 购物车_拷贝 {
+            get {
+                object obj = ResourceManager.GetObject("购物车 拷贝", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 购物车1 {
+            get {
+                object obj = ResourceManager.GetObject("购物车1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

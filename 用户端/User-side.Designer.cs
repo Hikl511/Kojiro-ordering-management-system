@@ -33,11 +33,6 @@
             this.butClose = new System.Windows.Forms.Button();
             this.mainpanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -45,11 +40,16 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainpanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // butMinimize
@@ -106,6 +106,81 @@
             this.panel6.TabIndex = 7;
             this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
             this.panel6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.panel9);
+            this.panelMenu.Controls.Add(this.panel4);
+            this.panelMenu.Controls.Add(this.panel3);
+            this.panelMenu.Controls.Add(this.button4);
+            this.panelMenu.Controls.Add(this.button3);
+            this.panelMenu.Controls.Add(this.button2);
+            this.panelMenu.Controls.Add(this.button1);
+            this.panelMenu.Location = new System.Drawing.Point(0, 80);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(167, 536);
+            this.panelMenu.TabIndex = 0;
+            this.panelMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.panelMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Location = new System.Drawing.Point(148, 1);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(16, 520);
+            this.panel9.TabIndex = 6;
+            // 
+            // panel10
+            // 
+            this.panel10.Location = new System.Drawing.Point(145, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(20, 520);
+            this.panel10.TabIndex = 5;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panel4.Location = new System.Drawing.Point(0, 519);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(167, 18);
+            this.panel4.TabIndex = 8;
+            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel8);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(20, 520);
+            this.panel3.TabIndex = 4;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            // 
+            // panel8
+            // 
+            this.panel8.Location = new System.Drawing.Point(145, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(20, 520);
+            this.panel8.TabIndex = 5;
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panel7.Location = new System.Drawing.Point(803, 80);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(13, 537);
+            this.panel7.TabIndex = 8;
+            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
             // button4
             // 
@@ -186,81 +261,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // panelMenu
-            // 
-            this.panelMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.panel9);
-            this.panelMenu.Controls.Add(this.panel4);
-            this.panelMenu.Controls.Add(this.panel3);
-            this.panelMenu.Controls.Add(this.button4);
-            this.panelMenu.Controls.Add(this.button3);
-            this.panelMenu.Controls.Add(this.button2);
-            this.panelMenu.Controls.Add(this.button1);
-            this.panelMenu.Location = new System.Drawing.Point(0, 80);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(167, 536);
-            this.panelMenu.TabIndex = 0;
-            this.panelMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
-            this.panelMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.panel10);
-            this.panel9.Location = new System.Drawing.Point(148, 1);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(16, 520);
-            this.panel9.TabIndex = 6;
-            // 
-            // panel10
-            // 
-            this.panel10.Location = new System.Drawing.Point(145, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(20, 520);
-            this.panel10.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panel4.Location = new System.Drawing.Point(0, 519);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(167, 18);
-            this.panel4.TabIndex = 8;
-            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
-            this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.panel8);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 520);
-            this.panel3.TabIndex = 4;
-            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
-            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
-            // 
-            // panel8
-            // 
-            this.panel8.Location = new System.Drawing.Point(145, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(20, 520);
-            this.panel8.TabIndex = 5;
-            // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panel7.Location = new System.Drawing.Point(803, 80);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(13, 537);
-            this.panel7.TabIndex = 8;
-            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
-            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
-            // 
             // User_side
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -283,10 +283,10 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             this.mainpanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -221,16 +221,13 @@ namespace Kojiro_ordering_management_system
                                     {
                                         if (textBox5.Text.Equals(code))//判断验证码是否正确
                                         {
-                                           
                                             string Uid = textBox1.Text;//账号
                                             string Pwd = textBox2.Text;//密码
                                             string Name = "用户"+UsName();//昵称
-                                            string Addres = null;//地址
                                             string Phone = textBox4.Text;//手机
                                             string Addtime = DateTime.Now.ToString("yyyy-MM-dd"); //获取当前日期 年 - 月 - 日显示  //注册日期
-                                            string sql = string.Format("insert Ustable values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}','{6}')", Name, Phone, Uid, Pwd, Addres, Addtime,null);
+                                            string sql = string.Format("insert Ustable values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", Name, Phone, Uid, Pwd,Addtime,null);
                                             string sql2 = string.Format("select* from Ustable where Uid = {0}", Uid);
-
                                             string sql3 = string.Format("select* from Ustable where Phone = {0}", Phone);
                                             SqlDataReader dr1 = DBHelper.GDR(sql2);
                                             if (dr1.HasRows)//验证账户是否已注册
