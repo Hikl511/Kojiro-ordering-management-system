@@ -29,97 +29,83 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_side));
+            this.butMinimize = new System.Windows.Forms.Button();
+            this.butClose = new System.Windows.Forms.Button();
+            this.mainpanel = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.butMinimize = new System.Windows.Forms.Button();
-            this.butClose = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.mainpanel = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.mainpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panelLogo.SuspendLayout();
-            this.mainpanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelMenu
+            // butMinimize
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.panel9);
-            this.panelMenu.Controls.Add(this.panel4);
-            this.panelMenu.Controls.Add(this.panel3);
-            this.panelMenu.Controls.Add(this.button4);
-            this.panelMenu.Controls.Add(this.button3);
-            this.panelMenu.Controls.Add(this.button2);
-            this.panelMenu.Controls.Add(this.button1);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 80);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(167, 536);
-            this.panelMenu.TabIndex = 0;
-            this.panelMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
-            this.panelMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            this.butMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butMinimize.FlatAppearance.BorderSize = 0;
+            this.butMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butMinimize.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butMinimize.ForeColor = System.Drawing.SystemColors.Window;
+            this.butMinimize.Location = new System.Drawing.Point(780, 9);
+            this.butMinimize.Name = "butMinimize";
+            this.butMinimize.Size = new System.Drawing.Size(16, 24);
+            this.butMinimize.TabIndex = 3;
+            this.butMinimize.Text = "—";
+            this.butMinimize.UseVisualStyleBackColor = true;
+            this.butMinimize.Click += new System.EventHandler(this.butMinimize_Click);
             // 
-            // panel9
+            // butClose
             // 
-            this.panel9.Controls.Add(this.panel10);
-            this.panel9.Location = new System.Drawing.Point(148, 1);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(16, 520);
-            this.panel9.TabIndex = 6;
+            this.butClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butClose.FlatAppearance.BorderSize = 0;
+            this.butClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butClose.ForeColor = System.Drawing.SystemColors.Window;
+            this.butClose.Location = new System.Drawing.Point(803, 8);
+            this.butClose.Name = "butClose";
+            this.butClose.Size = new System.Drawing.Size(30, 30);
+            this.butClose.TabIndex = 1;
+            this.butClose.Text = "x";
+            this.butClose.UseVisualStyleBackColor = true;
+            this.butClose.Click += new System.EventHandler(this.butClose_Click);
             // 
-            // panel10
+            // mainpanel
             // 
-            this.panel10.Location = new System.Drawing.Point(145, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(20, 520);
-            this.panel10.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.mainpanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panel4.Location = new System.Drawing.Point(0, 519);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(167, 18);
-            this.panel4.TabIndex = 8;
-            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
-            this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            this.mainpanel.BackColor = System.Drawing.Color.White;
+            this.mainpanel.Controls.Add(this.panel6);
+            this.mainpanel.Location = new System.Drawing.Point(167, 80);
+            this.mainpanel.Name = "mainpanel";
+            this.mainpanel.Size = new System.Drawing.Size(661, 536);
+            this.mainpanel.TabIndex = 6;
+            this.mainpanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.mainpanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
-            // panel3
+            // panel6
             // 
-            this.panel3.Controls.Add(this.panel8);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 520);
-            this.panel3.TabIndex = 4;
-            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
-            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
-            // 
-            // panel8
-            // 
-            this.panel8.Location = new System.Drawing.Point(145, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(20, 520);
-            this.panel8.TabIndex = 5;
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panel6.Location = new System.Drawing.Point(-13, 526);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(671, 11);
+            this.panel6.TabIndex = 7;
+            this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.panel6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
             // button4
             // 
@@ -192,7 +178,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Kojiro_ordering_management_system.Properties.Resources.Logo_小次郎_拷贝1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(156, 47);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -200,125 +186,74 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // butMinimize
+            // panelMenu
             // 
-            this.butMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butMinimize.FlatAppearance.BorderSize = 0;
-            this.butMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butMinimize.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butMinimize.ForeColor = System.Drawing.SystemColors.Window;
-            this.butMinimize.Location = new System.Drawing.Point(732, 5);
-            this.butMinimize.Name = "butMinimize";
-            this.butMinimize.Size = new System.Drawing.Size(30, 30);
-            this.butMinimize.TabIndex = 3;
-            this.butMinimize.Text = "O";
-            this.butMinimize.UseVisualStyleBackColor = true;
-            this.butMinimize.Click += new System.EventHandler(this.butMinimize_Click);
+            this.panelMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.panel9);
+            this.panelMenu.Controls.Add(this.panel4);
+            this.panelMenu.Controls.Add(this.panel3);
+            this.panelMenu.Controls.Add(this.button4);
+            this.panelMenu.Controls.Add(this.button3);
+            this.panelMenu.Controls.Add(this.button2);
+            this.panelMenu.Controls.Add(this.button1);
+            this.panelMenu.Location = new System.Drawing.Point(0, 80);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(167, 536);
+            this.panelMenu.TabIndex = 0;
+            this.panelMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.panelMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
-            // butClose
+            // panel9
             // 
-            this.butClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butClose.FlatAppearance.BorderSize = 0;
-            this.butClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butClose.ForeColor = System.Drawing.SystemColors.Window;
-            this.butClose.Location = new System.Drawing.Point(804, 5);
-            this.butClose.Name = "butClose";
-            this.butClose.Size = new System.Drawing.Size(30, 30);
-            this.butClose.TabIndex = 1;
-            this.butClose.Text = "O";
-            this.butClose.UseVisualStyleBackColor = true;
-            this.butClose.Click += new System.EventHandler(this.butClose_Click);
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Location = new System.Drawing.Point(148, 1);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(16, 520);
+            this.panel9.TabIndex = 6;
             // 
-            // button6
+            // panel10
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.Window;
-            this.button6.Location = new System.Drawing.Point(768, 5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(30, 30);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "O";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.panel10.Location = new System.Drawing.Point(145, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(20, 520);
+            this.panel10.TabIndex = 5;
             // 
-            // panel2
+            // panel4
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panel2.Controls.Add(this.panelLogo);
-            this.panel2.Controls.Add(this.button6);
-            this.panel2.Controls.Add(this.butMinimize);
-            this.panel2.Controls.Add(this.butClose);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(840, 80);
-            this.panel2.TabIndex = 5;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
-            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panelLogo.Controls.Add(this.panel5);
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Controls.Add(this.panel1);
-            this.panelLogo.Location = new System.Drawing.Point(3, 3);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(167, 80);
-            this.panelLogo.TabIndex = 0;
-            this.panelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
-            this.panelLogo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
-            // 
-            // panel5
-            // 
-            this.panel5.Location = new System.Drawing.Point(144, 77);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(20, 520);
-            this.panel5.TabIndex = 5;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(217, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(865, 80);
-            this.panel1.TabIndex = 5;
-            // 
-            // mainpanel
-            // 
-            this.mainpanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainpanel.AutoSize = true;
-            this.mainpanel.BackColor = System.Drawing.Color.White;
-            this.mainpanel.Controls.Add(this.panel6);
-            this.mainpanel.Location = new System.Drawing.Point(167, 80);
-            this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(673, 536);
-            this.mainpanel.TabIndex = 6;
-            this.mainpanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
-            this.mainpanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panel4.Location = new System.Drawing.Point(0, 519);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(167, 18);
+            this.panel4.TabIndex = 8;
+            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
             // 
-            // panel6
+            // panel3
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(3, 526);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(658, 11);
-            this.panel6.TabIndex = 7;
-            this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
-            this.panel6.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            this.panel3.Controls.Add(this.panel8);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(20, 520);
+            this.panel3.TabIndex = 4;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            // 
+            // panel8
+            // 
+            this.panel8.Location = new System.Drawing.Point(145, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(20, 520);
+            this.panel8.TabIndex = 5;
             // 
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.panel7.Location = new System.Drawing.Point(827, 80);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(13, 537);
@@ -329,56 +264,49 @@
             // User_side
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.SystemColors.GrayText;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.ClientSize = new System.Drawing.Size(840, 616);
             this.ControlBox = false;
+            this.Controls.Add(this.butMinimize);
+            this.Controls.Add(this.butClose);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.mainpanel);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "User_side";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.User_side_Load);
+            this.Load += new System.EventHandler(this.User_side_Load_1);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseDown_1);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.User_side_MouseMove_1);
+            this.mainpanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panelLogo.ResumeLayout(false);
-            this.mainpanel.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button butMinimize;
         private System.Windows.Forms.Button butClose;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel mainpanel;
-        private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel7;
     }
 }

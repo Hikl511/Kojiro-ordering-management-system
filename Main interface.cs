@@ -15,7 +15,6 @@ namespace Kojiro_ordering_management_system
     public partial class Main_interface : Form
     {
         public Ordering_food ordering_Food = new Ordering_food();//实例化
-        public My_information  my_Information = new My_information();
         public Main_interface()
         {
             InitializeComponent();
@@ -28,7 +27,7 @@ namespace Kojiro_ordering_management_system
         }
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            User_side.user_Side.loadform(my_Information);
+            User_side.user_Side.loadform(My_information.my_Information);
         }
 
         private void pictureBox2_Click_1(object sender, EventArgs e)

@@ -119,7 +119,7 @@
             this.butClose.Name = "butClose";
             this.butClose.Size = new System.Drawing.Size(22, 28);
             this.butClose.TabIndex = 15;
-            this.butClose.Text = "O";
+            this.butClose.Text = "x";
             this.butClose.UseVisualStyleBackColor = true;
             this.butClose.Click += new System.EventHandler(this.butClose_Click);
             // 
@@ -132,9 +132,9 @@
             this.butMinimize.ForeColor = System.Drawing.SystemColors.Window;
             this.butMinimize.Location = new System.Drawing.Point(343, 0);
             this.butMinimize.Name = "butMinimize";
-            this.butMinimize.Size = new System.Drawing.Size(25, 25);
+            this.butMinimize.Size = new System.Drawing.Size(16, 24);
             this.butMinimize.TabIndex = 16;
-            this.butMinimize.Text = "O";
+            this.butMinimize.Text = "—";
             this.butMinimize.UseVisualStyleBackColor = true;
             this.butMinimize.Click += new System.EventHandler(this.butMinimize_Click);
             // 

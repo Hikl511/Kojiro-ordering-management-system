@@ -133,8 +133,6 @@ namespace Kojiro_ordering_management_system
                         textBox1.Text = "";
                         textBox2.Text = "";
                         user_Side.Show();//打开窗口
-
-                        
                     }
                     else
                     {

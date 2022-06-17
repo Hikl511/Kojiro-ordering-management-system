@@ -122,7 +122,8 @@ namespace Kojiro_ordering_management_system
             user_Side = this;// 当前窗体对象赋值给上面的窗体对象
             this.Text = "小次郎点餐系统客户端";
             ControlBox = false;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;//限制最大化的大小
+            this.DoubleBuffered = true;
+
         }
 
         protected override CreateParams CreateParams  //防止界面闪烁  同时也去除了动画
@@ -163,11 +164,14 @@ namespace Kojiro_ordering_management_system
         private void butClose_Click(object sender, EventArgs e)
         {
             // Application.Exit();
-            if (Form1.form1.WindowState==FormWindowState.Normal)//因为登录时隐藏了主窗口  所以在本程序关闭前判断一下主窗口是否时默认状态 如果是就关掉 以防有后台下次打不开
+            
+            if (Form1.form1.WindowState == FormWindowState.Normal)//因为登录时隐藏了主窗口  所以在本程序关闭前判断一下主窗口是否时默认状态 如果是就关掉 以防有后台下次打不开
             {
                 Form1.form1.Close();
             }
-           Close();
+
+            Close();
+            Application.Exit();
         }
 
         private void butMinimize_Click(object sender, EventArgs e)
@@ -175,35 +179,18 @@ namespace Kojiro_ordering_management_system
             this.WindowState = FormWindowState.Minimized;//最小化
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Normal)//如果现在的窗口是默认大小
-            {
-                WindowState = FormWindowState.Maximized;//那就设置成最大化
-            }
-            else
-            {
-                WindowState = FormWindowState.Normal;//否则就默认显示
-            }
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         /*private void User_side_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             //窗体关闭动画效果
             AnimateWindow(this.Handle, 400, AW_HIDE | AW_BLEND | AW_CENTER);
-        }
-        
-          private void User_side_Load(object sender, EventArgs e)
-        {
-            //窗体加载动画效果
-            AnimateWindow(this.Handle, 300, AW_BLEND | AW_CENTER);
         }*/
 
+        private void User_side_Load_1(object sender, EventArgs e)
+        {
+            loadform(main_interface);//加载时显示主页面
+            //窗体加载动画效果
+            //AnimateWindow(this.Handle, 300, AW_BLEND | AW_CENTER);
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             loadform(main_interface);
@@ -228,14 +215,6 @@ namespace Kojiro_ordering_management_system
         {
             loadform(more);
         }
-
-        private void User_side_Load(object sender, EventArgs e)
-        {
-            loadform(main_interface);//加载时显示主页面
-        }
-
-
-
 
         /// <summary>
         /// 获取游标位置并改变形状
@@ -315,5 +294,7 @@ namespace Kojiro_ordering_management_system
                 SendMessage(this.Handle, WM_SYSCOMMAND, wParam, IntPtr.Zero.ToInt32());
             }
         }
+
+   
     }
 }

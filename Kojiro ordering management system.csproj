@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Business.Designer.cs">
+      <DependentUpon>Business.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBHelper.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -85,6 +91,7 @@
     <Compile Include="My_information.Designer.cs">
       <DependentUpon>My_information.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ordering.cs" />
     <Compile Include="Ordering_food.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +131,9 @@
     <Compile Include="User-side.Designer.cs">
       <DependentUpon>User-side.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Business.resx">
+      <DependentUpon>Business.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>

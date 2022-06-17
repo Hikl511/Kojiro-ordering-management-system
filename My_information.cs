@@ -116,6 +116,15 @@ namespace Kojiro_ordering_management_system
             //shipping_Address.Show();
         }
 
+        protected override CreateParams CreateParams  //防止界面闪烁  同时也去除了动画
+        {
+            get
+            {
+                CreateParams paras = base.CreateParams;
+                paras.ExStyle |= 0x02000000;
+                return paras;
+            }
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
