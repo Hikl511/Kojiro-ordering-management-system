@@ -20,11 +20,11 @@ namespace Kojiro_ordering_management_system
 
         //在函数外，命名空间内声明页面的变量，这样子我们可以做到重新加载页面的时候不会出现初始值
         //而是在打开上次切换前的页面
-        public Ordering_food  ordering_Food = new Ordering_food();
+        //public Ordering_food  ordering_Food = new Ordering_food();
         public Orders orders = new Orders();
         public My_information  my_Information = new My_information();
         public More more = new More();
-        public Main_interface main_interface = new Main_interface();
+        //public Main_interface main_interface = new Main_interface();
 
        
         //窗体边框阴影动画效果移动改变大小
@@ -187,33 +187,43 @@ namespace Kojiro_ordering_management_system
 
         private void User_side_Load_1(object sender, EventArgs e)
         {
+            Main_interface main_interface = new Main_interface();
             loadform(main_interface);//加载时显示主页面
             //窗体加载动画效果
             //AnimateWindow(this.Handle, 300, AW_BLEND | AW_CENTER);
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            Main_interface main_interface = new Main_interface();
             loadform(main_interface);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Ordering_food ordering_Food = new Ordering_food();
             loadform(ordering_Food);
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Business.business.Close();
+            Ordering_food.ordering_Food.Close();
             loadform(orders);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             loadform(my_Information);
+            Business.business.Close();
+            Ordering_food.ordering_Food.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             loadform(more);
+            Business.business.Close();
+            Ordering_food.ordering_Food.Close();
         }
 
         /// <summary>

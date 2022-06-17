@@ -20,6 +20,7 @@ namespace Kojiro_ordering_management_system
 
         private void My_information_Load(object sender, EventArgs e)
         {
+            Ordering_food.ordering_Food.a = "";
             PicShow();//从数据库中查找图片路径并给控件赋值
             UsName();
         }
@@ -135,6 +136,7 @@ namespace Kojiro_ordering_management_system
 
         }
 
+       
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
             Main_interface main_Interface = new Main_interface();

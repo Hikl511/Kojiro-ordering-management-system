@@ -9,8 +9,7 @@ namespace Kojiro_ordering_management_system
     public partial class Ordering_food : Form
     {
         public static Ordering_food ordering_Food = new Ordering_food();
-        Business business = new Business();//商家窗口
-        public string a = "";
+        public string a;
         public Ordering_food()
         {
             ordering_Food = this;
@@ -85,17 +84,17 @@ namespace Kojiro_ordering_management_system
         }
         public void btn_click(object sender, System.EventArgs e)
         { 
-                a = "";
                 PictureBox b = (PictureBox)sender;
                 a = b.Name.ToString();
+                Business business = new Business();
                 User_side.user_Side.loadform(business);//点控件 打开商家详情页
         }
            
         public void btn_click2(object sender, System.EventArgs e)
         {
-                a = "";
                 Label lbl = (Label)sender;
                 a = lbl.Text;
+                Business business = new Business();
                 User_side.user_Side.loadform(business);
             
         }

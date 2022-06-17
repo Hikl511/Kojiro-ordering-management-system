@@ -54,105 +54,105 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business.cs">
+    <Compile Include="用户端\Business.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Business.Designer.cs">
+    <Compile Include="用户端\Business.Designer.cs">
       <DependentUpon>Business.cs</DependentUpon>
     </Compile>
     <Compile Include="DBHelper.cs" />
-    <Compile Include="login.cs">
+    <Compile Include="用户端\login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.Designer.cs">
+    <Compile Include="用户端\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="enroll.cs">
+    <Compile Include="用户端\enroll.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="enroll.Designer.cs">
+    <Compile Include="用户端\enroll.Designer.cs">
       <DependentUpon>enroll.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main interface.cs">
+    <Compile Include="用户端\Main interface.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main interface.Designer.cs">
+    <Compile Include="用户端\Main interface.Designer.cs">
       <DependentUpon>Main interface.cs</DependentUpon>
     </Compile>
-    <Compile Include="More.cs">
+    <Compile Include="用户端\More.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="More.Designer.cs">
+    <Compile Include="用户端\More.Designer.cs">
       <DependentUpon>More.cs</DependentUpon>
     </Compile>
-    <Compile Include="My_information.cs">
+    <Compile Include="用户端\My_information.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="My_information.Designer.cs">
+    <Compile Include="用户端\My_information.Designer.cs">
       <DependentUpon>My_information.cs</DependentUpon>
     </Compile>
     <Compile Include="Ordering.cs" />
-    <Compile Include="Ordering_food.cs">
+    <Compile Include="用户端\Ordering_food.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ordering_food.Designer.cs">
+    <Compile Include="用户端\Ordering_food.Designer.cs">
       <DependentUpon>Ordering_food.cs</DependentUpon>
     </Compile>
-    <Compile Include="Orders.cs">
+    <Compile Include="用户端\Orders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Orders.Designer.cs">
+    <Compile Include="用户端\Orders.Designer.cs">
       <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Retrieve pwd.cs">
+    <Compile Include="用户端\Retrieve pwd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Retrieve pwd.Designer.cs">
+    <Compile Include="用户端\Retrieve pwd.Designer.cs">
       <DependentUpon>Retrieve pwd.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShaXian.cs">
+    <Compile Include="用户端\ShaXian.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShaXian.Designer.cs">
+    <Compile Include="用户端\ShaXian.Designer.cs">
       <DependentUpon>ShaXian.cs</DependentUpon>
     </Compile>
-    <Compile Include="Shipping_address.cs">
+    <Compile Include="用户端\Shipping_address.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Shipping_address.Designer.cs">
+    <Compile Include="用户端\Shipping_address.Designer.cs">
       <DependentUpon>Shipping_address.cs</DependentUpon>
     </Compile>
     <Compile Include="Smphone.cs" />
-    <Compile Include="User-side.cs">
+    <Compile Include="用户端\User-side.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User-side.Designer.cs">
+    <Compile Include="用户端\User-side.Designer.cs">
       <DependentUpon>User-side.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Business.resx">
+    <EmbeddedResource Include="用户端\Business.resx">
       <DependentUpon>Business.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
+    <EmbeddedResource Include="用户端\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="enroll.resx">
+    <EmbeddedResource Include="用户端\enroll.resx">
       <DependentUpon>enroll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main interface.resx">
+    <EmbeddedResource Include="用户端\Main interface.resx">
       <DependentUpon>Main interface.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="More.resx">
+    <EmbeddedResource Include="用户端\More.resx">
       <DependentUpon>More.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="My_information.resx">
+    <EmbeddedResource Include="用户端\My_information.resx">
       <DependentUpon>My_information.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ordering_food.resx">
+    <EmbeddedResource Include="用户端\Ordering_food.resx">
       <DependentUpon>Ordering_food.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Orders.resx">
+    <EmbeddedResource Include="用户端\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -165,16 +165,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Retrieve pwd.resx">
+    <EmbeddedResource Include="用户端\Retrieve pwd.resx">
       <DependentUpon>Retrieve pwd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShaXian.resx">
+    <EmbeddedResource Include="用户端\ShaXian.resx">
       <DependentUpon>ShaXian.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Shipping_address.resx">
+    <EmbeddedResource Include="用户端\Shipping_address.resx">
       <DependentUpon>Shipping_address.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User-side.resx">
+    <EmbeddedResource Include="用户端\User-side.resx">
       <DependentUpon>User-side.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -399,6 +399,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\返回.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\首页.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\首页 拷贝.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

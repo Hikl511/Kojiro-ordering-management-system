@@ -23,7 +23,7 @@ namespace Kojiro_ordering_management_system
 
         private void Main_interface_Load(object sender, EventArgs e)
         {
-            
+           // Ordering_food.ordering_Food.a = "";
         }
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
