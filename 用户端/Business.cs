@@ -146,7 +146,7 @@ namespace Kojiro_ordering_management_system
                     lbl2[i].Text = "￥" + money[i].Substring(0, 4);//截取价格字符串 为4为 保留一个小数点                                               // lbl2[i].Text = money[i];
                     lbl2[i].ForeColor = Color.Red;
                     btu1[i].Size = new Size(80, 20);
-                    btu1[i].FlatAppearance.BorderSize = 0;//无边框
+                    btu1[i].FlatAppearance.BorderSize = 0;//无边框 btu1[i].FlatStyle = FlatStyle.Flat;
                     btu1[i].Name = lbltxt[i];
                     btu1[i].Text = "加入购物车";
                     btu1[i].Font = new Font("宋体", 9);

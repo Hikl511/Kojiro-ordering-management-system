@@ -31,8 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Shipping_address));
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,14 +52,39 @@
             // button5
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("新宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button5.ForeColor = System.Drawing.Color.Red;
-            this.button5.Location = new System.Drawing.Point(186, 451);
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(200, 450);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(270, 29);
             this.button5.TabIndex = 10;
-            this.button5.Text = "切换账号";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Text = "添加地址";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(139, 59);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(385, 369);
+            this.panel1.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("宋体", 10F);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(139, 166);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 14);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "请先添加收货地址！";
+            this.label2.Visible = false;
             // 
             // pictureBox2
             // 
@@ -69,14 +96,6 @@
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(139, 59);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(385, 369);
-            this.panel1.TabIndex = 13;
             // 
             // Shipping_address
             // 
@@ -93,6 +112,8 @@
             this.Name = "Shipping_address";
             this.Text = "Shipping_address";
             this.Load += new System.EventHandler(this.Shipping_address_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,5 +126,6 @@
         private System.Windows.Forms.Button button5;
         public System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -5,13 +5,8 @@ using Com.Alipay.Model;
 using Spire.Barcode;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using 支付宝c接口;
 
@@ -107,7 +102,7 @@ namespace Kojiro_ordering_management_system.用户端
         }
 
 
-        
+
 
         private AlipayTradePrecreateContentBuilder BuildPrecreateContent()
         {
@@ -135,9 +130,9 @@ namespace Kojiro_ordering_management_system.用户端
             //不参与优惠计算的金额
             //builder.undiscountable_amount = "";
             //订单名称
-            builder.subject = ShoppingCart.shoppingCart.DelName+ System.DateTime.Now.ToString("yyyyMMddHHmmss") + "0000" + (new Random()).Next(1, 10000).ToString().Trim();//订单名字
+            builder.subject = ShoppingCart.shoppingCart.DelName + System.DateTime.Now.ToString("yyyyMMddHHmmss") + "0000" + (new Random()).Next(1, 10000).ToString().Trim();//订单名字
             //自定义超时时间
-            builder.timeout_express = "60s";
+            builder.timeout_express = "120s";
             //订单描述
             builder.body = "";
             //门店编号，很重要的参数，可以用作之后的营销
@@ -198,9 +193,10 @@ namespace Kojiro_ordering_management_system.用户端
         /// </summary>
         /// <param name="o">订单号</param>
         /// 
+        AlipayF2FQueryResult queryResult = new AlipayF2FQueryResult();//定义在方法外  方便跳转订单方法调用
         public void LoopQuery(object o)
         {
-            AlipayF2FQueryResult queryResult = new AlipayF2FQueryResult();
+           
             int count = 100;
             int interval = 10000;
             string out_trade_no = o.ToString();
@@ -232,7 +228,7 @@ namespace Kojiro_ordering_management_system.用户端
         {
             //支付成功，请更新相应单据
             // log.WriteLine("扫码支付成功：外部订单号" + queryResult.response.OutTradeNo);
-            MessageBox.Show("支付成功，订单号:" + queryResult.response.OutTradeNo,"提示");
+            MessageBox.Show("支付成功，请返回订单界面！"+"\n"+"订单号:" + queryResult.response.OutTradeNo, "提示");   
         }
         /// <summary>
         /// 请添加支付失败后的处理

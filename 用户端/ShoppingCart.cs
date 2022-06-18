@@ -196,7 +196,7 @@ namespace Kojiro_ordering_management_system.用户端
             }
             else
             {
-                MessageBox.Show("请选择收货地址！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("请选择或添加收货地址！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }
