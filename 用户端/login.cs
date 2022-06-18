@@ -117,6 +117,7 @@ namespace Kojiro_ordering_management_system
         {
             string Uid = textBox1.Text;
             string Pwd = textBox2.Text;
+       
             if (textBox1.Text != "")
             {
                 if (textBox2.Text != "")
@@ -130,8 +131,6 @@ namespace Kojiro_ordering_management_system
                         dr.Close();//查询之后关闭
                         dr.Dispose();//释放资源
                         Hide();//隐藏
-                        textBox1.Text = "";
-                        textBox2.Text = "";
                         user_Side.Show();//打开窗口
                     }
                     else
@@ -181,5 +180,6 @@ namespace Kojiro_ordering_management_system
             User_side user = new User_side();
             user.Show();
         }
+        
     }
 }

@@ -68,14 +68,17 @@ namespace Kojiro_ordering_management_system
                     pictureBox1.Image = Image.FromFile(@"D:\XiaoCiLang\Resources\用户.png");
                 }
             }
+            dr.Close();
             DBHelper.conn.Close();
             conn.Close();
 
         }
         private void button4_Click(object sender, EventArgs e)
         {
+            Modify_data modify_Data = new Modify_data();
+            User_side.user_Side.loadform(modify_Data);//打开界面
 
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+           /* OpenFileDialog openFileDialog1 = new OpenFileDialog();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)//判断是否选择了图片
             {
                 photoname = openFileDialog1.FileName;
@@ -92,7 +95,7 @@ namespace Kojiro_ordering_management_system
                     if (DBHelper.ENQ(sql))
                     {
 
-                        MessageBox.Show("cg");
+                        MessageBox.Show("成功！");
                     }
                 }
                 catch (Exception)
@@ -101,7 +104,7 @@ namespace Kojiro_ordering_management_system
                 }
                 conn.Close();
                 pictureBox1.Image = Image.FromFile(photoname);
-            }
+            }*/
         }
 
         private void button5_Click(object sender, EventArgs e)
