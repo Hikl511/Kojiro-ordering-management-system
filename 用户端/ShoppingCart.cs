@@ -13,9 +13,11 @@ namespace Kojiro_ordering_management_system.用户端
 {
     public partial class ShoppingCart : Form
     {
+        public static  ShoppingCart shoppingCart = new ShoppingCart();
         public ShoppingCart()
         {
             InitializeComponent();
+            shoppingCart = this;
         }
 
         private void ShoppingCart_Load(object sender, EventArgs e)
@@ -139,7 +141,7 @@ namespace Kojiro_ordering_management_system.用户端
                 {
                     btu[i] = new Button();
                     btu[i].Name = "button" + i;
-                    System.Drawing.Point p = new Point(420, 480);
+                    System.Drawing.Point p = new Point(460, 480);
                     btu[i].Location = p;
                     btu[i].Anchor = (AnchorStyles)Bottom;
                     btu[i].Size = new Size(80, 40);
@@ -160,10 +162,11 @@ namespace Kojiro_ordering_management_system.用户端
             }
         }
 
+        public string DelName;
         public void del_click(object sender, System.EventArgs e)//删除事件
         {
             Button b = (Button)sender;
-            string DelName = b.Name.ToString(); //单击时把当前单机按钮的值传给变量 给删除语句窗口调用
+            DelName = b.Name.ToString(); //单击时把当前单机按钮的值传给变量 给删除语句窗口调用
             //添加到购物车表
             string DeleteSql = string.Format("delete from ShoppingCart where Name='{0}'", b.Name.ToString());
             if (DBHelper.ENQ(DeleteSql))
@@ -172,9 +175,10 @@ namespace Kojiro_ordering_management_system.用户端
                 User_side.user_Side.loadform(shoppingCart);
             }
         }
-        public void checkout_click(object sender, System.EventArgs e)//
+        public void checkout_click(object sender, System.EventArgs e)//打开结账界面
         {
- 
+            Checkout checkout = new Checkout();
+            User_side.user_Side.loadform(checkout);
             
         }
 
@@ -197,19 +201,27 @@ namespace Kojiro_ordering_management_system.用户端
         }
 
 
-
+        public double DiscountedPrice;
         public void LabelText()//获取数量和总价
         {
             string sqlcount = "select Count(Name) from ShoppingCart";//查询行数 
             int result = (int)DBHelper.ES(sqlcount);
             if (result > 0)//大于0就代表购物车有数据了
             {
-                string Sum = string.Format("select sum(quantity* money) from ShoppingCart");//查总价
+                string Sum = string.Format("select sum(quantity* money)Sum from ShoppingCart");//查总价
                 string ShopCount = string.Format("select  sum(quantity) from ShoppingCart");//查个数
                 object Price = DBHelper.ES(Sum);
                 string sum = Price.ToString();
                 string PriceSum = DBHelper.ES(ShopCount).ToString();
-                label3.Text = "商品数量:" + PriceSum + "        ￥:" + sum.Substring(0, 5);
+                SqlDataReader dr = DBHelper.GDR(Sum);
+                while (dr.Read())
+                {
+                   DiscountedPrice = double.Parse(dr["Sum"].ToString()) * 0.0008;
+                   label3.Text = "商品数量:" + PriceSum + " ￥:" + sum.Substring(0, 5) +"  (0.0008折后价)￥:" + DiscountedPrice.ToString().Substring(0, 4);// + DiscountedPrice
+                }
+              dr.Close();
+              
+               
             }
             else
             {

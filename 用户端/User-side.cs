@@ -162,15 +162,15 @@ namespace Kojiro_ordering_management_system
 
         private void butClose_Click(object sender, EventArgs e)
         {
-            // Application.Exit();
-            
-            if (Form1.form1.WindowState == FormWindowState.Normal)//因为登录时隐藏了主窗口  所以在本程序关闭前判断一下主窗口是否时默认状态 如果是就关掉 以防有后台下次打不开
-            {
-                Form1.form1.Close();
-            }
+           System.Environment.Exit(0);//完全退出
 
-            Close();
-            Application.Exit();
+            /* if (Form1.form1.WindowState == FormWindowState.Normal)//因为登录时隐藏了主窗口  所以在本程序关闭前判断一下主窗口是否时默认状态 如果是就关掉 以防有后台下次打不开
+             {
+                 Form1.form1.Close();
+             }
+
+             Close();*/
+             //Application.Exit();
         }
 
         private void butMinimize_Click(object sender, EventArgs e)
@@ -206,20 +206,20 @@ namespace Kojiro_ordering_management_system
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Ordering_food.ordering_Food.Close();
+            Orders orders = new Orders();
             loadform(orders);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            My_information my_information = new My_information();
             loadform(my_Information);
-            Ordering_food.ordering_Food.Close();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             loadform(more);
-            Ordering_food.ordering_Food.Close();
         }
 
         /// <summary>

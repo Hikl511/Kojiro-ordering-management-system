@@ -17,7 +17,7 @@ namespace Kojiro_ordering_management_system
       {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Checkout());
+            Application.Run(new Form1());
         }
     }
 }

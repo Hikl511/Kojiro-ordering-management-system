@@ -39,7 +39,7 @@ namespace Kojiro_ordering_management_system
                 string DeleteSql = string.Format("delete from ShoppingCart");
                 DBHelper.ENQ(DeleteSql);
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
               //  throw;

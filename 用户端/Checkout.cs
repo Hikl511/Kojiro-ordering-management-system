@@ -68,17 +68,11 @@ namespace Kojiro_ordering_management_system.用户端
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
+        private void QrCodeShow()//显示支付二维码
         {
-            AlipayTradePrecreateContentBuilder builder = BuildPrecreateContent();
+            AlipayTradePrecreateContentBuilder builder = BuildPrecreateContent();//接口
             string out_trade_no = builder.out_trade_no;
-            //如果需要接收扫码支付异步通知，那么请把下面两行注释代替本行。
-            //推荐使用轮询撤销机制，不推荐使用异步通知,避免单边账问题发生。
             AlipayF2FPrecreateResult precreateResult = serviceClient.tradePrecreate(builder);
-            //string notify_url = "http://10.5.21.14/notify_url.aspx";  //商户接收异步通知的地址
-            //AlipayF2FPrecreateResult precreateResult = serviceClient.tradePrecreate(builder, notify_url);
-
-            //以下返回结果的处理供参考。
             //payResponse.QrCode即二维码对于的链接
             //将链接用二维码工具生成二维码打印出来，顾客可以用支付宝钱包扫码支付。
             string result = "";
@@ -88,7 +82,7 @@ namespace Kojiro_ordering_management_system.用户端
                 case ResultEnum.SUCCESS:
                     DoWaitProcess(precreateResult);
                     Barcode(precreateResult.response.QrCode.ToString());
-                    ParameterizedThreadStart ParStart = new ParameterizedThreadStart(LoopQuery);
+                    ParameterizedThreadStart ParStart = new ParameterizedThreadStart(LoopQuery);//轮询支付状态
                     Thread myThread = new Thread(ParStart);
                     object o = precreateResult.response.OutTradeNo;
                     myThread.Start(o);
@@ -112,6 +106,9 @@ namespace Kojiro_ordering_management_system.用户端
             }
         }
 
+
+        
+
         private AlipayTradePrecreateContentBuilder BuildPrecreateContent()
         {
             //线上联调时，请输入真实的外部订单号。
@@ -122,7 +119,7 @@ namespace Kojiro_ordering_management_system.用户端
             }
             else
             {
-                out_trade_no = WIDout_request_no.Text.Trim();
+                out_trade_no = WIDout_request_no.Text.Trim();//设置订单号
             }
 
             AlipayTradePrecreateContentBuilder builder = new AlipayTradePrecreateContentBuilder();
@@ -131,15 +128,16 @@ namespace Kojiro_ordering_management_system.用户端
             //订单编号
             builder.out_trade_no = out_trade_no;
             //订单总金额
-            builder.total_amount = WIDtotal_fee.Text.Trim();
+            // builder.total_amount = ShoppingCart.shoppingCart.DiscountedPrice.ToString().Trim();//从购物车窗体控件获取金额
+            builder.total_amount = WIDtotal_fee.Text.Trim();//从购物车窗体控件获取金额
             //参与优惠计算的金额
             //builder.discountable_amount = "";
             //不参与优惠计算的金额
             //builder.undiscountable_amount = "";
             //订单名称
-            builder.subject = WIDsubject.Text.Trim();
+            builder.subject = ShoppingCart.shoppingCart.DelName+ System.DateTime.Now.ToString("yyyyMMddHHmmss") + "0000" + (new Random()).Next(1, 10000).ToString().Trim();//订单名字
             //自定义超时时间
-            builder.timeout_express = "1m";
+            builder.timeout_express = "60s";
             //订单描述
             builder.body = "";
             //门店编号，很重要的参数，可以用作之后的营销
@@ -199,6 +197,7 @@ namespace Kojiro_ordering_management_system.用户端
         /// 轮询
         /// </summary>
         /// <param name="o">订单号</param>
+        /// 
         public void LoopQuery(object o)
         {
             AlipayF2FQueryResult queryResult = new AlipayF2FQueryResult();
@@ -208,29 +207,33 @@ namespace Kojiro_ordering_management_system.用户端
 
             for (int i = 1; i <= count; i++)
             {
-                Thread.Sleep(interval);
-                queryResult = serviceClient.tradeQuery(out_trade_no);
+                Thread.Sleep(interval);//当前10000毫秒
+                queryResult = serviceClient.tradeQuery(out_trade_no);//通过订单号查询
                 if (queryResult != null)
                 {
-                    if (queryResult.Status == ResultEnum.SUCCESS)
+                    if (queryResult.Status == ResultEnum.SUCCESS)//Success为支付成功
                     {
                         DoSuccessProcess(queryResult);
+                       
                         return;
+                    }
+                    else
+                    {
+                        DoFailedProcess(queryResult);//否则弹出支付失败
+                        return;//失败后退出循环
                     }
                 }
             }
-            DoFailedProcess(queryResult);
         }
-
         /// <summary>
         /// 请添加支付成功后的处理
         /// </summary>
+        /// 
         private void DoSuccessProcess(AlipayF2FQueryResult queryResult)
         {
             //支付成功，请更新相应单据
             // log.WriteLine("扫码支付成功：外部订单号" + queryResult.response.OutTradeNo);
-            MessageBox.Show("支付成功，外部订单号" + queryResult.response.OutTradeNo);
-
+            MessageBox.Show("支付成功，订单号:" + queryResult.response.OutTradeNo,"提示");
         }
         /// <summary>
         /// 请添加支付失败后的处理
@@ -238,8 +241,20 @@ namespace Kojiro_ordering_management_system.用户端
         private void DoFailedProcess(AlipayF2FQueryResult queryResult)
         {
             //支付失败，请更新相应单据
-            MessageBox.Show("支付失败，外部订单号" + queryResult.response.OutTradeNo);
+            MessageBox.Show("支付失败或超时，请重新扫码支付或重新回购物车结算，订单号:" + queryResult.response.OutTradeNo);
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            ShoppingCart shoppingCart = new ShoppingCart();
+            User_side.user_Side.loadform(shoppingCart);
+        }
+
+        private void Checkout_Load_1(object sender, EventArgs e)
+        {
+            WIDtotal_fee.Text = ShoppingCart.shoppingCart.DiscountedPrice.ToString().Substring(0, 4);
+            label5.Text = "￥ " + WIDtotal_fee.Text;
+            QrCodeShow();
+        }
     }
 }

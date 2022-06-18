@@ -57,7 +57,7 @@ namespace Kojiro_ordering_management_system
                         da.Fill(ds);
                         photoname = ds.Tables[0].Rows[0][0].ToString();
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
 
                     }
@@ -95,7 +95,7 @@ namespace Kojiro_ordering_management_system
                         MessageBox.Show("cg");
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }
@@ -141,6 +141,12 @@ namespace Kojiro_ordering_management_system
         {
             Main_interface main_Interface = new Main_interface();
             User_side.user_Side.loadform(main_Interface);//回主界面
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Orders orders = new Orders();
+            User_side.user_Side.loadform(orders);
         }
     }
 }

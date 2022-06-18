@@ -12,9 +12,11 @@ namespace Kojiro_ordering_management_system
 {
     public partial class Orders : Form
     {
+        public static  Orders orders = new Orders();
         public Orders()
         {
             InitializeComponent();
+            orders = this;
         }
         protected override CreateParams CreateParams  //防止界面闪烁  同时也去除了动画
         {

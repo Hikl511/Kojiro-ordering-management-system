@@ -60,8 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.Designer.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="用户端\Anchor.cs" />
     <Compile Include="用户端\Business.cs">
       <SubType>Form</SubType>
@@ -174,14 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="用户端\Retrieve pwd.resx">
       <DependentUpon>Retrieve pwd.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,15 +205,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\XioaoCiLang.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\denglu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\denglu1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\yonghu.jpg" />
@@ -296,9 +286,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\导航.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Logo 小次郎 拷贝.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo 小次郎 拷贝.png" />

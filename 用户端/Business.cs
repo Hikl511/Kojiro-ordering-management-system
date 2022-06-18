@@ -38,7 +38,7 @@ namespace Kojiro_ordering_management_system
                 string ShopCount = string.Format("select  sum(quantity) from ShoppingCart");//查个数
                 label4.Text = DBHelper.ES(ShopCount).ToString();
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
               //  throw;
@@ -167,7 +167,7 @@ namespace Kojiro_ordering_management_system
                     dr.Close();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
                 //throw;
