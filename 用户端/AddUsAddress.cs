@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,11 @@ using System.Xml;
 
 namespace Kojiro_ordering_management_system.用户端
 {
+    
     public partial class AddUsAddress : Form
     {
+        string Uid = Form1.form1.textBox1.Text;
+        string Pwd = Form1.form1.textBox2.Text;
         public AddUsAddress()
         {
             InitializeComponent();
@@ -89,6 +93,72 @@ namespace Kojiro_ordering_management_system.用户端
             allcounty = getCounty(doc, this.comboBox_Pro.SelectedValue.ToString(), this.comboBox_City.SelectedValue.ToString());
             comboBox_Dist.DataSource = allcounty; //给县 区 下拉框赋值
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //屎山代码↓↓↓↓↓↓↓屎山代码↓↓↓↓↓↓↓屎山代码↓↓↓↓↓↓↓屎山代码↓↓↓↓↓↓↓屎山代码↓↓↓↓↓↓↓屎山代码↓↓↓↓↓↓↓屎山代码\\
+            string sex = "";
+            string ClassID = "";
+            if (textBox1.Text != "")
+            {
+                if (radioButton1.Checked)
+                {
+                    sex = radioButton1.Text;//性别
+                }
+                if (radioButton2.Checked)
+                {
+                    sex = radioButton2.Text;
+                }
+                if (textBox4.Text!=""&&textBox4.Text.Length==11)
+                {
+                    if (textBox5.Text!="")
+                    {
+                        string cmdText = string.Format("select ID from Ustable where Uid='{0}' and Pwd='{1}'", Uid, Pwd);//查询当前用户的唯一ID
+                        SqlDataReader dr = DBHelper.GDR(cmdText);
+                        while (dr.Read())
+                        {
+                            ClassID= dr["ID"].ToString(); 
+                        }
+                        dr.Close();
+                        string Name = textBox1.Text;
+                        string Phone = textBox4.Text;
+                        string Usaddress = comboBox_Pro.Text + comboBox_City.Text + comboBox_Dist.Text + textBox5.Text;//收货地址拼接
+                        string AddAsSql = string.Format("insert UserAddress values('{0}','{1}','{2}','{3}','{4}')", Usaddress, Name, sex, Phone, ClassID);
+                        if (DBHelper.ENQ(AddAsSql))
+                        {
+                            MessageBox.Show("添加成功！请返回购物车结算！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("添加失败！"); 
+                        }
+
+                    }
+                    else
+                    {
+                        label2.Text = "请输入详细地址！";
+                        label1.Visible = true;
+                    }
+                }
+                else
+                {
+                    label2.Text = "手机号不正确！";
+                    label1.Visible = true;
+                }
+            }
+            else
+            {
+                label2.Text = "用户名不能为空！";
+                label1.Visible = true;
+            }
+            
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            ShoppingCart shoppingCart = new ShoppingCart();
+            User_side.user_Side.loadform(shoppingCart);//返回购物车
         }
     }
 }

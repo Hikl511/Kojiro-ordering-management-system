@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kojiro_ordering_management_system.用户端
 {
     public partial class ShoppingCart : Form
     {
-        public static  ShoppingCart shoppingCart = new ShoppingCart();
+        public static ShoppingCart shoppingCart = new ShoppingCart();
+        string Uid = Form1.form1.textBox1.Text;
+        string Pwd = Form1.form1.textBox2.Text;
+
         public ShoppingCart()
         {
             InitializeComponent();
@@ -28,11 +25,12 @@ namespace Kojiro_ordering_management_system.用户端
                 SetlLeAccountsButton();//结账按钮
                 LabelText();
                 linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;//超链接文本去除下划线
+                comboxShow();
             }
             catch (Exception)
             {
 
-                //throw;
+                throw;
             }
         }
 
@@ -52,7 +50,7 @@ namespace Kojiro_ordering_management_system.用户端
                 string[] lbltxt = new string[result];//菜品名字
                 string[] money = new string[result];//菜品价格
                 string[] shopcount = new string[result];//菜品数量
-          
+
                 PictureBox[] pb = new PictureBox[result];
                 Label[] lbl = new Label[result];
                 Label[] lbl2 = new Label[result];
@@ -101,7 +99,7 @@ namespace Kojiro_ordering_management_system.用户端
                     lbl2[i].Size = new Size(100, 20);
                     lbl2[i].BorderStyle = BorderStyle.None;
                     lbl2[i].Font = new Font("宋体", 9);
-                    lbl2[i].Text = "￥" + money[i].Substring(0, 4)+"   *" +shopcount[i];//截取价格字符串  保留一个小数点                                               // lbl2[i].Text = money[i];
+                    lbl2[i].Text = "￥" + money[i].Substring(0, 4) + "   *" + shopcount[i];//截取价格字符串  保留一个小数点                                               // lbl2[i].Text = money[i];
                     lbl2[i].ForeColor = Color.Red;
                     btu1[i].Size = new Size(80, 20);
                     btu1[i].FlatAppearance.BorderSize = 0;//无边框
@@ -136,7 +134,7 @@ namespace Kojiro_ordering_management_system.用户端
             }
         }
 
-        public  void  SetlLeAccountsButton()//结账按钮
+        public void SetlLeAccountsButton()//结账按钮
         {
             try
             {
@@ -182,16 +180,25 @@ namespace Kojiro_ordering_management_system.用户端
         }
         public void checkout_click(object sender, System.EventArgs e)//打开结账界面
         {
-            if (comboBox1.Text!="")
+            string sqlcount = "select Count(Name) from ShoppingCart";//查询行数 
+            int result = (int)DBHelper.ES(sqlcount);
+            if (comboBox1.Text != "")
             {
-                Checkout checkout = new Checkout();
-                User_side.user_Side.loadform(checkout);
+                if (result > 0)//判断购物车是否有商品
+                {
+                    Checkout checkout = new Checkout();
+                    User_side.user_Side.loadform(checkout);
+                }
+                else
+                {
+                    MessageBox.Show("您还没有选择商品！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             else
             {
-                MessageBox.Show("请选择收货地址！","提示",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                MessageBox.Show("请选择收货地址！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            
+
         }
 
         public void DelShopCart()//清空购物车方法
@@ -221,27 +228,63 @@ namespace Kojiro_ordering_management_system.用户端
             if (result > 0)//大于0就代表购物车有数据了
             {
                 string Sum = string.Format("select sum(quantity* money)Sum from ShoppingCart");//查总价
-                string ShopCount = string.Format("select  sum(quantity) from ShoppingCart");//查个数
+                string ShopCount = string.Format("select sum(quantity) from ShoppingCart");//查个数
                 object Price = DBHelper.ES(Sum);
                 string sum = Price.ToString();
                 string PriceSum = DBHelper.ES(ShopCount).ToString();
                 SqlDataReader dr = DBHelper.GDR(Sum);
                 while (dr.Read())
                 {
-                   DiscountedPrice = double.Parse(dr["Sum"].ToString()) * 0.0008;
-                   label3.Text = "商品数量:" + PriceSum + " ￥:" + sum.Substring(0, 5) +"  (0.0008折后价)￥:" + DiscountedPrice.ToString().Substring(0, 4);// + DiscountedPrice
+                    DiscountedPrice = double.Parse(dr["Sum"].ToString()) * 0.0008;
+                    label3.Text = "商品数量:" + PriceSum + " ￥:" + sum.Substring(0, 5) + "  (0.0008折后价)￥:" + DiscountedPrice.ToString().Substring(0, 4);// + DiscountedPrice
                 }
-              dr.Close();
-              
-               
+                dr.Close();
+
+
             }
             else
             {
                 label3.Text = "购物车空空如也(ˉ▽ˉ；)...";
             }
+        }
+        int i = 0;
+        public void comboxShow()//收货地址方法
+        {
+            string sqlcount = string.Format("select count(ClassID) from UserAddress where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}')", Uid, Pwd); //查询行数 
+            int result = (int)DBHelper.ES(sqlcount);
+            if (result > 0)
+            {
+                string[] Address = new string[result];
+                string[] Name = new string[result];
+                string[] Sex = new string[result];
+                string[] Phone = new string[result];
+                string[] UserAddress = new string[result];
+                string setAres = string.Format("select * from UserAddress where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}')", Uid, Pwd);
+                SqlDataReader dr = DBHelper.GDR(setAres);
+                while (dr.Read())
+                {
+                    Address[i] = dr["Address"].ToString();
+                    Name[i] = dr["Name"].ToString();
+                    Sex[i] = dr["Sex"].ToString();
+                    Phone[i] = dr["Phone"].ToString();
+                    i++;
+                }
+                dr.Close();
+                for (int i = 0; i < result; i++)
+                {
+                    UserAddress[i] = Address[i] + "  " + Name[i].Trim() + "  (" + Sex[i].Trim() + ")  " + Phone[i].Trim();
+                }
+                foreach (var item in UserAddress)
+                {
+                    comboBox1.Items.Add(item);
+                }
+                comboBox1.Text = UserAddress[0];//给下拉框赋值查询出来的第一个地址
+            }
+            else
+            {
+                comboBox1.Text = "请先添加收货地址！";//如果没有查询到地址就提示用户去添加
+            }
 
-            
-         
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -260,5 +303,10 @@ namespace Kojiro_ordering_management_system.用户端
             DelShopCart();
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AddUsAddress addUsAddress = new AddUsAddress();
+            User_side.user_Side.loadform(addUsAddress); //打开添加地址
+        }
     }
 }

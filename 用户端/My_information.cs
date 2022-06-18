@@ -28,8 +28,6 @@ namespace Kojiro_ordering_management_system
 
         public void UsName()//显示用户名
         {
-            string strconn = "server=.;database=Kojiror;uid=sa;pwd=1234";
-            SqlConnection conn = new SqlConnection(strconn);
             string cmdText = string.Format("select * from Ustable where Uid='{0}' and Pwd='{1}'", Uid, Pwd);
             SqlDataReader dr = DBHelper.GDR(cmdText);
             while (dr.Read())
@@ -37,7 +35,6 @@ namespace Kojiro_ordering_management_system
                 label1.Text = dr["Name"].ToString();
             }
             dr.Close();
-            DBHelper.conn.Close();
         }
         public void PicShow()//显示头像
         {

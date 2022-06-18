@@ -75,17 +75,18 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("宋体", 9F);
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.linkLabel1.Location = new System.Drawing.Point(589, 482);
+            this.linkLabel1.Location = new System.Drawing.Point(580, 482);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(53, 12);
             this.linkLabel1.TabIndex = 53;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "添加地址";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 480);
+            this.label4.Location = new System.Drawing.Point(12, 481);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 12);
             this.label4.TabIndex = 19;
@@ -94,10 +95,11 @@
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.DropDownWidth = 469;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(122, 477);
+            this.comboBox1.Location = new System.Drawing.Point(80, 477);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(461, 20);
+            this.comboBox1.Size = new System.Drawing.Size(495, 20);
             this.comboBox1.TabIndex = 18;
             // 
             // label3
