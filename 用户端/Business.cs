@@ -170,7 +170,7 @@ namespace Kojiro_ordering_management_system
             catch (Exception)
             {
 
-                //throw;
+              //  throw e;//抛出异常
             }
             finally
             {

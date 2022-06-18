@@ -120,7 +120,7 @@ namespace Kojiro_ordering_management_system.用户端
                     dr.Close();
                 }
             }
-            catch (Exception e)//捕获一异常然后抛出
+            catch (Exception)//捕获一异常然后抛出
             {
 
                 // throw e;

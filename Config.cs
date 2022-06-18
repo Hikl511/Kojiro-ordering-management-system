@@ -20,7 +20,7 @@ namespace 支付宝c接口
         public static string merchant_public_key = @"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0LI9Z/VXDB2q1SKNfdpXzfN/xiO3BsSC6oUEdrtMSyTuZjnFctC2Nvac8rDT9OZgYY3d8aoGoHrRkh9T7SGKA6xjIPCS2jm3hBasQ3LOp2pR2ZxmUJweF/mufsNvuw9UpaX+EuzRg0aEPzjQBPGeFSR8Cx+f/nFv9RnJw50rI+HfAjxpaWLU20RMz5bo1ahjK2sFRQ2rMTA8BlfPnafZZv9pHrnXUPskQFniwKyNmnXlGNJ+3WDxy3hXPg2C4+7q6eriPzAJ6d5KcullaJcCtNg3epM8546EfHyo0tBpfTdrSFWAKKvKUM4XTOlOXLTd8APuPbKC+9Mn1ISD9FJJ7QIDAQAB";
 
         //应用ID
-        public static string appId = "2021003131681203";
+        public static string appId = "2021003131681203"; 
 
         //合作伙伴ID：partnerID
         public static string pid = "2088332481380677";

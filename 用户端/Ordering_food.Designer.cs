@@ -38,7 +38,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(40, 0);
+            this.panel1.Location = new System.Drawing.Point(29, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(40, 10, 0, 0);
             this.panel1.Size = new System.Drawing.Size(657, 538);
