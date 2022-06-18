@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kojiro_ordering_management_system.用户端;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -48,7 +49,6 @@ namespace Kojiro_ordering_management_system
             {
                 if (dr["UserImag"].ToString() != "")
                 {
-                    label2.Text = dr["UserImag"].ToString();
                     conn.Open();
                     SqlDataAdapter da = new SqlDataAdapter(cmdText, conn);
                     DataSet ds = new DataSet();
@@ -147,6 +147,12 @@ namespace Kojiro_ordering_management_system
         {
             Orders orders = new Orders();
             User_side.user_Side.loadform(orders);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Change_Password change_Password = new Change_Password();
+            User_side.user_Side.loadform(change_Password);
         }
     }
 }

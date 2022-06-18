@@ -74,6 +74,12 @@
       <DependentUpon>Business.cs</DependentUpon>
     </Compile>
     <Compile Include="DBHelper.cs" />
+    <Compile Include="用户端\Change_Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="用户端\Change_Password.Designer.cs">
+      <DependentUpon>Change_Password.cs</DependentUpon>
+    </Compile>
     <Compile Include="用户端\Checkout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </Compile>
     <EmbeddedResource Include="用户端\Business.resx">
       <DependentUpon>Business.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="用户端\Change_Password.resx">
+      <DependentUpon>Change_Password.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="用户端\Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
