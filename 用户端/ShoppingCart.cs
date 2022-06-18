@@ -27,14 +27,19 @@ namespace Kojiro_ordering_management_system.用户端
                 PicLableButtonShow();
                 SetlLeAccountsButton();//结账按钮
                 LabelText();
-
-
+                linkLabel1.LinkBehavior = LinkBehavior.NeverUnderline;//超链接文本去除下划线
             }
             catch (Exception)
             {
 
                 //throw;
             }
+        }
+
+
+        public void UsAddress()//查询用户收货地址
+        {
+            string SetSql = string.Format("select * from");
         }
 
         public void PicLableButtonShow()
@@ -141,10 +146,10 @@ namespace Kojiro_ordering_management_system.用户端
                 {
                     btu[i] = new Button();
                     btu[i].Name = "button" + i;
-                    System.Drawing.Point p = new Point(460, 480);
+                    System.Drawing.Point p = new Point(490, 490);
                     btu[i].Location = p;
                     btu[i].Anchor = (AnchorStyles)Bottom;
-                    btu[i].Size = new Size(80, 40);
+                    btu[i].Size = new Size(70, 30);
                     btu[i].BackColor = Color.White;
                     btu[i].FlatStyle = FlatStyle.Flat;
                     btu[i].FlatAppearance.BorderSize = 0;//无边框
@@ -177,8 +182,15 @@ namespace Kojiro_ordering_management_system.用户端
         }
         public void checkout_click(object sender, System.EventArgs e)//打开结账界面
         {
-            Checkout checkout = new Checkout();
-            User_side.user_Side.loadform(checkout);
+            if (comboBox1.Text!="")
+            {
+                Checkout checkout = new Checkout();
+                User_side.user_Side.loadform(checkout);
+            }
+            else
+            {
+                MessageBox.Show("请选择收货地址！","提示",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
             
         }
 

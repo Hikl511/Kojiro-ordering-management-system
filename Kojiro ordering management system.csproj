@@ -33,14 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AopSdk">
-      <HintPath>C:\Users\guaji\OneDrive\桌面\支付接口\c#支付宝\bin\Debug\AopSdk.dll</HintPath>
+    <Reference Include="AopSdk, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AopSdk.dll</HintPath>
     </Reference>
-    <Reference Include="F2FPayDll">
-      <HintPath>C:\Users\guaji\OneDrive\桌面\支付接口\c#支付宝\bin\Debug\F2FPayDll.dll</HintPath>
+    <Reference Include="F2FPayDll, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\F2FPayDll.dll</HintPath>
     </Reference>
-    <Reference Include="MyTextBox">
-      <HintPath>C:\Users\guaji\OneDrive\桌面\TextBox无边框\MyTextBox.dll</HintPath>
+    <Reference Include="MyTextBox, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MyTextBox.dll</HintPath>
     </Reference>
     <Reference Include="Spire.Barcode">
       <HintPath>C:\Users\guaji\OneDrive\桌面\支付接口\c#支付宝\bin\Debug\Spire.Barcode.dll</HintPath>

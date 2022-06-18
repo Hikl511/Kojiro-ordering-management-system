@@ -214,7 +214,6 @@ namespace Kojiro_ordering_management_system.用户端
                     if (queryResult.Status == ResultEnum.SUCCESS)//Success为支付成功
                     {
                         DoSuccessProcess(queryResult);
-                       
                         return;
                     }
                     else
