@@ -199,8 +199,10 @@ namespace Kojiro_ordering_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Ordering_food ordering_Food = new Ordering_food();
-            loadform(ordering_Food);
+           // Ordering_food ordering_Food = new Ordering_food();
+           // loadform(ordering_Food);
+            AdminOrdering_food adminOrdering_food = new AdminOrdering_food();
+            loadform(adminOrdering_food);
            
         }
 

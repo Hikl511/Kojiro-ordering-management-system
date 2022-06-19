@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="用户端\AdminOrdering_food.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="用户端\AdminOrdering_food.Designer.cs">
+      <DependentUpon>AdminOrdering_food.cs</DependentUpon>
+    </Compile>
     <Compile Include="用户端\AddUsAddress_My.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     </Compile>
     <Compile Include="用户端\AddUsAddress.Designer.cs">
       <DependentUpon>AddUsAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="用户端\AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="用户端\AdminLogin.Designer.cs">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="用户端\Modify_data.cs">
       <SubType>Form</SubType>
@@ -176,11 +188,17 @@
     <Compile Include="用户端\User-side.Designer.cs">
       <DependentUpon>User-side.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="用户端\AdminOrdering_food.resx">
+      <DependentUpon>AdminOrdering_food.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="用户端\AddUsAddress_My.resx">
       <DependentUpon>AddUsAddress_My.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="用户端\AddUsAddress.resx">
       <DependentUpon>AddUsAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="用户端\AdminLogin.resx">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="用户端\Modify_data.resx">
       <DependentUpon>Modify_data.cs</DependentUpon>

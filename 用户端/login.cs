@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
+using Kojiro_ordering_management_system.用户端;
 
 namespace Kojiro_ordering_management_system
 {
@@ -44,7 +45,7 @@ namespace Kojiro_ordering_management_system
         }
         private void butClose_Click(object sender, EventArgs e)
         {
-            Close();//关闭
+            Application.Exit();//关闭
         }
         private void butMinimize_Click(object sender, EventArgs e)
         {
@@ -177,8 +178,9 @@ namespace Kojiro_ordering_management_system
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            User_side user = new User_side();
-            user.Show();
+            AdminLogin adminLogin = new AdminLogin();
+            adminLogin.Show();
+            Hide();
         }
         
     }
