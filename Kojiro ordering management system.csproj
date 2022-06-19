@@ -63,191 +63,236 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="用户端\AdminOrdering_food.cs">
+    <Compile Include="From\AdminUser_side.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\AdminOrdering_food.Designer.cs">
-      <DependentUpon>AdminOrdering_food.cs</DependentUpon>
+    <Compile Include="From\AdminUser_side.Designer.cs">
+      <DependentUpon>AdminUser_side.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\AddUsAddress_My.cs">
+    <Compile Include="From\Orders_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\AddUsAddress_My.Designer.cs">
+    <Compile Include="From\Orders_Main.Designer.cs">
+      <DependentUpon>Orders_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="From\Order_Close.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\Order_Close.Designer.cs">
+      <DependentUpon>Order_Close.cs</DependentUpon>
+    </Compile>
+    <Compile Include="From\Order_Completed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\Order_Completed.Designer.cs">
+      <DependentUpon>Order_Completed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="From\Order_Paid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\Order_Paid.Designer.cs">
+      <DependentUpon>Order_Paid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="From\AddUsAddress_My.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\AddUsAddress_My.Designer.cs">
       <DependentUpon>AddUsAddress_My.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\AddUsAddress.cs">
+    <Compile Include="From\AddUsAddress.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\AddUsAddress.Designer.cs">
+    <Compile Include="From\AddUsAddress.Designer.cs">
       <DependentUpon>AddUsAddress.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\AdminLogin.cs">
+    <Compile Include="From\AdminLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\AdminLogin.Designer.cs">
+    <Compile Include="From\AdminLogin.Designer.cs">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\Modify_data.cs">
+    <Compile Include="From\Modify_data.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\Modify_data.Designer.cs">
+    <Compile Include="From\Modify_data.Designer.cs">
       <DependentUpon>Modify_data.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\Change_Password.cs">
+    <Compile Include="From\Change_Password.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\Change_Password.Designer.cs">
+    <Compile Include="From\Change_Password.Designer.cs">
       <DependentUpon>Change_Password.cs</DependentUpon>
     </Compile>
     <Compile Include="Config.cs" />
+    <Compile Include="From\Orders_Delivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\Orders_Delivery.Designer.cs">
+      <DependentUpon>Orders_Delivery.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="用户端\Anchor.cs" />
-    <Compile Include="用户端\Business.cs">
+    <Compile Include="From\Anchor.cs" />
+    <Compile Include="From\Business.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\Business.Designer.cs">
+    <Compile Include="From\Business.Designer.cs">
       <DependentUpon>Business.cs</DependentUpon>
     </Compile>
     <Compile Include="DBHelper.cs" />
-    <Compile Include="用户端\Checkout.cs">
+    <Compile Include="From\Checkout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\Checkout.Designer.cs">
+    <Compile Include="From\Checkout.Designer.cs">
       <DependentUpon>Checkout.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\login.cs">
+    <Compile Include="From\login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\login.Designer.cs">
+    <Compile Include="From\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\enroll.cs">
+    <Compile Include="From\enroll.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\enroll.Designer.cs">
+    <Compile Include="From\enroll.Designer.cs">
       <DependentUpon>enroll.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\Main interface.cs">
+    <Compile Include="From\Main interface.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\Main interface.Designer.cs">
+    <Compile Include="From\Main interface.Designer.cs">
       <DependentUpon>Main interface.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\More.cs">
+    <Compile Include="From\More.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\More.Designer.cs">
+    <Compile Include="From\More.Designer.cs">
       <DependentUpon>More.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\My_information.cs">
+    <Compile Include="From\My_information.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\My_information.Designer.cs">
+    <Compile Include="From\My_information.Designer.cs">
       <DependentUpon>My_information.cs</DependentUpon>
     </Compile>
     <Compile Include="Ordering.cs" />
-    <Compile Include="用户端\Ordering_food.cs">
+    <Compile Include="From\Ordering_food.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\Ordering_food.Designer.cs">
+    <Compile Include="From\Ordering_food.Designer.cs">
       <DependentUpon>Ordering_food.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\Orders.cs">
+    <Compile Include="From\Orders_All.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\Orders.Designer.cs">
-      <DependentUpon>Orders.cs</DependentUpon>
+    <Compile Include="From\Orders_All.Designer.cs">
+      <DependentUpon>Orders_All.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="用户端\Retrieve pwd.cs">
+    <Compile Include="From\Retrieve pwd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\Retrieve pwd.Designer.cs">
+    <Compile Include="From\Retrieve pwd.Designer.cs">
       <DependentUpon>Retrieve pwd.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\Shipping_address.cs">
+    <Compile Include="From\Shipping_address.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\Shipping_address.Designer.cs">
+    <Compile Include="From\Shipping_address.Designer.cs">
       <DependentUpon>Shipping_address.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\ShoppingCart.cs">
+    <Compile Include="From\ShoppingCart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\ShoppingCart.Designer.cs">
+    <Compile Include="From\ShoppingCart.Designer.cs">
       <DependentUpon>ShoppingCart.cs</DependentUpon>
     </Compile>
-    <Compile Include="用户端\User-side.cs">
+    <Compile Include="From\User-side.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="用户端\User-side.Designer.cs">
+    <Compile Include="From\User-side.Designer.cs">
       <DependentUpon>User-side.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="用户端\AdminOrdering_food.resx">
-      <DependentUpon>AdminOrdering_food.cs</DependentUpon>
+    <EmbeddedResource Include="From\AdminUser_side.resx">
+      <DependentUpon>AdminUser_side.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\AddUsAddress_My.resx">
+    <EmbeddedResource Include="From\Orders_Delivery.resx">
+      <DependentUpon>Orders_Delivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\Orders_Main.resx">
+      <DependentUpon>Orders_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\AddUsAddress_My.resx">
       <DependentUpon>AddUsAddress_My.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\AddUsAddress.resx">
+    <EmbeddedResource Include="From\AddUsAddress.resx">
       <DependentUpon>AddUsAddress.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\AdminLogin.resx">
+    <EmbeddedResource Include="From\AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\Modify_data.resx">
+    <EmbeddedResource Include="From\Modify_data.resx">
       <DependentUpon>Modify_data.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\Change_Password.resx">
+    <EmbeddedResource Include="From\Change_Password.resx">
       <DependentUpon>Change_Password.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\Business.resx">
+    <EmbeddedResource Include="From\Business.resx">
       <DependentUpon>Business.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\Checkout.resx">
+    <EmbeddedResource Include="From\Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\login.resx">
+    <EmbeddedResource Include="From\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\enroll.resx">
+    <EmbeddedResource Include="From\enroll.resx">
       <DependentUpon>enroll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\Main interface.resx">
+    <EmbeddedResource Include="From\Main interface.resx">
       <DependentUpon>Main interface.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\More.resx">
+    <EmbeddedResource Include="From\More.resx">
       <DependentUpon>More.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\My_information.resx">
+    <EmbeddedResource Include="From\My_information.resx">
       <DependentUpon>My_information.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\Ordering_food.resx">
+    <EmbeddedResource Include="From\Ordering_food.resx">
       <DependentUpon>Ordering_food.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\Orders.resx">
-      <DependentUpon>Orders.cs</DependentUpon>
+    <EmbeddedResource Include="From\Orders_All.resx">
+      <DependentUpon>Orders_All.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\Retrieve pwd.resx">
+    <EmbeddedResource Include="From\Order_Close.resx">
+      <DependentUpon>Order_Close.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\Order_Completed.resx">
+      <DependentUpon>Order_Completed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\Order_Paid.resx">
+      <DependentUpon>Order_Paid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From\Retrieve pwd.resx">
       <DependentUpon>Retrieve pwd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\Shipping_address.resx">
+    <EmbeddedResource Include="From\Shipping_address.resx">
       <DependentUpon>Shipping_address.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\ShoppingCart.resx">
+    <EmbeddedResource Include="From\ShoppingCart.resx">
       <DependentUpon>ShoppingCart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="用户端\User-side.resx">
+    <EmbeddedResource Include="From\User-side.resx">
       <DependentUpon>User-side.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
@@ -479,6 +524,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\清空购物车.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R-C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\已付款.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\已付款1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\订单.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\订单黑.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\已取消 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\已完成.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\商家.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

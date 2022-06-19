@@ -12,6 +12,7 @@ namespace Kojiro_ordering_management_system.用户端
         public AdminLogin()
         {
             InitializeComponent();
+            adminLogin = this;
         }
         protected override CreateParams CreateParams  //防止界面闪烁
         {
@@ -22,6 +23,8 @@ namespace Kojiro_ordering_management_system.用户端
                 return paras;
             }
         }
+
+
 
         public void SetWindowRegion()
         {
@@ -56,12 +59,15 @@ namespace Kojiro_ordering_management_system.用户端
             return path;
         }
 
+
+
         private void AdminLogin_Load(object sender, EventArgs e)
         {
             linkLabel3.LinkBehavior = LinkBehavior.NeverUnderline;
             label1.Visible = false;//加载时隐藏提示文本
         }
 
+        //设置圆角
         private void AdminLogin_Resize(object sender, EventArgs e)
         {
             SetWindowRegion();
@@ -119,12 +125,13 @@ namespace Kojiro_ordering_management_system.用户端
                 SqlDataReader dr = DBHelper.GDR(sql);
                 if (dr.HasRows)
                 {
-                    User_side user_Side = new User_side();
+                    
                     label1.Visible = false;//成功后把错误提示文本隐藏
                     dr.Close();//查询之后关闭
                     dr.Dispose();//释放资源
                     Hide();//隐藏
-                    user_Side.Show();//打开窗口
+                    AdminUser_side adminUser_Side = new AdminUser_side();
+                    adminUser_Side.Show();//打开管理员端
                 }
                 else
                 {
@@ -146,11 +153,22 @@ namespace Kojiro_ordering_management_system.用户端
                 label1.Text = "请输入用户名！";
                 label1.Visible = true;
             }
-
-
-
         }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                //复选框被勾选，明文显示
+                textBox2.PasswordChar = new char();
 
+            }
+            else
+            {
+                //复选框被取消勾选，密文显示
+                textBox2.PasswordChar = '*';
+
+            }
+        }
     }
 }
    

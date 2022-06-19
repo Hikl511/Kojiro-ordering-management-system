@@ -64,6 +64,10 @@ namespace Kojiro_ordering_management_system.用户端
             pictureBox1.Image = image;
             //image.Save("QRCode.png");
         }
+
+        /// <summary>
+        /// 显示支付二维码
+        /// </summary>
         public void QrCodeShow()//显示支付二维码
         {
             AlipayTradePrecreateContentBuilder builder = BuildPrecreateContent();//接口
@@ -211,7 +215,7 @@ namespace Kojiro_ordering_management_system.用户端
                     if (queryResult.Status == ResultEnum.SUCCESS)//Success为支付成功
                     {
                         DoSuccessProcess(queryResult);
-                        
+                        label6.Text = "1";
                         return;
                     }
                     else
@@ -230,8 +234,9 @@ namespace Kojiro_ordering_management_system.用户端
         {
             //支付成功，请更新相应单据
             // log.WriteLine("扫码支付成功：外部订单号" + queryResult.response.OutTradeNo);
-            MessageBox.Show("支付成功，请返回订单界面！" + "\n" + "订单号:" + queryResult.response.OutTradeNo, "提示");
             label6.Text = "1";
+            MessageBox.Show("支付成功，请返回订单界面！" + "\n" + "订单号:" + queryResult.response.OutTradeNo, "提示");
+           
         }
         /// <summary>
         /// 请添加支付失败后的处理
@@ -254,7 +259,6 @@ namespace Kojiro_ordering_management_system.用户端
             WIDtotal_fee.Text = ShoppingCart.shoppingCart.DiscountedPrice.ToString().Substring(0, 4);
             label5.Text = "￥ " + WIDtotal_fee.Text;
             QrCodeShow();
-
         }
     }
 }

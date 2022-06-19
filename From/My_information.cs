@@ -106,7 +106,7 @@ namespace Kojiro_ordering_management_system
 
         private void button5_Click(object sender, EventArgs e)
         {
-            User_side.user_Side.Close();//关闭父窗体
+            User_side.user_Side.Hide();//隐藏父窗体
             Form1.form1.Show();//打开登录页
         }
 
@@ -145,7 +145,7 @@ namespace Kojiro_ordering_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Orders orders = new Orders();
+            Orders_All orders = new Orders_All();
             User_side.user_Side.loadform(orders);
         }
 

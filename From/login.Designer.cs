@@ -60,10 +60,9 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.linkLabel1.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel1.Location = new System.Drawing.Point(510, 442);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(340, 295);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(82, 24);
+            this.linkLabel1.Size = new System.Drawing.Size(56, 17);
             this.linkLabel1.TabIndex = 3;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "找回密码";
@@ -75,10 +74,9 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.linkLabel2.LinkColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.linkLabel2.Location = new System.Drawing.Point(380, 315);
-            this.linkLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel2.Location = new System.Drawing.Point(253, 210);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(80, 18);
+            this.linkLabel2.Size = new System.Drawing.Size(53, 12);
             this.linkLabel2.TabIndex = 4;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "注册账号";
@@ -88,10 +86,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(174, 356);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(116, 237);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 18);
+            this.label1.Size = new System.Drawing.Size(113, 12);
             this.label1.TabIndex = 13;
             this.label1.Text = "用户名或密码错误！";
             // 
@@ -103,10 +100,9 @@
             this.panel1.Controls.Add(this.butClose);
             this.panel1.Controls.Add(this.butMinimize);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(602, 164);
+            this.panel1.Size = new System.Drawing.Size(401, 109);
             this.panel1.TabIndex = 14;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
@@ -119,10 +115,9 @@
             this.butClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butClose.ForeColor = System.Drawing.SystemColors.Window;
-            this.butClose.Location = new System.Drawing.Point(562, 0);
-            this.butClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butClose.Location = new System.Drawing.Point(375, 0);
             this.butClose.Name = "butClose";
-            this.butClose.Size = new System.Drawing.Size(33, 42);
+            this.butClose.Size = new System.Drawing.Size(22, 28);
             this.butClose.TabIndex = 15;
             this.butClose.Text = "x";
             this.butClose.UseVisualStyleBackColor = true;
@@ -135,10 +130,9 @@
             this.butMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butMinimize.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12.75F);
             this.butMinimize.ForeColor = System.Drawing.SystemColors.Window;
-            this.butMinimize.Location = new System.Drawing.Point(514, 0);
-            this.butMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butMinimize.Location = new System.Drawing.Point(343, 0);
             this.butMinimize.Name = "butMinimize";
-            this.butMinimize.Size = new System.Drawing.Size(24, 36);
+            this.butMinimize.Size = new System.Drawing.Size(16, 24);
             this.butMinimize.TabIndex = 16;
             this.butMinimize.Text = "—";
             this.butMinimize.UseVisualStyleBackColor = true;
@@ -147,10 +141,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Kojiro_ordering_management_system.Properties.Resources.Logo_小次郎_拷贝1;
-            this.pictureBox1.Location = new System.Drawing.Point(-30, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(-20, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(139, 33);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -159,34 +152,33 @@
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.textBox2.Location = new System.Drawing.Point(176, 261);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Location = new System.Drawing.Point(117, 174);
             this.textBox2.MaxLength = 16;
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(284, 27);
+            this.textBox2.Size = new System.Drawing.Size(189, 18);
             this.textBox2.TabIndex = 79;
+            this.textBox2.Text = "1";
             // 
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.textBox1.Location = new System.Drawing.Point(177, 194);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(118, 129);
             this.textBox1.MaxLength = 10;
             this.textBox1.Name = "textBox1";
             this.textBox1.ShortcutsEnabled = false;
-            this.textBox1.Size = new System.Drawing.Size(284, 27);
+            this.textBox1.Size = new System.Drawing.Size(189, 18);
             this.textBox1.TabIndex = 78;
+            this.textBox1.Text = "1";
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.checkBox1.Location = new System.Drawing.Point(177, 314);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Location = new System.Drawing.Point(118, 209);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(106, 22);
+            this.checkBox1.Size = new System.Drawing.Size(72, 16);
             this.checkBox1.TabIndex = 86;
             this.checkBox1.Text = "显示密码";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -198,10 +190,9 @@
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.linkLabel3.LinkColor = System.Drawing.SystemColors.WindowFrame;
-            this.linkLabel3.Location = new System.Drawing.Point(12, 442);
-            this.linkLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel3.Location = new System.Drawing.Point(8, 295);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(100, 24);
+            this.linkLabel3.Size = new System.Drawing.Size(68, 17);
             this.linkLabel3.TabIndex = 87;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "管理员登录";
@@ -210,10 +201,9 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::Kojiro_ordering_management_system.Properties.Resources.直线;
-            this.pictureBox9.Location = new System.Drawing.Point(177, 290);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox9.Location = new System.Drawing.Point(118, 193);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(284, 15);
+            this.pictureBox9.Size = new System.Drawing.Size(189, 10);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 85;
             this.pictureBox9.TabStop = false;
@@ -221,10 +211,9 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::Kojiro_ordering_management_system.Properties.Resources.直线;
-            this.pictureBox8.Location = new System.Drawing.Point(176, 218);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox8.Location = new System.Drawing.Point(117, 145);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(284, 15);
+            this.pictureBox8.Size = new System.Drawing.Size(189, 10);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 82;
             this.pictureBox8.TabStop = false;
@@ -232,10 +221,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Kojiro_ordering_management_system.Properties.Resources.用户_拷贝png_拷贝1;
-            this.pictureBox3.Location = new System.Drawing.Point(134, 192);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(89, 128);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(46, 33);
+            this.pictureBox3.Size = new System.Drawing.Size(31, 22);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 80;
             this.pictureBox3.TabStop = false;
@@ -243,10 +231,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Kojiro_ordering_management_system.Properties.Resources.密码;
-            this.pictureBox4.Location = new System.Drawing.Point(135, 262);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(90, 175);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(42, 38);
+            this.pictureBox4.Size = new System.Drawing.Size(28, 25);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 81;
             this.pictureBox4.TabStop = false;
@@ -254,10 +241,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Kojiro_ordering_management_system.Properties.Resources.denglu2;
-            this.pictureBox2.Location = new System.Drawing.Point(174, 398);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(116, 265);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(254, 51);
+            this.pictureBox2.Size = new System.Drawing.Size(169, 34);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
@@ -265,10 +251,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(600, 482);
+            this.ClientSize = new System.Drawing.Size(400, 321);
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox9);
@@ -284,6 +270,7 @@
             this.Controls.Add(this.linkLabel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "登录";

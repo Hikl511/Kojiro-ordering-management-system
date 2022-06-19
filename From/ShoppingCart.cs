@@ -214,6 +214,9 @@ namespace Kojiro_ordering_management_system.用户端
                     string Price = DiscountedPrice.ToString().Substring(0, 4);//总价格
                     string setOrders = string.Format("insert Orders values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",BusinessName,state,ReturnTime,Address,OrderNumber,Price,ClassID);
                     DBHelper.ENQ(setOrders);//添加到订单表
+                    //打开购物车时  关闭订单主界面 防止支付成功后订单状态没有修改  因为修改状态的代码 写在订单主界面的加载方法里 所以要写
+                    Orders_Main orders_Main = new Orders_Main();
+                    orders_Main.Close();
                 }
                 else
                 {
@@ -333,6 +336,11 @@ namespace Kojiro_ordering_management_system.用户端
         {
             AddUsAddress addUsAddress = new AddUsAddress();
             User_side.user_Side.loadform(addUsAddress); //打开添加地址
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

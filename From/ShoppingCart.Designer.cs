@@ -68,6 +68,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(654, 520);
             this.panel2.TabIndex = 14;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // linkLabel1
             // 

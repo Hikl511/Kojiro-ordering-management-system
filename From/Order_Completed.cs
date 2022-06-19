@@ -1,47 +1,40 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kojiro_ordering_management_system
 {
-    public partial class Orders : Form
+    public partial class Order_Completed : Form
     {
-        public static Orders orders = new Orders();
         string Uid = Form1.form1.textBox1.Text;
         string Pwd = Form1.form1.textBox2.Text;
-        public Orders()
+        public Order_Completed()
         {
             InitializeComponent();
-            orders = this;
         }
 
-        protected override CreateParams CreateParams  //防止界面闪烁  同时也去除了动画
+        private void button4_Click(object sender, EventArgs e)
         {
-            get
-            {
-                CreateParams paras = base.CreateParams;
-                paras.ExStyle |= 0x02000000;
-                return paras;
-            }
+
         }
 
-        private void Orders_Load(object sender, System.EventArgs e)
+        private void Order_Completed_Load(object sender, EventArgs e)
         {
-            /* if (Checkout.checkout.label6.Text == "1")//1是支付成功
-             {
-                 string OrderNumber = Business.business.OrderNumber;
-                 string updateOrder = string.Format("update Orders set State='{0}' where OrderNumber='{1}'", 1, OrderNumber);
-                 DBHelper.ENQ(updateOrder);
-                 // AddOrders();
-             }
-             label2.Text = Checkout.checkout.label6.Text;
-            */
-            OrdersShow();
+            State5();
         }
-
-        public void OrdersShow()
-        {//对pic1操作
-            string sqlcount = string.Format("select count(BusinessName) from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}')", Uid, Pwd); //查询用户订单行数 
+        /// <summary>
+        /// 已完成订单
+        /// </summary>
+        public void State5()
+        {
+            string sqlcount = string.Format("select count(BusinessName) from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}') and State='{2}'", Uid, Pwd, 5); //查询用户已付款订单行数 
             int result = (int)DBHelper.ES(sqlcount);
             if (result > 0)
             {
@@ -64,7 +57,7 @@ namespace Kojiro_ordering_management_system
                 int i = 0;
                 int x = 0;
                 int y = 0;
-                string setAres = string.Format("select * from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}')", Uid, Pwd);
+                string setAres = string.Format("select * from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}') and State='{2}'", Uid, Pwd, 1);//根据状态查询出来的加过
                 SqlDataReader dr = DBHelper.GDR(setAres);
                 while (dr.Read())
                 {
@@ -88,27 +81,46 @@ namespace Kojiro_ordering_management_system
                     int OrdersSum = (int)DBHelper.ES(sum);//查每个订单编号的菜品个数
                     SumCount[i] = OrdersSum.ToString();
                     //label2.Text = State[i].ToString();
-                    //获取状态信息并修改值   //支付状态 0已取消 1 已付款  2待确认  3已接单 4已完成
+                    //获取状态信息并修改值   //支付状态 0已取消 1 已付款  2待确认  3已接单 4派送中 5已完成
+
+
+
                     if (State[i].Equals("0"))
                     {
                         State[i] = "已取消";
+                        btu1[i].Text = "删除";//已取消的订单可以删除
                     }
                     else if (State[i] == "1")
                     {
                         State[i] = "已付款";
+                        btu1[i].Text = "待接单";//已付款订单名字改成待商家接单
                     }
                     else if (State[i] == "2")
                     {
                         State[i] = "待确认";
+                        btu1[i].Text = "催促";//待确认改成催促
                     }
                     else if (State[i] == "3")
                     {
                         State[i] = "已接单";
+                        btu1[i].Text = "确认收货";//已接单改成待送达
                     }
                     else if (State[i] == "4")
                     {
-                        State[i] = "已完成";
+                        State[i] = "派送中";
+                        btu1[i].Text = "催促";//已付款订单名字改成待商家接单
                     }
+                    else if (State[i] == "5")
+                    {
+                        State[i] = "已完成";
+                        btu1[i].Text = "再来一单";//已付款订单名字改成待商家接单
+                    }
+
+
+
+
+
+
                     string SetTpm = string.Format("select * from TemporaryMenu where OrderNumber='{0}'", OrderNumber[i]);//通过订单号查订单对应菜品
                     SqlDataReader dr2 = DBHelper.GDR(SetTpm);
                     while (dr2.Read())
@@ -117,66 +129,60 @@ namespace Kojiro_ordering_management_system
                         OrdersImage[i] = dr2["image"].ToString();
                     }
                     dr2.Close();
-                    if (pic[i] == pic[3])
-                    {
-                        y += 50;
-                    }
                     //  btu1[i].Name = "Button" + i + 1;
-                    lbl1[i].Name = "txb1" + i;
-                    lbl2[i].Name = "txb2" + i;
-                    lbl3[i].Name = "txb3" + i;
-                    System.Drawing.Point p = new Point(80 * x, 115 + y);
-                    lbl1[i].Location = p;
-                    lbl1[i].Size = new Size(100, 30);
-                    lbl1[i].BorderStyle = BorderStyle.None;
-                    lbl1[i].Text = "商家:" + BusinessName[i].Trim() + "\n" + "订单状态:" + State[i].Trim();//商家名字 + 状态
-                    lbl1[i].Font = new Font("宋体", 9);
-                    
-
-                    pic[i].Name = BusinessName[i];
-                    System.Drawing.Point p2 = new Point(80 * x, 15 + y);
+                    pic[i].Name = OrderName[i];
+                    System.Drawing.Point p = new Point(80 * x, 15 + y);
                     pic[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                    pic[i].Location = p2;
-                    pic[i].Size = new Size(100, 100);
+                    pic[i].Location = p;
+                    pic[i].Size = new Size(90, 90);
                     pic[i].BorderStyle = BorderStyle.None;
                     Image img = Image.FromFile(OrdersImage[i]);
                     pic[i].Image = img;
+                    lbl1[i].Name = "lbl3" + i;
+                    System.Drawing.Point p2 = new Point(80 * x, 110 + y);//x宽 y高
+                    lbl1[i].Location = p2;
+                    lbl1[i].Size = new Size(100, 20);
+                    lbl1[i].BorderStyle = BorderStyle.None;
+                    lbl1[i].Font = new Font("微软雅黑", 9);
+                    lbl1[i].Text = "商家:" + BusinessName[i].Trim() + "订单状态:" + State[i].Trim();//商家名字 + 状态
+                    lbl1[i].AutoEllipsis = true;//对超出lable宽度的文字自动处理//  事件 pb[i].Click += new System.EventHandler(btn_click);
 
-                    System.Drawing.Point p3 = new Point(80 * x, 150 + y);
+
+                    lbl2[i].Name = "labe2" + i;
+                    System.Drawing.Point p3 = new Point(80 * x, 130 + y);//x宽 y高
                     lbl2[i].Location = p3;
-                    lbl2[i].Size = new Size(100, 30);
+                    lbl2[i].Size = new Size(100, 20);
                     lbl2[i].BorderStyle = BorderStyle.None;
-                    lbl2[i].Text = "下单时间:" + "\n" + ReturnTime[i].Substring(0, 9);//下单时间
-                    lbl2[i].Font = new Font("宋体", 9);
+                    lbl2[i].Font = new Font("微软雅黑", 7);
+                    lbl2[i].Text = "下单时间:" + ReturnTime[i].Substring(0, 9);//下单时间
+                    lbl2[i].ForeColor = Color.DimGray;
 
 
 
-                    System.Drawing.Point p4 = new Point(80 * x, 180 + y);
+                    lbl3[i].Name = "labe3" + i;
+                    System.Drawing.Point p4 = new Point(80 * x, 150 + y);//x宽 y高
                     lbl3[i].Location = p4;
-                    lbl3[i].Size = new Size(100, 30);
+                    lbl3[i].Size = new Size(100, 20);
                     lbl3[i].BorderStyle = BorderStyle.None;
-                    lbl3[i].Text = "共" + SumCount[i].Trim() + "件" + "\n" + "合计 ￥" + Price[i].Trim().Substring(0, 4);//数量 金额
-                    lbl3[i].Font = new Font("宋体", 9);
+                    lbl3[i].Font = new Font("微软雅黑", 7);
+                    lbl3[i].Text = "共 " + SumCount[i].Trim() + " 件 " + "合计 ￥ " + Price[i].Trim().Substring(0, 4);//数量 金额
+                    lbl3[i].ForeColor = Color.DimGray;
 
-                    btu1[i].Name = "button" + i;
-                    System.Drawing.Point p5 = new Point(80 * x, 200 + y);
-                    btu1[i].Location = p5;
-                    btu1[i].Anchor = (AnchorStyles)Bottom;
-                    btu1[i].Size = new Size(100, 20);
-                    btu1[i].BackColor = Color.White;
-                    btu1[i].FlatStyle = FlatStyle.Flat;
-                    btu1[i].FlatAppearance.BorderSize = 0;//无边框
-                    btu1[i].Text = "删除";
+
+                    btu1[i].Size = new Size(80, 20);
+                    btu1[i].FlatAppearance.BorderSize = 0;//无边框 btu1[i].FlatStyle = FlatStyle.Flat;
+                    btu1[i].Name = OrderNumber[i];
                     btu1[i].Font = new Font("宋体", 9);
+                    btu1[i].FlatStyle = FlatStyle.Flat;
+                    System.Drawing.Point p5 = new Point(80 * x, 170 + y);//x宽 y高
+                    btu1[i].Location = p5;
+                    //btu1[i].Click += new System.EventHandler(btn_click);
                     // btu1[i].Click += new System.EventHandler(checkout_click);
+                    panel1.Controls.Add(pic[i]);
                     panel1.Controls.Add(lbl1[i]);
                     panel1.Controls.Add(lbl2[i]);
                     panel1.Controls.Add(lbl3[i]);
-                    panel1.Controls.Add(pic[i]);
                     panel1.Controls.Add(btu1[i]);
-                    //   panel1.Controls.Add(txb3[i]);
-                    //   panel1.Controls.Add(txb4[i]);
-                    //  panel1.Controls.Add(btu1[i]);
                     x++;
                     if (x++ >= 4)
                     {
@@ -185,9 +191,36 @@ namespace Kojiro_ordering_management_system
                     }
                     dr.Close();
                 }
-
+            }
+            else
+            {
+                // 没有订单提示文本
+                label2.Visible = true;
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Order_Close order_Close = new Order_Close();
+            User_side.user_Side.loadform(order_Close);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Order_Paid order_Paid = new Order_Paid();
+            User_side.user_Side.loadform(order_Paid);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Orders_All orders_All = new Orders_All();
+            User_side.user_Side.loadform(orders_All);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Orders_Delivery orders_Delivery = new Orders_Delivery();
+            User_side.user_Side.loadform(orders_Delivery);
+        }
     }
 }

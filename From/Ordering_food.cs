@@ -9,7 +9,7 @@ namespace Kojiro_ordering_management_system
     public partial class Ordering_food : Form
     {
         public static Ordering_food ordering_Food = new Ordering_food();
-        public string name;
+        public string name ="";
         public Ordering_food()
         {
             ordering_Food = this;

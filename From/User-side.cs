@@ -21,7 +21,7 @@ namespace Kojiro_ordering_management_system
         //在函数外，命名空间内声明页面的变量，这样子我们可以做到重新加载页面的时候不会出现初始值
         //而是在打开上次切换前的页面
         //public Ordering_food  ordering_Food = new Ordering_food();
-        public Orders orders = new Orders();
+     //   public Orders_Main orders_Main = new Orders_Main();
         public My_information  my_Information = new My_information();
         public More more = new More();
         //public Main_interface main_interface = new Main_interface();
@@ -162,20 +162,8 @@ namespace Kojiro_ordering_management_system
 
         private void butClose_Click(object sender, EventArgs e)
         {
-           System.Environment.Exit(0);//完全退出
+                System.Environment.Exit(0);//完全退出 退出所有进程
 
-            /* if (Form1.form1.WindowState == FormWindowState.Normal)//因为登录时隐藏了主窗口  所以在本程序关闭前判断一下主窗口是否时默认状态 如果是就关掉 以防有后台下次打不开
-             {
-                 Form1.form1.Close();
-             }
-
-             Close();*/
-             //Application.Exit();
-        }
-
-        private void butMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;//最小化
         }
 
         /*private void User_side_FormClosing_1(object sender, FormClosingEventArgs e)
@@ -199,22 +187,24 @@ namespace Kojiro_ordering_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // Ordering_food ordering_Food = new Ordering_food();
-           // loadform(ordering_Food);
-            AdminOrdering_food adminOrdering_food = new AdminOrdering_food();
-            loadform(adminOrdering_food);
+            Ordering_food ordering_Food = new Ordering_food();
+            loadform(ordering_Food);
            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            loadform(orders);
+            Orders_Main orders_Main = new Orders_Main();
+            loadform(orders_Main);
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             My_information my_information = new My_information();
             loadform(my_Information);
+            
+         
             
         }
 
@@ -301,7 +291,5 @@ namespace Kojiro_ordering_management_system
                 SendMessage(this.Handle, WM_SYSCOMMAND, wParam, IntPtr.Zero.ToInt32());
             }
         }
-
-   
     }
 }

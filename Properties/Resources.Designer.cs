@@ -113,6 +113,16 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap R_C {
+            get {
+                object obj = ResourceManager.GetObject("R-C", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap XioaoCiLang {
             get {
                 object obj = ResourceManager.GetObject("XioaoCiLang", resourceCulture);
@@ -166,6 +176,16 @@ namespace Kojiro_ordering_management_system.Properties {
         internal static System.Drawing.Bitmap 刷新 {
             get {
                 object obj = ResourceManager.GetObject("刷新", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 商家 {
+            get {
+                object obj = ResourceManager.GetObject("商家", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -396,6 +416,46 @@ namespace Kojiro_ordering_management_system.Properties {
         internal static System.Drawing.Bitmap 小次郎logo {
             get {
                 object obj = ResourceManager.GetObject("小次郎logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 已付款 {
+            get {
+                object obj = ResourceManager.GetObject("已付款", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 已付款1 {
+            get {
+                object obj = ResourceManager.GetObject("已付款1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 已取消_拷贝 {
+            get {
+                object obj = ResourceManager.GetObject("已取消 拷贝", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 已完成 {
+            get {
+                object obj = ResourceManager.GetObject("已完成", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -693,6 +753,16 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 订单 {
+            get {
+                object obj = ResourceManager.GetObject("订单", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 订单_拷贝 {
             get {
                 object obj = ResourceManager.GetObject("订单 拷贝", resourceCulture);
@@ -726,6 +796,16 @@ namespace Kojiro_ordering_management_system.Properties {
         internal static System.Drawing.Bitmap 订单_拷贝2 {
             get {
                 object obj = ResourceManager.GetObject("订单 拷贝2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 订单黑 {
+            get {
+                object obj = ResourceManager.GetObject("订单黑", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
