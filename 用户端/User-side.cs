@@ -206,7 +206,6 @@ namespace Kojiro_ordering_management_system
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Orders orders = new Orders();
             loadform(orders);
         }
 

@@ -14,10 +14,13 @@ namespace Kojiro_ordering_management_system.用户端
 {
     public partial class Checkout : Form
     {
+        public static Checkout checkout = new Checkout();
         public Checkout()
         {
             InitializeComponent();
+            checkout = this;
         }
+        //参考文档 https://opendocs.alipay.com/open/02ekfh?scene=23
         IAlipayTradeService serviceClient = F2FBiz.CreateClientInstance(Config.serverUrl, Config.appId, Config.merchant_private_key, Config.version,
                                             Config.sign_type, Config.alipay_public_key, Config.charset);
 
@@ -61,9 +64,7 @@ namespace Kojiro_ordering_management_system.用户端
             pictureBox1.Image = image;
             //image.Save("QRCode.png");
         }
-
-
-        private void QrCodeShow()//显示支付二维码
+        public void QrCodeShow()//显示支付二维码
         {
             AlipayTradePrecreateContentBuilder builder = BuildPrecreateContent();//接口
             string out_trade_no = builder.out_trade_no;
@@ -104,7 +105,7 @@ namespace Kojiro_ordering_management_system.用户端
 
 
 
-        private AlipayTradePrecreateContentBuilder BuildPrecreateContent()
+        public AlipayTradePrecreateContentBuilder BuildPrecreateContent()
         {
             //线上联调时，请输入真实的外部订单号。
             string out_trade_no = "";
@@ -163,7 +164,7 @@ namespace Kojiro_ordering_management_system.用户端
         /// 生成二维码并展示到页面上
         /// </summary>
         /// <param name="precreateResult">二维码串</param>
-        private void DoWaitProcess(AlipayF2FPrecreateResult precreateResult)
+        public void DoWaitProcess(AlipayF2FPrecreateResult precreateResult)
         {
             ////打印出 preResponse.QrCode 对应的条码
             //Bitmap bt;
@@ -193,23 +194,24 @@ namespace Kojiro_ordering_management_system.用户端
         /// </summary>
         /// <param name="o">订单号</param>
         /// 
-        AlipayF2FQueryResult queryResult = new AlipayF2FQueryResult();//定义在方法外  方便跳转订单方法调用
         public void LoopQuery(object o)
         {
-           
+
+            AlipayF2FQueryResult queryResult = new AlipayF2FQueryResult();//定义在方法外  方便跳转订单方法调用
             int count = 100;
-            int interval = 10000;
+            int interval = 15000;
             string out_trade_no = o.ToString();
 
             for (int i = 1; i <= count; i++)
             {
-                Thread.Sleep(interval);//当前10000毫秒
+                Thread.Sleep(interval);//当前15000毫秒  就是15秒
                 queryResult = serviceClient.tradeQuery(out_trade_no);//通过订单号查询
                 if (queryResult != null)
                 {
                     if (queryResult.Status == ResultEnum.SUCCESS)//Success为支付成功
                     {
                         DoSuccessProcess(queryResult);
+                        
                         return;
                     }
                     else
@@ -224,32 +226,35 @@ namespace Kojiro_ordering_management_system.用户端
         /// 请添加支付成功后的处理
         /// </summary>
         /// 
-        private void DoSuccessProcess(AlipayF2FQueryResult queryResult)
+        public void DoSuccessProcess(AlipayF2FQueryResult queryResult)
         {
             //支付成功，请更新相应单据
             // log.WriteLine("扫码支付成功：外部订单号" + queryResult.response.OutTradeNo);
-            MessageBox.Show("支付成功，请返回订单界面！"+"\n"+"订单号:" + queryResult.response.OutTradeNo, "提示");   
+            MessageBox.Show("支付成功，请返回订单界面！" + "\n" + "订单号:" + queryResult.response.OutTradeNo, "提示");
+            label6.Text = "1";
         }
         /// <summary>
         /// 请添加支付失败后的处理
         /// </summary>
-        private void DoFailedProcess(AlipayF2FQueryResult queryResult)
+        public void DoFailedProcess(AlipayF2FQueryResult queryResult)
         {
             //支付失败，请更新相应单据
             MessageBox.Show("支付失败或超时，请重新扫码支付或重新回购物车结算，订单号:" + queryResult.response.OutTradeNo);
+            label6.Text = "2";
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        public void pictureBox2_Click(object sender, EventArgs e)
         {
             ShoppingCart shoppingCart = new ShoppingCart();
             User_side.user_Side.loadform(shoppingCart);
         }
 
-        private void Checkout_Load_1(object sender, EventArgs e)
+        public void Checkout_Load_1(object sender, EventArgs e)
         {
             WIDtotal_fee.Text = ShoppingCart.shoppingCart.DiscountedPrice.ToString().Substring(0, 4);
             label5.Text = "￥ " + WIDtotal_fee.Text;
             QrCodeShow();
+
         }
     }
 }

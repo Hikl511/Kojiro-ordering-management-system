@@ -188,6 +188,32 @@ namespace Kojiro_ordering_management_system.用户端
                 {
                     Checkout checkout = new Checkout();
                     User_side.user_Side.loadform(checkout);
+                    //如果有商品 就添加到订单表
+                    /*[ID]//主键
+                      [BusinessName]//商家名称
+                      [State]//State//订单状态
+                      [ReturnTime]//下单时间
+                      [CompletionTime]//完成时间
+                      [Address]//地址
+                      [OrderNumber]//订单编号
+                      [Price]//总价格
+                      [ClassID] *///用户ID
+                    string setUsID =string.Format("select ID from Ustable where Uid='{0}' and Pwd='{1}'",Uid,Pwd);
+                    SqlDataReader dr = DBHelper.GDR(setUsID);
+                    string ClassID="";
+                    while (dr.Read())
+                    {
+                        ClassID = dr["ID"].ToString();
+                    }
+                    dr.Close();
+                    string BusinessName = Ordering_food.ordering_Food.name;
+                    int state = 0;//订单状态先默认为0
+                    string ReturnTime = DateTime.Now.ToString();//获取到秒
+                    string Address = comboBox1.Text;
+                    string OrderNumber = Business.business.OrderNumber;
+                    string Price = DiscountedPrice.ToString().Substring(0, 4);//总价格
+                    string setOrders = string.Format("insert Orders values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",BusinessName,state,ReturnTime,Address,OrderNumber,Price,ClassID);
+                    DBHelper.ENQ(setOrders);//添加到订单表
                 }
                 else
                 {

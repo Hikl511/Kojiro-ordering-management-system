@@ -232,6 +232,7 @@
     <EmbeddedResource Include="用户端\User-side.resx">
       <DependentUpon>User-side.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include=".editorconfig" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
