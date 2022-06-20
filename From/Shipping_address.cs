@@ -160,7 +160,7 @@ namespace Kojiro_ordering_management_system
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AddUsAddress_My addUsAddress_My = new AddUsAddress_My();
+            UpdateDishes addUsAddress_My = new UpdateDishes();
             User_side.user_Side.loadform(addUsAddress_My);//打开添加地址
         }
     }

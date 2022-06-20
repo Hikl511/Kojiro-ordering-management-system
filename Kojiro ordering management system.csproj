@@ -93,11 +93,11 @@
     <Compile Include="From\Order_Paid.Designer.cs">
       <DependentUpon>Order_Paid.cs</DependentUpon>
     </Compile>
-    <Compile Include="From\AddUsAddress_My.cs">
+    <Compile Include="From\UpdateDishes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="From\AddUsAddress_My.Designer.cs">
-      <DependentUpon>AddUsAddress_My.cs</DependentUpon>
+    <Compile Include="From\UpdateDishes.Designer.cs">
+      <DependentUpon>UpdateDishes.cs</DependentUpon>
     </Compile>
     <Compile Include="From\AddUsAddress.cs">
       <SubType>Form</SubType>
@@ -227,8 +227,8 @@
     <EmbeddedResource Include="From\Orders_Main.resx">
       <DependentUpon>Orders_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="From\AddUsAddress_My.resx">
-      <DependentUpon>AddUsAddress_My.cs</DependentUpon>
+    <EmbeddedResource Include="From\UpdateDishes.resx">
+      <DependentUpon>UpdateDishes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="From\AddUsAddress.resx">
       <DependentUpon>AddUsAddress.cs</DependentUpon>

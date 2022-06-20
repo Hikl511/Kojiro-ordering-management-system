@@ -16,7 +16,7 @@ namespace Kojiro_ordering_management_system
         public string OrderCmpName = Order_Completed.order_Completed.OrderCmpName;//获取从已完成界面传回来的商家名字
         public string OrderAllName = Orders_All.orders.OrderAllName;//获取从全部订单传回来的商家名字
         public string OrderMainName = Orders_Main.orders_Main.OrderMainName;//获取从订单主界面传回来的商家名字
-        public string DishesName;//商品名字
+        public string DishesName;//菜品名字
         public string OrderNumber;//订单编号
         public string Uid = Form1.form1.textBox1.Text;
         public string Pwd = Form1.form1.textBox2.Text;
@@ -204,15 +204,26 @@ namespace Kojiro_ordering_management_system
                     lbl2[i].Font = new Font("微软雅黑", 7);
                     lbl2[i].Text = "￥" + money[i].Substring(0, 4);//截取价格字符串 为4为 保留一个小数点                                               // lbl2[i].Text = money[i];
                     lbl2[i].ForeColor = Color.Red;
+
+                    if (AdminLogin.adminLogin.identity == "管理员")
+                    {
+                        btu1[i].Text = "管理";
+                        btu1[i].Click += new System.EventHandler(set_click);
+                    }
+                    else
+                    {
+                        btu1[i].Text = "加入购物车";
+                        btu1[i].Click += new System.EventHandler(btn_click);
+                    }
                     btu1[i].Size = new Size(80, 20);
                     btu1[i].FlatAppearance.BorderSize = 0;//无边框 btu1[i].FlatStyle = FlatStyle.Flat;
+
                     btu1[i].Name = lbltxt[i];
-                    btu1[i].Text = "加入购物车";
+                   
                     btu1[i].Font = new Font("宋体", 9);
                     btu1[i].FlatStyle = FlatStyle.Flat;
                     System.Drawing.Point p4 = new Point(80 * x, 150 + y);//x宽 y高
                     btu1[i].Location = p4;
-                    btu1[i].Click += new System.EventHandler(btn_click);
                     panel2.Controls.Add(pb[i]);
                     panel2.Controls.Add(lbl[i]);
                     panel2.Controls.Add(lbl2[i]);
@@ -238,6 +249,11 @@ namespace Kojiro_ordering_management_system
         }
 
         public object Price;
+        /// <summary>
+        /// 添加购物车事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btn_click(object sender, System.EventArgs e)
         {
             Button b = (Button)sender;
@@ -288,6 +304,20 @@ namespace Kojiro_ordering_management_system
             label2.Text = Price.ToString();
             label4.Text = DBHelper.ES(ShopCount).ToString();
         }
+
+        /// <summary>
+        /// 修改商品事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void set_click(object sender, System.EventArgs e)
+        {
+            Button b = (Button)sender;
+            DishesName = b.Name.ToString(); //单击时把当前单机按钮的值传给变量 给购物车窗口调用
+            UpdateDishes updateDishes = new UpdateDishes();
+            AdminUser_side.adminUser_Side.AdminLoadform(updateDishes);
+        }
+
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
