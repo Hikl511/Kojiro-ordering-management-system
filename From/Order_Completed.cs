@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kojiro_ordering_management_system.用户端;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,14 @@ namespace Kojiro_ordering_management_system
 {
     public partial class Order_Completed : Form
     {
+        public static Order_Completed order_Completed = new Order_Completed();
+        public string OrderCmpName = "";
         string Uid = Form1.form1.textBox1.Text;
         string Pwd = Form1.form1.textBox2.Text;
         public Order_Completed()
         {
             InitializeComponent();
+            order_Completed = this;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -57,7 +61,7 @@ namespace Kojiro_ordering_management_system
                 int i = 0;
                 int x = 0;
                 int y = 0;
-                string setAres = string.Format("select * from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}') and State='{2}'", Uid, Pwd, 1);//根据状态查询出来的加过
+                string setAres = string.Format("select * from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}') and State='{2}'", Uid, Pwd, 5);//根据状态查询出来的加过
                 SqlDataReader dr = DBHelper.GDR(setAres);
                 while (dr.Read())
                 {
@@ -95,11 +99,6 @@ namespace Kojiro_ordering_management_system
                         State[i] = "已付款";
                         btu1[i].Text = "待接单";//已付款订单名字改成待商家接单
                     }
-                    else if (State[i] == "2")
-                    {
-                        State[i] = "待确认";
-                        btu1[i].Text = "催促";//待确认改成催促
-                    }
                     else if (State[i] == "3")
                     {
                         State[i] = "已接单";
@@ -113,7 +112,7 @@ namespace Kojiro_ordering_management_system
                     else if (State[i] == "5")
                     {
                         State[i] = "已完成";
-                        btu1[i].Text = "再来一单";//已付款订单名字改成待商家接单
+                        btu1[i].Text = "再次购买";//已付款订单名字改成待商家接单
                     }
 
 
@@ -171,12 +170,12 @@ namespace Kojiro_ordering_management_system
 
                     btu1[i].Size = new Size(80, 20);
                     btu1[i].FlatAppearance.BorderSize = 0;//无边框 btu1[i].FlatStyle = FlatStyle.Flat;
-                    btu1[i].Name = OrderNumber[i];
+                    btu1[i].Name = BusinessName[i];
                     btu1[i].Font = new Font("宋体", 9);
                     btu1[i].FlatStyle = FlatStyle.Flat;
                     System.Drawing.Point p5 = new Point(80 * x, 170 + y);//x宽 y高
                     btu1[i].Location = p5;
-                    //btu1[i].Click += new System.EventHandler(btn_click);
+                    btu1[i].Click += new System.EventHandler(Shops_click);
                     // btu1[i].Click += new System.EventHandler(checkout_click);
                     panel1.Controls.Add(pic[i]);
                     panel1.Controls.Add(lbl1[i]);
@@ -199,28 +198,82 @@ namespace Kojiro_ordering_management_system
             }
         }
 
+        /// <summary>
+        /// 再次购买事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Shops_click(object sender, System.EventArgs e)
+        {
+            Button b = (Button)sender;
+            OrderCmpName = b.Name.ToString(); //单击时把当前单机按钮的值传给变量 给删除语句窗口调用
+            Business business = new Business();//打开商家窗口
+            User_side.user_Side.loadform(business);
+        }
+
+
         private void button2_Click(object sender, EventArgs e)
         {
-            Order_Close order_Close = new Order_Close();
-            User_side.user_Side.loadform(order_Close);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Order_Close order_Close = new Order_Close();
+                AdminUser_side.adminUser_Side.AdminLoadform(order_Close);
+
+            }
+            else
+            {
+                Order_Close order_Close = new Order_Close();
+                User_side.user_Side.loadform(order_Close);
+            }
+          
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Order_Paid order_Paid = new Order_Paid();
-            User_side.user_Side.loadform(order_Paid);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Order_Paid order_Paid = new Order_Paid();
+                AdminUser_side.adminUser_Side.AdminLoadform(order_Paid);
+
+            }
+            else
+            {
+                Order_Paid order_Paid = new Order_Paid();
+                User_side.user_Side.loadform(order_Paid);
+            }
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Orders_All orders_All = new Orders_All();
-            User_side.user_Side.loadform(orders_All);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Orders_All orders_All = new Orders_All();
+                AdminUser_side.adminUser_Side.AdminLoadform(orders_All);
+
+            }
+            else
+            {
+                Orders_All orders_All = new Orders_All();
+                User_side.user_Side.loadform(orders_All);
+            }
+
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Orders_Delivery orders_Delivery = new Orders_Delivery();
-            User_side.user_Side.loadform(orders_Delivery);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Orders_Delivery orders_Delivery = new Orders_Delivery();
+                AdminUser_side.adminUser_Side.AdminLoadform(orders_Delivery);
+
+            }
+            else
+            {
+                Orders_Delivery orders_Delivery = new Orders_Delivery();
+                User_side.user_Side.loadform(orders_Delivery);
+            }
+      
         }
     }
 }

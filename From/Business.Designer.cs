@@ -32,11 +32,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -81,6 +81,16 @@
             this.label3.Text = "打开购物车";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Kojiro_ordering_management_system.Properties.Resources.购物车_拷贝;
+            this.pictureBox1.Location = new System.Drawing.Point(522, 42);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 36);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -99,26 +109,6 @@
             this.panel2.Size = new System.Drawing.Size(641, 391);
             this.panel2.TabIndex = 15;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 15F);
-            this.label1.Location = new System.Drawing.Point(188, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "123123";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Kojiro_ordering_management_system.Properties.Resources.购物车_拷贝;
-            this.pictureBox1.Location = new System.Drawing.Point(522, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 36);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Kojiro_ordering_management_system.Properties.Resources.返回;
@@ -129,6 +119,16 @@
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 15F);
+            this.label1.Location = new System.Drawing.Point(188, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "123123";
             // 
             // Business
             // 

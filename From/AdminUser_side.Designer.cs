@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminUser_side));
-            this.butClose = new System.Windows.Forms.Button();
             this.mainpanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -44,27 +43,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.butClose = new System.Windows.Forms.Button();
             this.mainpanel.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // butClose
-            // 
-            this.butClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butClose.FlatAppearance.BorderSize = 0;
-            this.butClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butClose.ForeColor = System.Drawing.SystemColors.Window;
-            this.butClose.Location = new System.Drawing.Point(779, 4);
-            this.butClose.Name = "butClose";
-            this.butClose.Size = new System.Drawing.Size(30, 30);
-            this.butClose.TabIndex = 20;
-            this.butClose.Text = "x";
-            this.butClose.UseVisualStyleBackColor = true;
-            this.butClose.Click += new System.EventHandler(this.butClose_Click);
             // 
             // mainpanel
             // 
@@ -240,6 +225,21 @@
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
+            // butClose
+            // 
+            this.butClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butClose.FlatAppearance.BorderSize = 0;
+            this.butClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butClose.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butClose.ForeColor = System.Drawing.SystemColors.Window;
+            this.butClose.Location = new System.Drawing.Point(786, 8);
+            this.butClose.Name = "butClose";
+            this.butClose.Size = new System.Drawing.Size(30, 30);
+            this.butClose.TabIndex = 8;
+            this.butClose.Text = "x";
+            this.butClose.UseVisualStyleBackColor = true;
+            this.butClose.Click += new System.EventHandler(this.butClose_Click_1);
+            // 
             // AdminUser_side
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -270,7 +270,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button butClose;
         private System.Windows.Forms.Panel mainpanel;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panelMenu;
@@ -285,5 +284,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button butClose;
     }
 }

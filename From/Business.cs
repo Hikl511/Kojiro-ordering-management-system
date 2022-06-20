@@ -13,6 +13,9 @@ namespace Kojiro_ordering_management_system
         // Ordering_food ordering_Food = new Ordering_food();
         public static Business business = new Business();
         string name = Ordering_food.ordering_Food.name.ToString();
+        public string OrderCmpName = Order_Completed.order_Completed.OrderCmpName;//获取从已完成界面传回来的商家名字
+        public string OrderAllName = Orders_All.orders.OrderAllName;//获取从全部订单传回来的商家名字
+        public string OrderMainName = Orders_Main.orders_Main.OrderMainName;//获取从订单主界面传回来的商家名字
         public string DishesName;//商品名字
         public string OrderNumber;//订单编号
         public string Uid = Form1.form1.textBox1.Text;
@@ -26,12 +29,27 @@ namespace Kojiro_ordering_management_system
 
         private void Business_Load(object sender, EventArgs e)
         {
-            label1.Text = name;
-            PicShow();
-            PicLableButtonShow();
-            LabelText();
-            i = 1;//重新进入窗体时把i赋值为1  生成1次订单号
-            //PicShow();
+            try
+            {
+                label1.Text = name;
+                PicShow();
+                PicLableButtonShow();
+                LabelText();
+                i = 1;//重新进入窗体时把i赋值为1  生成1次订单号
+                      //PicShow();
+                if (AdminLogin.adminLogin.identity == "管理员")
+                {
+                    pictureBox1.Visible = false;
+                    label3.Visible = false;
+                    label4.Visible = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                //throw;
+            }
+
         }
 
 
@@ -55,7 +73,23 @@ namespace Kojiro_ordering_management_system
             string[] lbltxt = new string[1];
             PictureBox[] pb = new PictureBox[1];
             Label[] lbl = new Label[1];
-            string cmdText = string.Format("select introduce,Logo from Business where Name='{0}'", name);
+            string cmdText;
+            if (OrderCmpName != "")//当名字不为空 就代表在已完成界面点击了再次购买按钮 就跳转到点单界面
+            {
+                cmdText = string.Format("select introduce,Logo from Business where Name='{0}'", OrderCmpName);
+            }
+            else if (OrderAllName != "")
+            {
+                cmdText = string.Format("select introduce,Logo from Business where Name='{0}'", OrderAllName);
+            }
+            else if (OrderMainName!="")
+            {
+                cmdText = string.Format("select introduce,Logo from Business where Name='{0}'", OrderMainName);
+            }
+            else
+            {
+                cmdText = string.Format("select introduce,Logo from Business where Name='{0}'", name);
+            }
             SqlDataReader dr = DBHelper.GDR(cmdText);
             int i = 0;
             while (dr.Read())
@@ -92,8 +126,11 @@ namespace Kojiro_ordering_management_system
 
         }
 
+        /// <summary>
+        /// 加载菜品方法
+        /// </summary>
         public void PicLableButtonShow()
-        {//对pic1操作
+        {
             try
             {
                 string sqlcount = "select Count(ClassID) from Dishes";//查询行数 
@@ -105,7 +142,24 @@ namespace Kojiro_ordering_management_system
                 Label[] lbl = new Label[result];
                 Label[] lbl2 = new Label[result];
                 Button[] btu1 = new Button[result];
-                string cmdText = string.Format("select image,Name,dumoney from Dishes where ClassID=(select id from Business Where Name='{0}')", name);
+                string cmdText;
+                if (OrderCmpName != "")
+                {
+                    cmdText = string.Format("select image,Name,dumoney from Dishes where ClassID=(select id from Business Where Name='{0}')", OrderCmpName);
+                }
+                else if (OrderAllName != "")
+                {
+                    cmdText = string.Format("select image,Name,dumoney from Dishes where ClassID=(select id from Business Where Name='{0}')", OrderAllName);
+                }
+                else if (OrderMainName !="")
+                {
+                    cmdText = string.Format("select image,Name,dumoney from Dishes where ClassID=(select id from Business Where Name='{0}')", OrderMainName);
+                }
+                else
+                {
+                    cmdText = string.Format("select image,Name,dumoney from Dishes where ClassID=(select id from Business Where Name='{0}')", name);
+
+                }
                 // string cmdText = string.Format("select Logo,Name,ID from Business");
                 SqlDataReader dr = DBHelper.GDR(cmdText);
                 int i = 0;
@@ -175,7 +229,7 @@ namespace Kojiro_ordering_management_system
             catch (Exception)
             {
 
-                //  throw e;//抛出异常
+               //  throw;//抛出异常
             }
             finally
             {
@@ -237,15 +291,38 @@ namespace Kojiro_ordering_management_system
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Ordering_food ordering_Food = new Ordering_food();
-            User_side.user_Side.loadform(ordering_Food);
-            Close();
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Ordering_food ordering_Food = new Ordering_food();
+                AdminUser_side.adminUser_Side.AdminLoadform(ordering_Food);
+                Close();
+            }
+            else
+            {
+                //当返回时把已完成界面或主界面赋值过的用来查询的商家名字 和订单编号清空清空  以免查不到其他商家
+                Order_Completed.order_Completed.OrderCmpName = "";
+                Orders_All.orders.OrderAllName = "";
+                Orders_Main.orders_Main.OrderMainName = "";
+                Ordering_food ordering_Food = new Ordering_food();
+                User_side.user_Side.loadform(ordering_Food);
+                Close();
+            }
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ShoppingCart shoppingCart = new ShoppingCart();
-            User_side.user_Side.loadform(shoppingCart);//打开购物车
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+
+
+            }
+            else
+            {
+                ShoppingCart shoppingCart = new ShoppingCart();
+                User_side.user_Side.loadform(shoppingCart);//打开购物车
+            }
+
         }
 
         private void label3_Click(object sender, EventArgs e)

@@ -95,7 +95,7 @@
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Image = global::Kojiro_ordering_management_system.Properties.Resources.修改密码_拷贝;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.button3.Location = new System.Drawing.Point(344, 168);
+            this.button3.Location = new System.Drawing.Point(144, 278);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(2, 5, 0, 0);
             this.button3.Size = new System.Drawing.Size(156, 59);
@@ -133,7 +133,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Kojiro_ordering_management_system.Properties.Resources.订单_拷贝_2;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.button1.Location = new System.Drawing.Point(344, 266);
+            this.button1.Location = new System.Drawing.Point(344, 278);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(2, 5, 0, 0);
             this.button1.Size = new System.Drawing.Size(156, 59);
@@ -152,7 +152,7 @@
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = global::Kojiro_ordering_management_system.Properties.Resources.地址_拷贝_2;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.button2.Location = new System.Drawing.Point(144, 266);
+            this.button2.Location = new System.Drawing.Point(344, 168);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(2, 5, 0, 0);
             this.button2.Size = new System.Drawing.Size(156, 59);

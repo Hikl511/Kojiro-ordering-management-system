@@ -84,7 +84,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("宋体", 10F);
             this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Image = global::Kojiro_ordering_management_system.Properties.Resources.已取消_拷贝;
+            this.button6.Image = global::Kojiro_ordering_management_system.Properties.Resources.派送;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(12, 316);
             this.button6.Name = "button6";

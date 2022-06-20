@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kojiro_ordering_management_system.用户端;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,10 +18,10 @@ namespace Kojiro_ordering_management_system
         //而是在打开上次切换前的页面
         //public Ordering_food  ordering_Food = new Ordering_food();
         //   public Orders_Main orders_Main = new Orders_Main();
-        public My_information my_Information = new My_information();
-        public More more = new More();
+      //  public My_information my_Information = new My_information();
+      //  public More more = new More();
         //public Main_interface main_interface = new Main_interface();
-
+        public static AdminUser_side adminUser_Side = new AdminUser_side();
 
         //窗体边框阴影动画效果移动改变大小
         const int CS_DropSHADOW = 0x20000;
@@ -113,6 +114,7 @@ namespace Kojiro_ordering_management_system
         public AdminUser_side()
         {
             InitializeComponent();
+            adminUser_Side = this;
         }
         
 
@@ -143,6 +145,7 @@ namespace Kojiro_ordering_management_system
             this.Text = "小次郎点餐管理员客户端";
             Ordering_food ordering_Food = new Ordering_food();
             AdminLoadform(ordering_Food);//加载时显示商家界面
+            
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -244,6 +247,11 @@ namespace Kojiro_ordering_management_system
         }
 
         private void butClose_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);//完全退出 退出所有进程
+        }
+
+        private void butClose_Click_1(object sender, EventArgs e)
         {
             System.Environment.Exit(0);//完全退出 退出所有进程
         }

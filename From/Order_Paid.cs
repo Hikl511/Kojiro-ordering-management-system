@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kojiro_ordering_management_system.用户端;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -92,11 +93,6 @@ namespace Kojiro_ordering_management_system
                         btu1[i].Text = "取消";//已付款订单名字改成待商家接单
                         btu1[i].Click += new System.EventHandler(Cancel_click);
                     }
-                    else if (State[i] == "2")
-                    {
-                        State[i] = "待确认";
-                        btu1[i].Text = "催促";//待确认改成催促
-                    }
                     else if (State[i] == "3")
                     {
                         State[i] = "已接单";
@@ -180,6 +176,7 @@ namespace Kojiro_ordering_management_system
                     panel1.Controls.Add(lbl2[i]);
                     panel1.Controls.Add(lbl3[i]);
                     panel1.Controls.Add(btu1[i]);
+
                     x++;
                     if (x++ >= 4)
                     {
@@ -198,14 +195,35 @@ namespace Kojiro_ordering_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Orders_All orders_All = new Orders_All();
-            User_side.user_Side.loadform(orders_All);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Orders_All orders_All = new Orders_All();
+                AdminUser_side.adminUser_Side.AdminLoadform(orders_All);
+
+            }
+            else
+            {
+               // Orders_Main orders_Main = new Orders_Main();
+                Orders_All orders_All = new Orders_All();
+                User_side.user_Side.loadform(orders_All);
+            }
+          
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Order_Completed order_Completed = new Order_Completed();
-            User_side.user_Side.loadform(order_Completed);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Order_Completed order_Completed = new Order_Completed();
+                AdminUser_side.adminUser_Side.AdminLoadform(order_Completed);
+
+            }
+            else
+            {
+                Order_Completed order_Completed = new Order_Completed();
+                User_side.user_Side.loadform(order_Completed);
+            }
+         
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -215,14 +233,34 @@ namespace Kojiro_ordering_management_system
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Order_Close order_Close = new Order_Close();
-            User_side.user_Side.loadform(order_Close);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Order_Close order_Close = new Order_Close();
+                AdminUser_side.adminUser_Side.AdminLoadform(order_Close);
+
+            }
+            else
+            {
+                Order_Close order_Close = new Order_Close();
+                User_side.user_Side.loadform(order_Close);
+            }
+           
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Orders_Delivery orders_Delivery = new Orders_Delivery();
-            User_side.user_Side.loadform(orders_Delivery);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Orders_Delivery orders_Delivery = new Orders_Delivery();
+                AdminUser_side.adminUser_Side.AdminLoadform(orders_Delivery);
+
+            }
+            else
+            {
+                Orders_Delivery orders_Delivery = new Orders_Delivery();
+                User_side.user_Side.loadform(orders_Delivery);
+            }
+           
         }
         public void Cancel_click(object sender, System.EventArgs e)//取消事件
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kojiro_ordering_management_system.用户端;
+using System;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
@@ -71,7 +72,8 @@ namespace Kojiro_ordering_management_system
                     int OrdersSum = (int)DBHelper.ES(sum);//查每个订单编号的菜品个数
                     SumCount[i] = OrdersSum.ToString();
                     //label2.Text = State[i].ToString();
-                    //获取状态信息并修改值   //支付状态 0已取消 1 已付款  2待确认  3已接单 4派送中 5已完成
+                    //获取状态信息并修改值   //支付状态 0已取消 1 已付款   3已接单 4派送中 5已完成
+
 
 
 
@@ -86,11 +88,6 @@ namespace Kojiro_ordering_management_system
                         State[i] = "已付款";
                         btu1[i].Text = "待接单";//已付款订单名字改成待商家接单
                     }
-                    else if (State[i] == "2")
-                    {
-                        State[i] = "待确认";
-                        btu1[i].Text = "催促";//待确认改成催促
-                    }
                     else if (State[i] == "3")
                     {
                         State[i] = "已接单";
@@ -104,7 +101,7 @@ namespace Kojiro_ordering_management_system
                     else if (State[i] == "5")
                     {
                         State[i] = "已完成";
-                        btu1[i].Text = "再来一单";//已付款订单名字改成待商家接单
+                        btu1[i].Text = "再次购买";//已付款订单名字改成待商家接单
                     }
 
 
@@ -193,8 +190,18 @@ namespace Kojiro_ordering_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Orders_All orders_All = new Orders_All();
-            User_side.user_Side.loadform(orders_All);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Orders_All orders_All = new Orders_All();
+                AdminUser_side.adminUser_Side.AdminLoadform(orders_All);
+
+            }
+            else
+            {
+                Orders_All orders_All = new Orders_All();
+                User_side.user_Side.loadform(orders_All);
+            }
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -204,20 +211,50 @@ namespace Kojiro_ordering_management_system
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Order_Paid order_Paid = new Order_Paid();
-            User_side.user_Side.loadform(order_Paid);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Order_Paid order_Paid = new Order_Paid();
+                AdminUser_side.adminUser_Side.AdminLoadform(order_Paid);
+
+            }
+            else
+            {
+                Order_Paid order_Paid = new Order_Paid();
+                User_side.user_Side.loadform(order_Paid);
+            }
+          
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Order_Completed order_Completed = new Order_Completed();
-            User_side.user_Side.loadform(order_Completed);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Order_Completed order_Completed = new Order_Completed();
+                AdminUser_side.adminUser_Side.AdminLoadform(order_Completed);
+
+            }
+            else
+            {
+                Order_Completed order_Completed = new Order_Completed();
+                User_side.user_Side.loadform(order_Completed);
+            }
+       
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Orders_Delivery orders_Delivery = new Orders_Delivery();
-            User_side.user_Side.loadform(orders_Delivery);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Orders_Delivery orders_Delivery = new Orders_Delivery();
+                AdminUser_side.adminUser_Side.AdminLoadform(orders_Delivery);
+
+            }
+            else
+            {
+                Orders_Delivery orders_Delivery = new Orders_Delivery();
+                User_side.user_Side.loadform(orders_Delivery);
+            }
+          
         }
 
         public void del_click(object sender, System.EventArgs e)//删除事件
@@ -230,8 +267,8 @@ namespace Kojiro_ordering_management_system
                 string DeleteSql = string.Format("delete from Orders where OrderNumber='{0}'", b.Name.ToString());
                 if (DBHelper.ENQ(DeleteSql))
                 {
-                    Orders_Main orders_Main = new Orders_Main();
-                    User_side.user_Side.loadform(orders_Main);
+                    Order_Close order_Close = new Order_Close();
+                    User_side.user_Side.loadform(order_Close);
                 }
             }
         }

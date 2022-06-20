@@ -9,6 +9,7 @@ namespace Kojiro_ordering_management_system.用户端
     public partial class AdminLogin : Form
     {
         public static AdminLogin adminLogin = new AdminLogin();
+        public string identity = "";
         public AdminLogin()
         {
             InitializeComponent();
@@ -65,6 +66,8 @@ namespace Kojiro_ordering_management_system.用户端
         {
             linkLabel3.LinkBehavior = LinkBehavior.NeverUnderline;
             label1.Visible = false;//加载时隐藏提示文本
+            textBox1.Text = "admin";
+            textBox2.Text = "admin";
         }
 
         //设置圆角
@@ -121,11 +124,15 @@ namespace Kojiro_ordering_management_system.用户端
 
             if (Uid != "" && Pwd != "")
             {
-                string sql = string.Format("select* from Admin where Uid = '{0}' and pwd = '{1}'", Uid, Pwd);//验证登录账号和密码是否一致
+                string sql = string.Format("select * from Ustable where Uid = '{0}' and pwd = '{1}'", Uid, Pwd);//验证登录账号和密码是否一致
                 SqlDataReader dr = DBHelper.GDR(sql);
-                if (dr.HasRows)
+                while (dr.Read())
                 {
-                    
+                    identity = dr["identity"].ToString().Trim();
+                }
+                if (dr.HasRows && identity == "管理员")
+                {
+
                     label1.Visible = false;//成功后把错误提示文本隐藏
                     dr.Close();//查询之后关闭
                     dr.Dispose();//释放资源
@@ -135,7 +142,7 @@ namespace Kojiro_ordering_management_system.用户端
                 }
                 else
                 {
-                    label1.Text = "账号或密码错误！";
+                    label1.Text = "请输入正确的管理员账号密码！";
                     label1.Visible = true;
                     textBox1.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
                     textBox2.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
@@ -143,7 +150,9 @@ namespace Kojiro_ordering_management_system.用户端
                     dr.Dispose();//释放资源
                 }
 
-            }else if(Uid != "")
+
+            }
+            else if (Uid != "")
             {
                 label1.Text = "请输入密码！";
                 label1.Visible = true;
@@ -153,6 +162,7 @@ namespace Kojiro_ordering_management_system.用户端
                 label1.Text = "请输入用户名！";
                 label1.Visible = true;
             }
+
         }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -171,4 +181,4 @@ namespace Kojiro_ordering_management_system.用户端
         }
     }
 }
-   
+

@@ -1,24 +1,21 @@
 ﻿using Kojiro_ordering_management_system.用户端;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kojiro_ordering_management_system
 {
     public partial class Orders_Main : Form
     {
+        public static Orders_Main orders_Main = new Orders_Main();
+        public string OrderMainName = "";
         string Uid = Form1.form1.textBox1.Text;
         string Pwd = Form1.form1.textBox2.Text;
         public Orders_Main()
         {
             InitializeComponent();
+            orders_Main = this;
         }
 
         private void Orders_Main_Load(object sender, EventArgs e)
@@ -34,13 +31,13 @@ namespace Kojiro_ordering_management_system
                     DBHelper.ENQ(updateOrder);
                     // AddOrders();
                 }
-                  OrdersShow();//加载全部订单
+                OrdersShow();//加载全部订单
                 // label2.Text = Checkout.checkout.label6.Text;
             }
             catch (System.Exception)
             {
 
-                throw;
+               // throw;
             }
         }
 
@@ -113,25 +110,23 @@ namespace Kojiro_ordering_management_system
                         btu1[i].Text = "取消";//已付款订单名字改成待商家接单
                         btu1[i].Click += new System.EventHandler(Cancel_click);
                     }
-                    else if (State[i] == "2")
-                    {
-                        State[i] = "待确认";
-                        btu1[i].Text = "催促";//待确认改成催促
-                    }
                     else if (State[i] == "3")
                     {
                         State[i] = "已接单";
-                        btu1[i].Text = "催促";//已接单改成待送达
+                        btu1[i].Text = "确认收货";//已接单改成待送达
+                        btu1[i].Click += new System.EventHandler(Comple_click);
                     }
                     else if (State[i] == "4")
                     {
                         State[i] = "派送中";
                         btu1[i].Text = "确认收货";//已付款订单名字改成待商家接单
+                        btu1[i].Click += new System.EventHandler(Comple_click);
                     }
                     else if (State[i] == "5")
                     {
                         State[i] = "已完成";
-                        btu1[i].Text = "再来一单";//已付款订单名字改成待商家接单
+                        btu1[i].Text = "再次购买";//已付款订单名字改成待商家接单
+                        btu1[i].Click += new System.EventHandler(Shops_click);
                     }
 
 
@@ -181,6 +176,7 @@ namespace Kojiro_ordering_management_system
                     lbl3[i].BorderStyle = BorderStyle.None;
                     lbl3[i].Font = new Font("微软雅黑", 7);
                     lbl3[i].Text = "共 " + SumCount[i].Trim() + " 件 " + "合计 ￥ " + Price[i].Trim().Substring(0, 4);//数量 金额
+                    lbl3[i].AutoEllipsis = true;//对超出lable宽度的文字自动处理//  事件 pb[i].Click += new System.EventHandler(btn_click);
                     lbl3[i].ForeColor = Color.DimGray;
 
 
@@ -188,6 +184,7 @@ namespace Kojiro_ordering_management_system
                     btu1[i].Size = new Size(80, 20);
                     btu1[i].FlatAppearance.BorderSize = 0;//无边框 btu1[i].FlatStyle = FlatStyle.Flat;
                     btu1[i].Name = OrderNumber[i];
+                    btu1[i].Tag = BusinessName[i];//Tag 用户自定义绑定的值
                     btu1[i].Font = new Font("宋体", 9);
                     btu1[i].FlatStyle = FlatStyle.Flat;
                     System.Drawing.Point p5 = new Point(80 * x, 170 + y);//x宽 y高
@@ -221,39 +218,90 @@ namespace Kojiro_ordering_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Orders_All orders_All = new Orders_All();
-            User_side.user_Side.loadform(orders_All);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Orders_All orders_All = new Orders_All();
+                AdminUser_side.adminUser_Side.AdminLoadform(orders_All);
+
+            }
+            else
+            {
+                Orders_All orders_All = new Orders_All();
+                User_side.user_Side.loadform(orders_All);
+
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Order_Paid order_Paid = new Order_Paid();
-            User_side.user_Side.loadform(order_Paid);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Order_Paid order_Paid = new Order_Paid();
+                AdminUser_side.adminUser_Side.AdminLoadform(order_Paid);
+
+            }
+            else
+            {
+                Order_Paid order_Paid = new Order_Paid();
+                User_side.user_Side.loadform(order_Paid);
+
+            }
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Order_Completed order_Completed = new Order_Completed();
-            User_side.user_Side.loadform(order_Completed);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Order_Completed order_Completed = new Order_Completed();
+                AdminUser_side.adminUser_Side.AdminLoadform(order_Completed);
+
+            }
+            else
+            {
+                Order_Completed order_Completed = new Order_Completed();
+                User_side.user_Side.loadform(order_Completed);
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Order_Close order_Close = new Order_Close();
-            User_side.user_Side.loadform(order_Close);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Order_Close order_Close = new Order_Close();
+                AdminUser_side.adminUser_Side.AdminLoadform(order_Close);
+
+            }
+            else
+            {
+                Order_Close order_Close = new Order_Close();
+                User_side.user_Side.loadform(order_Close);
+            }
+
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Orders_Delivery orders_Delivery = new Orders_Delivery();
-            User_side.user_Side.loadform(orders_Delivery);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                Orders_Delivery orders_Delivery = new Orders_Delivery();
+                AdminUser_side.adminUser_Side.AdminLoadform(orders_Delivery);
+
+            }
+            else
+            {
+                Orders_Delivery orders_Delivery = new Orders_Delivery();
+                User_side.user_Side.loadform(orders_Delivery);
+            }
+
         }
 
         public void del_click(object sender, System.EventArgs e)//删除事件
         {
             Button b = (Button)sender;
             //DelOrderNumber = b.Name.ToString(); //单击时把当前单机按钮的值传给变量 给删除语句窗口调用
-            DialogResult result = MessageBox.Show("确认删除此订单?"+"\n"+"订单删除后将无法恢复","删除",MessageBoxButtons.OKCancel,MessageBoxIcon.Exclamation);
+            DialogResult result = MessageBox.Show("确认删除此订单?" + "\n" + "订单删除后将无法恢复", "删除", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (result == DialogResult.OK)
             {
                 string DeleteSql = string.Format("delete from Orders where OrderNumber='{0}'", b.Name.ToString());
@@ -269,12 +317,48 @@ namespace Kojiro_ordering_management_system
         {
             Button b = (Button)sender;
             //DelOrderNumber = b.Name.ToString(); //单击时把当前单机按钮的值传给变量 给删除语句窗口调用
-            string DeleteSql = string.Format("update Orders set State = 0 where OrderNumber='{0}'", b.Name.ToString());
+            string DeleteSql = string.Format("update Orders set State = 0 where OrderNumber='{0}'", b.Tag.ToString());
             if (DBHelper.ENQ(DeleteSql))
             {
                 MessageBox.Show("订单已取消!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Orders_Main orders_Main = new Orders_Main();
                 User_side.user_Side.loadform(orders_Main);
+            }
+        }
+
+        /// <summary>
+        /// 再次购买事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Shops_click(object sender, System.EventArgs e)
+        {
+            Button b = (Button)sender;
+            OrderMainName = b.Tag.ToString(); //单击时把当前单机按钮的值传给变量 给删除语句窗口调用
+            Business business = new Business();//打开商家窗口
+            User_side.user_Side.loadform(business);
+        }
+
+
+        /// <summary>
+        /// 确认收货事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Comple_click(object sender, System.EventArgs e)
+        {
+            Button b = (Button)sender;
+            //DelOrderNumber = b.Name.ToString(); //单击时把当前单机按钮的值传给变量 给删除语句窗口调用
+            DialogResult result = MessageBox.Show("确认收到货了吗" + "\n" + "为了保证您的权益，请收到商品确认无误后再确认收货!", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result == DialogResult.OK)
+            {
+                string DeleteSql = string.Format("update Orders set State = '5' where OrderNumber='{0}'", b.Name.ToString());//根据订单编号修改状态
+                if (DBHelper.ENQ(DeleteSql))
+                {
+                    Orders_Main orders_Main = new Orders_Main();
+                    User_side.user_Side.loadform(orders_Main);
+                }
+
             }
         }
     }
