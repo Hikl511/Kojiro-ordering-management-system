@@ -116,46 +116,52 @@ namespace Kojiro_ordering_management_system
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+
             string Uid = textBox1.Text;
             string Pwd = textBox2.Text;
-       
-            if (textBox1.Text != "")
-            {
-                if (textBox2.Text != "")
-                {
-                    string sql = string.Format("select* from Ustable where Uid = '{0}' and pwd = '{1}'", Uid, Pwd);//验证登录账号和密码是否一致
-                    SqlDataReader dr = DBHelper.GDR(sql);
-                    if (dr.HasRows)
-                    {
-                        User_side user_Side = new User_side();
-                        label1.Visible = false;//成功后把错误提示文本隐藏
-                        dr.Close();//查询之后关闭
-                        dr.Dispose();//释放资源
-                        Hide();//隐藏
-                        user_Side.Show();//打开窗口
-                    }
-                    else
-                    {
-                        label1.Text = "账号或密码错误！";
-                        label1.Visible = true;
-                        textBox1.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
-                        textBox2.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
-                        dr.Close();//查询之后关闭
-                        dr.Dispose();//释放资源
-                    }
 
+            if (Uid != "" && Pwd != "")
+            {
+                string identity="";
+                string sql = string.Format("select * from Ustable where Uid = '{0}' and pwd = '{1}'", Uid, Pwd);//验证登录账号和密码是否一致
+                SqlDataReader dr = DBHelper.GDR(sql);
+                while (dr.Read())
+                {
+                  identity = dr["identity"].ToString().Trim();
+                }
+                if (dr.HasRows && identity != "管理员")
+                {
+
+                    User_side user_Side = new User_side();
+                    label1.Visible = false;//成功后把错误提示文本隐藏
+                    dr.Close();//查询之后关闭
+                    dr.Dispose();//释放资源
+                    Hide();//隐藏
+                    user_Side.Show();//打开窗口
                 }
                 else
                 {
-                    label1.Text = "请输入密码！";
+                    label1.Text = "请输入正确的账号密码！";
                     label1.Visible = true;
+                    textBox1.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
+                    textBox2.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
+                    dr.Close();//查询之后关闭
+                    dr.Dispose();//释放资源
                 }
+
+
+            }
+            else if (Uid != "")
+            {
+                label1.Text = "请输入密码！";
+                label1.Visible = true;
             }
             else
             {
                 label1.Text = "请输入用户名！";
                 label1.Visible = true;
             }
+           
            
 
         }
