@@ -102,12 +102,12 @@ namespace Kojiro_ordering_management_system
                     {
                         State[i] = "已取消";
                         btu1[i].Text = "删除";//已取消的订单可以删除
-                        btu1[i].Click += new System.EventHandler(del_click);
+                        btu1[i].Click += new System.EventHandler(del_click); 
                     }
                     else if (State[i] == "1")
                     {
                         State[i] = "已付款";
-                        btu1[i].Text = "取消";//已付款订单名字改成待商家接单
+                        btu1[i].Text = "取消";//已付款订单名字改成取消订单
                         btu1[i].Click += new System.EventHandler(Cancel_click);
                     }
                     else if (State[i] == "3")
@@ -317,7 +317,7 @@ namespace Kojiro_ordering_management_system
         {
             Button b = (Button)sender;
             //DelOrderNumber = b.Name.ToString(); //单击时把当前单机按钮的值传给变量 给删除语句窗口调用
-            string DeleteSql = string.Format("update Orders set State = 0 where OrderNumber='{0}'", b.Tag.ToString());
+            string DeleteSql = string.Format("update Orders set State = '0' where OrderNumber='{0}'", b.Name.ToString());
             if (DBHelper.ENQ(DeleteSql))
             {
                 MessageBox.Show("订单已取消!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);

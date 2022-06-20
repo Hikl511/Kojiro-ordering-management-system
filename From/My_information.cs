@@ -33,9 +33,17 @@ namespace Kojiro_ordering_management_system
                 button3.Location = new Point(144, 214);
             }
 
+            try 
+	        {	        
+	        	 PicShow();//从数据库中查找图片路径并给控件赋值
+                 UsName();
+	        }
+	        catch (Exception)
+	        {
 
-            PicShow();//从数据库中查找图片路径并给控件赋值
-            UsName();
+	            //	throw;
+	        }
+            
         }
 
         public void UsName()//显示用户名
