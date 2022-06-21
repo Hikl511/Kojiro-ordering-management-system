@@ -17,7 +17,15 @@ namespace Kojiro_ordering_management_system
 
         private void Orders_Delivery_Load(object sender, EventArgs e)
         {
-            State4();
+            try
+            {
+                State4();
+            }
+            catch (Exception)
+            {
+
+                //throw;
+            }
         }
 
         /// <summary>
@@ -25,8 +33,18 @@ namespace Kojiro_ordering_management_system
         /// </summary>
         public void State4()
         {
-            string sqlcount = string.Format("select count(BusinessName) from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}') and State='{2}'", Uid, Pwd, 4); //查询用户已付款订单行数 
-            int result = (int)DBHelper.ES(sqlcount);
+            int result;
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                string sqlcount = string.Format("select count(BusinessName) from Orders where State='{0}'",4); //查询用户订单行数 
+                result = (int)DBHelper.ES(sqlcount);
+            }
+            else
+            {
+                string sqlcount = string.Format("select count(BusinessName) from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}') and State='{2}'", Uid, Pwd, 4); //查询用户已付款订单行数 
+                 result = (int)DBHelper.ES(sqlcount);
+            }
+           
             if (result > 0)
             {
                 string[] ID = new string[result];//ID
@@ -53,7 +71,16 @@ namespace Kojiro_ordering_management_system
                 int i = 0;
                 int x = 0;
                 int y = 0;
-                string setAres = string.Format("select * from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}') and State='{2}'", Uid, Pwd, 4);//根据状态查询出来的加过
+                string setAres;
+                if (AdminLogin.adminLogin.identity == "管理员")
+                {
+                    setAres = string.Format("select * from Orders where State='{0}'", 4);
+                }
+                else
+                {
+                     setAres = string.Format("select * from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}') and State='{2}'", Uid, Pwd, 4);//根据状态查询出来的结果
+                }
+                
                 SqlDataReader dr = DBHelper.GDR(setAres);
                 while (dr.Read())
                 {

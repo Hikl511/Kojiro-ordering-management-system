@@ -25,15 +25,33 @@ namespace Kojiro_ordering_management_system
 
         private void Order_Completed_Load(object sender, EventArgs e)
         {
-            State5();
+            try
+            {
+                State5();
+            }
+            catch (Exception)
+            {
+
+               // throw;
+            }
         }
         /// <summary>
         /// 已完成订单
         /// </summary>
         public void State5()
         {
-            string sqlcount = string.Format("select count(BusinessName) from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}') and State='{2}'", Uid, Pwd, 5); //查询用户已付款订单行数 
-            int result = (int)DBHelper.ES(sqlcount);
+            int result;
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                string sqlcount = string.Format("select count(BusinessName) from Orders where State='{0}'",5); //查询用户订单行数 
+                result = (int)DBHelper.ES(sqlcount);
+            }
+            else
+            {
+                string sqlcount = string.Format("select count(BusinessName) from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}') and State='{2}'", Uid, Pwd, 5); //查询用户已付款订单行数 
+                result = (int)DBHelper.ES(sqlcount);
+            }
+          
             if (result > 0)
             {
                 string[] ID = new string[result];//ID
@@ -60,7 +78,16 @@ namespace Kojiro_ordering_management_system
                 int i = 0;
                 int x = 0;
                 int y = 0;
-                string setAres = string.Format("select * from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}') and State='{2}'", Uid, Pwd, 5);//根据状态查询出来的加过
+                string setAres;
+                if (AdminLogin.adminLogin.identity == "管理员")
+                {
+                    setAres = string.Format("select * from Orders where State='{0}'", 5);
+                }
+                else
+                {
+                     setAres = string.Format("select * from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}') and State='{2}'", Uid, Pwd, 5);//根据状态查询出来的加过
+                }
+              
                 SqlDataReader dr = DBHelper.GDR(setAres);
                 while (dr.Read())
                 {
@@ -194,7 +221,7 @@ namespace Kojiro_ordering_management_system
 
                     if (AdminLogin.adminLogin.identity == "管理员")//如果是管理员端 就查询用户名字+电话+收货地址 并在界面显示
                     {
-                        string SrtNamePhone = string.Format("select Name,Phone from Ustable where Uid='{0}' and Pwd='{1}'", Uid, Pwd);
+                        string SrtNamePhone = string.Format("select * from Ustable where ID=(select ClassID from Orders where OrderNumber='{0}')", OrderNumber[i]);
                         SqlDataReader dr3 = DBHelper.GDR(SrtNamePhone);
                         while (dr3.Read())
                         {
@@ -203,7 +230,7 @@ namespace Kojiro_ordering_management_system
                         }
                         dr3.Close();
 
-                        string SetUserAddress = string.Format("select Address from UserAddress where ClassID=(select ID from Ustable  where Uid='{0}' and Pwd='{1}')", Uid, Pwd);
+                        string SetUserAddress = string.Format("select Address from UserAddress where ClassID=(select ClassID from Orders where OrderNumber='{0}')", OrderNumber[i]);
                         SqlDataReader dr4 = DBHelper.GDR(SetUserAddress);
                         while (dr4.Read())
                         {

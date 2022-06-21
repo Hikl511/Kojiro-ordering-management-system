@@ -66,8 +66,6 @@ namespace Kojiro_ordering_management_system.用户端
         {
             linkLabel3.LinkBehavior = LinkBehavior.NeverUnderline;
             label1.Visible = false;//加载时隐藏提示文本
-            textBox1.Text = "admin";
-            textBox2.Text = "admin";
         }
 
         //设置圆角

@@ -105,7 +105,7 @@
             this.textBox4.Location = new System.Drawing.Point(234, 204);
             this.textBox4.MaxLength = 11;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(189, 18);
+            this.textBox4.Size = new System.Drawing.Size(244, 18);
             this.textBox4.TabIndex = 4;
             // 
             // pictureBox5

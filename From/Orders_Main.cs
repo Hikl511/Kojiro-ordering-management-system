@@ -23,7 +23,7 @@ namespace Kojiro_ordering_management_system
             //comboBox1.SelectedIndex = 0;
             try
             {
-                OrdersShow();//加载全部订单
+             
                 if (Checkout.checkout.state == "1")//1是支付成功
                 {
                     string OrderNumber = Business.business.OrderNumber;//Business窗体里生成的订单编号
@@ -31,7 +31,7 @@ namespace Kojiro_ordering_management_system
                     DBHelper.ENQ(updateOrder);
                     // AddOrders();
                 }
-
+                OrdersShow();//加载全部订单
                 // label2.Text = Checkout.checkout.label6.Text;
             }
             catch (System.Exception)
@@ -46,12 +46,21 @@ namespace Kojiro_ordering_management_system
         /// </summary>
         public void OrdersShow()
         {
-            string sqlcount = string.Format("select count(BusinessName) from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}')", Uid, Pwd); //查询用户订单行数 
-            int result = (int)DBHelper.ES(sqlcount);
+            int result;
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                string sqlcount = string.Format("select count(BusinessName) from Orders "); //查询用户订单行数 
+                 result = (int)DBHelper.ES(sqlcount);
+            }
+            else
+            {
+                string sqlcount = string.Format("select count(BusinessName) from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}')", Uid, Pwd); //查询用户订单行数 
+                result = (int)DBHelper.ES(sqlcount);
+            }
             if (result > 0)
             {
 
-                string[] ID = new string[result];//ID
+                string[] ID = new string[result];//
                 string[] BusinessName = new string[result];//商家名字
                 string[] State = new string[result];//订单状态
                 string[] ReturnTime = new string[result];//下单时间
@@ -60,6 +69,7 @@ namespace Kojiro_ordering_management_system
                 string[] OrderName = new string[result];//查菜品名字
                 string[] OrdersImage = new string[result];//查订单表对应菜品物品图片
                 string[] SumCount = new string[result];//菜品数量
+                string[] ClassID = new string[result];//订单对应的用户ID
 
                 string[] UserName = new string[result];//用户名字
                 string[] UserPhone = new string[result];//用户电话
@@ -77,10 +87,19 @@ namespace Kojiro_ordering_management_system
                 int i = 0;
                 int x = 0;
                 int y = 0;
-                string setAres = string.Format("select * from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}')", Uid, Pwd);
+                string setAres;
+                if (AdminLogin.adminLogin.identity == "管理员")
+                {
+                     setAres = string.Format("select * from Orders");
+                }
+                else
+                {
+                   setAres = string.Format("select * from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}')", Uid, Pwd);
+                }
                 SqlDataReader dr = DBHelper.GDR(setAres);
                 while (dr.Read())
                 {
+                    ClassID[i] = dr["ClassID"].ToString();
                     ID[i] = dr["ID"].ToString();
                     BusinessName[i] = dr["BusinessName"].ToString();
                     State[i] = dr["State"].ToString();
@@ -100,7 +119,15 @@ namespace Kojiro_ordering_management_system
                     pic[i] = new PictureBox();
                     string sum = string.Format("select sum(quantity) from TemporaryMenu where OrderNumber = '{0}'", OrderNumber[i]);
                     int OrdersSum = (int)DBHelper.ES(sum);//查每个订单编号的菜品个数
-                    SumCount[i] = OrdersSum.ToString();
+                    if (OrdersSum < 0)//订单菜品如果小于0
+                    {
+                        label2.Text = "暂时没有订单哦(ˉ▽ˉ；)...";
+                    }
+                    else
+                    {
+                        SumCount[i] = OrdersSum.ToString();
+                    }
+                   
                     //label2.Text = State[i].ToString();
                     //获取状态信息并修改值   //支付状态 0已取消 1 已付款  2待确认  3已接单 4派送中 5已完成
 
@@ -225,7 +252,8 @@ namespace Kojiro_ordering_management_system
 
                     if (AdminLogin.adminLogin.identity == "管理员")//如果是管理员端 就查询用户名字+电话+收货地址 并在界面显示
                     {
-                        string SrtNamePhone = string.Format("select Name,Phone from Ustable where Uid='{0}' and Pwd='{1}'", Uid, Pwd);
+                        //通过对应订单号查询用户的用户名字+电话+收货地址
+                        string SrtNamePhone = string.Format("select * from Ustable where ID=(select ClassID from Orders where OrderNumber='{0}')", OrderNumber[i]);
                         SqlDataReader dr3 = DBHelper.GDR(SrtNamePhone);
                         while (dr3.Read())
                         {
@@ -234,7 +262,7 @@ namespace Kojiro_ordering_management_system
                         }
                         dr3.Close();
 
-                        string SetUserAddress = string.Format("select Address from UserAddress where ClassID=(select ID from Ustable  where Uid='{0}' and Pwd='{1}')", Uid, Pwd);
+                        string SetUserAddress = string.Format("select Address from UserAddress where ClassID=(select ClassID from Orders where OrderNumber='{0}')", OrderNumber[i]);
                         SqlDataReader dr4 = DBHelper.GDR(SetUserAddress);
                         while (dr4.Read())
                         {

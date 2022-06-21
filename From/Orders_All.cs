@@ -29,15 +29,42 @@ namespace Kojiro_ordering_management_system
 
         private void Orders_Load(object sender, System.EventArgs e)
         {
-            OrdersShow();
+            try
+            {
+                OrdersShow();//加载全部订单
+                if (Checkout.checkout.state == "1")//1是支付成功
+                {
+                    string OrderNumber = Business.business.OrderNumber;//Business窗体里生成的订单编号
+                    string updateOrder = string.Format("update Orders set State='{0}' where OrderNumber='{1}'", 1, OrderNumber);
+                    DBHelper.ENQ(updateOrder);
+                    // AddOrders();
+                }
+
+                // label2.Text = Checkout.checkout.label6.Text;
+            }
+            catch (System.Exception)
+            {
+
+                // throw;
+            }
         }
         /// <summary>
         /// 查询全部订单
         /// </summary>
         public void OrdersShow()
         {
-            string sqlcount = string.Format("select count(BusinessName) from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}')", Uid, Pwd); //查询用户订单行数 
-            int result = (int)DBHelper.ES(sqlcount);
+            int result;
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                string sqlcount = string.Format("select count(BusinessName) from Orders "); //查询用户订单行数 
+                result = (int)DBHelper.ES(sqlcount);
+            }
+            else
+            {
+                string sqlcount = string.Format("select count(BusinessName) from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}')", Uid, Pwd); //查询用户订单行数 
+                result = (int)DBHelper.ES(sqlcount);
+            }
+
             if (result > 0)
             {
                 string Uid = Form1.form1.textBox1.Text;
@@ -67,7 +94,15 @@ namespace Kojiro_ordering_management_system
                 int i = 0;
                 int x = 0;
                 int y = 0;
-                string setAres = string.Format("select * from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}')", Uid, Pwd);
+                string setAres;
+                if (AdminLogin.adminLogin.identity == "管理员")
+                {
+                    setAres = string.Format("select * from Orders");
+                }
+                else
+                {
+                    setAres = string.Format("select * from Orders where ClassID=(select ID from Ustable Where Uid='{0}' and pwd='{1}')", Uid, Pwd);
+                }
                 SqlDataReader dr = DBHelper.GDR(setAres);
                 while (dr.Read())
                 {
@@ -105,9 +140,9 @@ namespace Kojiro_ordering_management_system
                         {
                             State[i] = "客户已付款 待商家接单";
                             btu1[i].Text = "接单";
+                            btu2[i].Text = "取消";
 
                             //如果是管理员 就在已付款的订单加上取消按钮
-                            btu2[i].Text = "取消";
                             btu2[i].Size = new Size(80, 20);
                             btu2[i].FlatAppearance.BorderSize = 0;//无边框 btu1[i].FlatStyle = FlatStyle.Flat;
                             btu2[i].Name = OrderNumber[i];
@@ -117,7 +152,7 @@ namespace Kojiro_ordering_management_system
                             System.Drawing.Point p6 = new Point(80 * x, 170 + y);//x宽 y高
                             btu2[i].Location = p6;
 
-                            btu1[i].Click += new System.EventHandler(Take_orders_click);//取消事件
+                            btu1[i].Click += new System.EventHandler(Take_orders_click);//接单事件
                             btu2[i].Click += new System.EventHandler(Cancel_click);//取消事件
                             panel1.Controls.Add(btu2[i]);
                         }
@@ -217,7 +252,7 @@ namespace Kojiro_ordering_management_system
 
                     if (AdminLogin.adminLogin.identity == "管理员")//如果是管理员端 就查询用户名字+电话+收货地址 并在界面显示
                     {
-                        string SrtNamePhone=string.Format("select Name,Phone from Ustable where Uid='{0}' and Pwd='{1}'",Uid,Pwd);
+                        string SrtNamePhone=string.Format("select * from Ustable where ID=(select ClassID from Orders where OrderNumber='{0}')", OrderNumber[i]);
                         SqlDataReader dr3 = DBHelper.GDR(SrtNamePhone);
                         while (dr3.Read())
                         {
@@ -225,8 +260,8 @@ namespace Kojiro_ordering_management_system
                             UserPhone[i] = dr3["Phone"].ToString();
                         }
                         dr3.Close();
-
-                        string SetUserAddress = string.Format("select Address from UserAddress where ClassID=(select ID from Ustable  where Uid='{0}' and Pwd='{1}')", Uid, Pwd);
+                        //地址
+                        string SetUserAddress = string.Format("select Address from UserAddress where ClassID=(select ClassID from Orders where OrderNumber='{0}')", OrderNumber[i]);
                         SqlDataReader dr4 = DBHelper.GDR(SetUserAddress);
                         while (dr4.Read())
                         {
@@ -452,7 +487,7 @@ namespace Kojiro_ordering_management_system
             DialogResult result = MessageBox.Show("确认收到货了吗" + "\n" + "为了保证您的权益，请收到商品确认无误后再确认收货!", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (result == DialogResult.OK)
             {
-                string DeleteSql = string.Format("update Orders set State = '5' where OrderNumber='{0}'", b.Name.ToString());//根据订单编号修改状态
+                string DeleteSql = string.Format("update Orders set State = '5' where OrderNumber='{0}'", b.Tag.ToString());//根据订单编号修改状态
                 if (DBHelper.ENQ(DeleteSql))
                 {
 
@@ -477,8 +512,8 @@ namespace Kojiro_ordering_management_system
             if (DBHelper.ENQ(DeleteSql))
             {
                 MessageBox.Show("接单成功!请尽快派送！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Orders_Main orders_Main = new Orders_Main();
-                AdminUser_side.adminUser_Side.AdminLoadform(orders_Main);
+                Orders_All orders_All = new Orders_All();
+                AdminUser_side.adminUser_Side.AdminLoadform(orders_All);
             }
 
         }

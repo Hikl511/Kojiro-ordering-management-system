@@ -216,7 +216,7 @@ namespace Kojiro_ordering_management_system.用户端
                     if (queryResult.Status == ResultEnum.SUCCESS)//Success为支付成功
                     {
                         DoSuccessProcess(queryResult);
-                        state = "1";
+                        state = "1";//支付成功返回支付状态为1
                         return;
                     }
                     else
@@ -257,9 +257,9 @@ namespace Kojiro_ordering_management_system.用户端
 
         public void Checkout_Load_1(object sender, EventArgs e)
         {
-            WIDtotal_fee.Text = ShoppingCart.shoppingCart.DiscountedPrice.ToString().Substring(0, 4);
-            label5.Text = "￥ " + WIDtotal_fee.Text;
-            QrCodeShow();
+                WIDtotal_fee.Text = ShoppingCart.shoppingCart.DiscountedPrice.ToString().Substring(0, 4);
+                label5.Text = "￥ " + WIDtotal_fee.Text;
+                QrCodeShow();
         }
     }
 }

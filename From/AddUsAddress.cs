@@ -121,9 +121,9 @@ namespace Kojiro_ordering_management_system.用户端
                             ClassID= dr["ID"].ToString(); 
                         }
                         dr.Close();
+                        string Usaddress = comboBox_Pro.Text + comboBox_City.Text + comboBox_Dist.Text + textBox5.Text;//收货地址拼接
                         string Name = textBox1.Text;
                         string Phone = textBox4.Text;
-                        string Usaddress = comboBox_Pro.Text + comboBox_City.Text + comboBox_Dist.Text + textBox5.Text;//收货地址拼接
                         string AddAsSql = string.Format("insert UserAddress values('{0}','{1}','{2}','{3}','{4}')", Usaddress, Name, sex, Phone, ClassID);
                         if (DBHelper.ENQ(AddAsSql))
                         {

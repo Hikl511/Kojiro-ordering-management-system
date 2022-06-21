@@ -158,7 +158,6 @@
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(189, 18);
             this.textBox2.TabIndex = 79;
-            this.textBox2.Text = "1";
             // 
             // textBox1
             // 
@@ -170,7 +169,6 @@
             this.textBox1.ShortcutsEnabled = false;
             this.textBox1.Size = new System.Drawing.Size(189, 18);
             this.textBox1.TabIndex = 78;
-            this.textBox1.Text = "1";
             // 
             // checkBox1
             // 
