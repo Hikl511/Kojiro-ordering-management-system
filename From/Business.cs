@@ -218,7 +218,7 @@ namespace Kojiro_ordering_management_system
                         btn[i].Size = new Size(80, 20);
                         btn[i].FlatAppearance.BorderSize = 0;//无边框 btu1[i].FlatStyle = FlatStyle.Flat;
                         btn[i].Name = lbltxt[i];//菜品名字给按钮赋值
-                        btn[i].Tag = Id[i];//商家ID给Tag赋值      
+                        btn[i].Tag = Id[i];//菜品ID给Tag赋值      
                         btn[i].Text = "删除";
                         btn[i].Font = new Font("宋体", 9);
                         btn[i].FlatStyle = FlatStyle.Flat;

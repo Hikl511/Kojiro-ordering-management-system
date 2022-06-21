@@ -82,35 +82,57 @@ namespace Kojiro_ordering_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string Name = textBox1.Text;
-            double duMoney = double.Parse(textBox2.Text.ToString().Trim());
+            try
+            {
+                string Name = textBox1.Text;
+                double duMoney = double.Parse(textBox2.Text.ToString().Trim());
+                string updaDis = $"update Dishes set Name='{Name}',image='{photoname}',dumoney={duMoney} where DishesID='{ID}' and Name='{name1}' ";
+                if (textBox1.Text != "" && textBox2.Text != "")
+                {
+                    if (DBHelper.ENQ(updaDis))
+                    {
+                        MessageBox.Show("商品信息修改成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Business business = new Business();
+                        AdminUser_side.adminUser_Side.AdminLoadform(business);//商家界面
+                    }
+                    else
+                    {
+                        MessageBox.Show("商品信息修改失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("请将信息填写完整!");
+                }
+            }
+            catch (Exception)
+            {
 
-            string updaDis = $"update Dishes set Name='{Name}',image='{photoname}',dumoney={duMoney} where DishesID='{ID}' and Name='{name1}' ";
-            if (DBHelper.ENQ(updaDis))
-            {
-                MessageBox.Show("商品信息修改成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Business business = new Business();
-                AdminUser_side.adminUser_Side.AdminLoadform(business);//商家界面
+                //  throw;
             }
-            else
-            {
-                MessageBox.Show("商品信息修改失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             string duMoney = textBox2.Text.ToString();
-            string updaDis = string.Format("insert Dishes values('{0}','{1}','{2}','{3}')", textBox1.Text, photoname, duMoney, ID);
-            if (DBHelper.ENQ(updaDis))
+            string updaDis = string.Format("insert Dishes values('{0}','{1}','{2}','{3}')", textBox1.Text, photoname, duMoney, Ordering_food.ordering_Food.ClassID);
+            if (textBox1.Text != "" && textBox2.Text != "")
             {
-                MessageBox.Show("商品信息添加成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Business business = new Business();
-                AdminUser_side.adminUser_Side.AdminLoadform(business);//商家界面
+                if (DBHelper.ENQ(updaDis))
+                {
+                    MessageBox.Show("商品信息添加成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Business business = new Business();
+                    AdminUser_side.adminUser_Side.AdminLoadform(business);//商家界面
+                }
+                else
+                {
+                    MessageBox.Show("商品信息添加失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
             }
             else
             {
-                MessageBox.Show("商品信息添加失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("请将信息填写完成!");
             }
         }
     }

@@ -11,6 +11,7 @@ namespace Kojiro_ordering_management_system
     {
         public static Ordering_food ordering_Food = new Ordering_food();
         public string name = "";
+        public int ClassID;
         public Ordering_food()
         {
             ordering_Food = this;
@@ -82,6 +83,7 @@ namespace Kojiro_ordering_management_system
                     lbl[i] = new Label();
                     btn[i] = new Button();
                     pb[i].Name = lbltxt[i];
+                    pb[i].Tag = ID[i];
                     System.Drawing.Point p = new Point(120 * x, 15 + y);
                     pb[i].SizeMode = PictureBoxSizeMode.StretchImage;
                     pb[i].Location = p;
@@ -96,6 +98,7 @@ namespace Kojiro_ordering_management_system
                     lbl[i].BorderStyle = BorderStyle.None;
                     lbl[i].Font = new Font("微软雅黑", 11);
                     lbl[i].Text = lbltxt[i];
+                    lbl[i].Tag = ID[i];
                     lbl[i].AutoEllipsis = true;//对超出lable宽度的文字自动处理
                     pb[i].Click += new System.EventHandler(btn_click);
                     lbl[i].Click += new System.EventHandler(btn_click2);
@@ -108,8 +111,8 @@ namespace Kojiro_ordering_management_system
                         btn[i].Text = "删除";
                         btn[i].Font = new Font("宋体", 9);
                         btn[i].FlatStyle = FlatStyle.Flat;
-                      //btn[i].ForeColor = Color.White;//字体白色
-                       // btn[i].BackColor = Color.SkyBlue;//背景蓝色
+                        //btn[i].ForeColor = Color.White;//字体白色
+                        // btn[i].BackColor = Color.SkyBlue;//背景蓝色
                         System.Drawing.Point p5 = new Point(120 * x, 170 + y);//x宽 y高
                         btn[i].Location = p5;
                         btn[i].Click += new System.EventHandler(del_click);
@@ -136,10 +139,12 @@ namespace Kojiro_ordering_management_system
         {
             PictureBox b = (PictureBox)sender;
             name = b.Name.ToString();
+            ClassID = int.Parse(b.Tag.ToString());
             if (AdminLogin.adminLogin.identity == "管理员")
             {
                 Business business = new Business();
                 AdminUser_side.adminUser_Side.AdminLoadform(business);
+
 
             }
             else
@@ -154,6 +159,7 @@ namespace Kojiro_ordering_management_system
         {
             Label lbl = (Label)sender;
             name = lbl.Text;
+            ClassID = int.Parse(lbl.Tag.ToString());
             if (AdminLogin.adminLogin.identity == "管理员")
             {
                 Business business = new Business();
@@ -176,7 +182,7 @@ namespace Kojiro_ordering_management_system
         {
             Button b = (Button)sender;
             //DelOrderNumber = b.Name.ToString(); //单击时把当前单机按钮的值传给变量 给删除语句窗口调用
-            DialogResult result = MessageBox.Show("确认删除此商家?" + "\n" + "该操作将会删除商家及所有菜品"+"\n"+"商家删除后将无法恢复", "删除", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            DialogResult result = MessageBox.Show("确认删除此商家?" + "\n" + "该操作将会删除商家及所有菜品" + "\n" + "商家删除后将无法恢复", "删除", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (result == DialogResult.OK)
             {
                 string DeleteBusiness = string.Format("delete from Business where Name='{0}'", b.Name.ToString());//删除商家
