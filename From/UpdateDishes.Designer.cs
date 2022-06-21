@@ -189,9 +189,8 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(266, 299);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 12);
+            this.label7.Size = new System.Drawing.Size(0, 12);
             this.label7.TabIndex = 147;
-            this.label7.Text = "菜品单价：";
             this.label7.Visible = false;
             // 
             // pictureBox12

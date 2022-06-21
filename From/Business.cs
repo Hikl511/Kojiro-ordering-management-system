@@ -214,7 +214,7 @@ namespace Kojiro_ordering_management_system
                     lbl2[i].Size = new Size(100, 20);
                     lbl2[i].BorderStyle = BorderStyle.None;
                     lbl2[i].Font = new Font("微软雅黑", 7);
-                    lbl2[i].Text = "￥" + money[i].Substring(0, 4);//截取价格字符串 为4为 保留一个小数点                                               // lbl2[i].Text = money[i];
+                    lbl2[i].Text = "￥" + money[i].Substring(0, 6);//截取价格字符串 为4为 保留一个小数点                                               // lbl2[i].Text = money[i];
                     lbl2[i].ForeColor = Color.Red;
 
                     if (AdminLogin.adminLogin.identity == "管理员")

@@ -95,7 +95,7 @@ namespace Kojiro_ordering_management_system
                     }
                     else
                     {
-                        MessageBox.Show("商品信息修改失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        MessageBox.Show("商品信息修改失败，请先添加该菜品！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
                 }
                 else
@@ -122,7 +122,7 @@ namespace Kojiro_ordering_management_system
                     DialogResult result =  MessageBox.Show("商品信息添加成功！是否继续添加？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     if (result == DialogResult.OK)
                     {
-                        pictureBox1.Image = Image.FromFile(@"");
+                        pictureBox1.Image = null;
                         textBox1.Text = "";
                         textBox2.Text = "";
                     }

@@ -33,6 +33,7 @@ namespace Kojiro_ordering_management_system
             if (AdminLogin.adminLogin.identity == "管理员")//如果当前用户时管理员 就显示添加商家按钮
             {
                 button5.Visible = true;
+                PicLableShow();
             }
         }
 
@@ -187,8 +188,9 @@ namespace Kojiro_ordering_management_system
             {
                 string DeleteBusiness = string.Format("delete from Business where Name='{0}'", b.Name.ToString());//删除商家
                 string DeleteDishes = string.Format("delete from Dishes where ClassID='{0}'", b.Tag.ToString());//删除对应菜品
-                if (DBHelper.ENQ(DeleteBusiness) && DBHelper.ENQ(DeleteDishes))
+                if (DBHelper.ENQ(DeleteBusiness))//不管有没有菜品都执行刷新商家界面
                 {
+                    DBHelper.ENQ(DeleteDishes); //有对应菜品则删除
                     Ordering_food ordering_Food = new Ordering_food();
                     AdminUser_side.adminUser_Side.AdminLoadform(ordering_Food);
                 }
