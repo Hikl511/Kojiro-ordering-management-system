@@ -38,7 +38,8 @@ namespace Kojiro_ordering_management_system
                     if (DBHelper.ENQ(sql))
                     {
 
-                        MessageBox.Show("头像修改成功！");
+                        MessageBox.Show("图片修改成功！");
+                        textBox2.Text = label7.Text;
                     }
                 }
                 catch (Exception)
@@ -55,16 +56,16 @@ namespace Kojiro_ordering_management_system
             try
             {
                 //待完善
-                string setDishes = string.Format("select Name,image,dumoney,ClassID from Dishes where Name='{0}'", Business.business.DishesName);
+                string setDishes = string.Format("select Name,image,dumoney,DishesID from Dishes where Name='{0}'", Business.business.DishesName);
                 SqlDataReader dr = DBHelper.GDR(setDishes);
 
                 while (dr.Read())
                 {
-                    textBox1.Text = dr["Name"].ToString();
+                    textBox1.Text = dr["Name"].ToString().Trim();
                     name1 = textBox1.Text;
                     label7.Text = dr["dumoney"].ToString().Substring(0, 5);
                     label7.Visible = true;
-                    ID = dr["ClassID"].ToString();
+                    ID = dr["DishesID"].ToString();
                     photoname = dr["image"].ToString();
                 }
                 dr.Close();
@@ -84,10 +85,12 @@ namespace Kojiro_ordering_management_system
             string Name = textBox1.Text;
             double duMoney = double.Parse(textBox2.Text.ToString().Trim());
 
-            string updaDis = $"update Dishes set Name='{Name}',image='{photoname}',dumoney={duMoney} where ClassID='{ID}' and Name='{name1}' ";
+            string updaDis = $"update Dishes set Name='{Name}',image='{photoname}',dumoney={duMoney} where DishesID='{ID}' and Name='{name1}' ";
             if (DBHelper.ENQ(updaDis))
             {
                 MessageBox.Show("商品信息修改成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Business business = new Business();
+                AdminUser_side.adminUser_Side.AdminLoadform(business);//商家界面
             }
             else
             {
@@ -102,6 +105,8 @@ namespace Kojiro_ordering_management_system
             if (DBHelper.ENQ(updaDis))
             {
                 MessageBox.Show("商品信息添加成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Business business = new Business();
+                AdminUser_side.adminUser_Side.AdminLoadform(business);//商家界面
             }
             else
             {

@@ -15,6 +15,7 @@ namespace Kojiro_ordering_management_system.用户端
     public partial class Checkout : Form
     {
         public static Checkout checkout = new Checkout();
+        public string state;
         public Checkout()
         {
             InitializeComponent();
@@ -215,7 +216,7 @@ namespace Kojiro_ordering_management_system.用户端
                     if (queryResult.Status == ResultEnum.SUCCESS)//Success为支付成功
                     {
                         DoSuccessProcess(queryResult);
-                        label6.Text = "1";
+                        state = "1";
                         return;
                     }
                     else
@@ -234,7 +235,7 @@ namespace Kojiro_ordering_management_system.用户端
         {
             //支付成功，请更新相应单据
             // log.WriteLine("扫码支付成功：外部订单号" + queryResult.response.OutTradeNo);
-            label6.Text = "1";
+            state = "1";
             MessageBox.Show("支付成功，请返回订单界面！" + "\n" + "订单号:" + queryResult.response.OutTradeNo, "提示");
            
         }
@@ -245,7 +246,7 @@ namespace Kojiro_ordering_management_system.用户端
         {
             //支付失败，请更新相应单据
             MessageBox.Show("支付失败或超时，请重新扫码支付或重新回购物车结算，订单号:" + queryResult.response.OutTradeNo);
-            label6.Text = "2";
+            state = "2";
         }
 
         public void pictureBox2_Click(object sender, EventArgs e)

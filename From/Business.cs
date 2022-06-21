@@ -82,7 +82,7 @@ namespace Kojiro_ordering_management_system
             {
                 cmdText = string.Format("select introduce,Logo from Business where Name='{0}'", OrderAllName);
             }
-            else if (OrderMainName!="")
+            else if (OrderMainName != "")
             {
                 cmdText = string.Format("select introduce,Logo from Business where Name='{0}'", OrderMainName);
             }
@@ -138,26 +138,28 @@ namespace Kojiro_ordering_management_system
                 string[] imag = new string[result];//图片路径
                 string[] lbltxt = new string[result];//菜品名字
                 string[] money = new string[result];//菜品价格
+                int[] Id=new int[result];
                 PictureBox[] pb = new PictureBox[result];//图片数组
                 Label[] lbl = new Label[result];
                 Label[] lbl2 = new Label[result];
                 Button[] btu1 = new Button[result];
+                Button[] btn = new Button[result]; 
                 string cmdText;
                 if (OrderCmpName != "")
                 {
-                    cmdText = string.Format("select image,Name,dumoney from Dishes where ClassID=(select id from Business Where Name='{0}')", OrderCmpName);
+                    cmdText = string.Format("select image,Name,dumoney,DishesID from Dishes where ClassID=(select id from Business Where Name='{0}')", OrderCmpName);
                 }
                 else if (OrderAllName != "")
                 {
-                    cmdText = string.Format("select image,Name,dumoney from Dishes where ClassID=(select id from Business Where Name='{0}')", OrderAllName);
+                    cmdText = string.Format("select image,Name,dumoney,DishesID from Dishes where ClassID=(select id from Business Where Name='{0}')", OrderAllName);
                 }
-                else if (OrderMainName !="")
+                else if (OrderMainName != "")
                 {
-                    cmdText = string.Format("select image,Name,dumoney from Dishes where ClassID=(select id from Business Where Name='{0}')", OrderMainName);
+                    cmdText = string.Format("select image,Name,dumoney,DishesID from Dishes where ClassID=(select id from Business Where Name='{0}')", OrderMainName);
                 }
                 else
                 {
-                    cmdText = string.Format("select image,Name,dumoney from Dishes where ClassID=(select id from Business Where Name='{0}')", name);
+                    cmdText = string.Format("select image,Name,dumoney,DishesID from Dishes where ClassID=(select id from Business Where Name='{0}')", name);
 
                 }
                 // string cmdText = string.Format("select Logo,Name,ID from Business");
@@ -171,6 +173,7 @@ namespace Kojiro_ordering_management_system
                     imag[i] = dr["image"].ToString();
                     lbltxt[i] = dr["Name"].ToString();
                     money[i] = dr["dumoney"].ToString();
+                    Id[i] = int.Parse(dr["DishesID"].ToString());
                     i++;
                 }
                 for (i = 0; i < result; i++)
@@ -179,6 +182,8 @@ namespace Kojiro_ordering_management_system
                     lbl[i] = new Label();
                     btu1[i] = new Button();
                     lbl2[i] = new Label();
+                    btn[i] = new Button();
+
                     btu1[i].Name = "Button" + i + 1;
                     pb[i].Name = lbltxt[i];
                     System.Drawing.Point p = new Point(80 * x, 15 + y);
@@ -209,6 +214,20 @@ namespace Kojiro_ordering_management_system
                     {
                         btu1[i].Text = "管理";
                         btu1[i].Click += new System.EventHandler(set_click);
+
+                        btn[i].Size = new Size(80, 20);
+                        btn[i].FlatAppearance.BorderSize = 0;//无边框 btu1[i].FlatStyle = FlatStyle.Flat;
+                        btn[i].Name = lbltxt[i];//菜品名字给按钮赋值
+                        btn[i].Tag = Id[i];//商家ID给Tag赋值      
+                        btn[i].Text = "删除";
+                        btn[i].Font = new Font("宋体", 9);
+                        btn[i].FlatStyle = FlatStyle.Flat;
+                        //btn[i].ForeColor = Color.White;//字体白色
+                        // btn[i].BackColor = Color.SkyBlue;//背景蓝色
+                        System.Drawing.Point p5 = new Point(80 * x, 170 + y);//x宽 y高
+                        btn[i].Location = p5;
+                        btn[i].Click += new System.EventHandler(del_click);
+                        panel2.Controls.Add(btn[i]);
                     }
                     else
                     {
@@ -219,7 +238,7 @@ namespace Kojiro_ordering_management_system
                     btu1[i].FlatAppearance.BorderSize = 0;//无边框 btu1[i].FlatStyle = FlatStyle.Flat;
 
                     btu1[i].Name = lbltxt[i];
-                   
+
                     btu1[i].Font = new Font("宋体", 9);
                     btu1[i].FlatStyle = FlatStyle.Flat;
                     System.Drawing.Point p4 = new Point(80 * x, 150 + y);//x宽 y高
@@ -240,11 +259,29 @@ namespace Kojiro_ordering_management_system
             catch (Exception)
             {
 
-               //  throw;//抛出异常
+                //  throw;//抛出异常
             }
             finally
             {
 
+            }
+        }
+
+        private void del_click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            label1.Text = b.Tag.ToString();
+            //DelOrderNumber = b.Name.ToString(); //单击时把当前单机按钮的值传给变量 给删除语句窗口调用
+            DialogResult result = MessageBox.Show("确认删除此菜品?" + "\n" + "该操作将会删除此菜品" + "\n" + "菜品删除后将无法恢复", "删除", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (result == DialogResult.OK)
+            {
+               // string DeleteBusiness = string.Format("delete from Business where Name='{0}'", b.Name.ToString());//删除商家
+                string DeleteDishes = string.Format("delete from Dishes where DishesID='{0}' and Name = '{1}'", b.Tag.ToString(),b.Name.ToString());//删除对应菜品
+                if ( DBHelper.ENQ(DeleteDishes))
+                {
+                    Business business = new Business();
+                    AdminUser_side.adminUser_Side.AdminLoadform(business);//商家界面
+                }
             }
         }
 

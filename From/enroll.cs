@@ -226,7 +226,7 @@ namespace Kojiro_ordering_management_system
                                             string Name = "用户"+UsName();//昵称
                                             string Phone = textBox4.Text;//手机
                                             string Addtime = DateTime.Now.ToString("yyyy-MM-dd"); //获取当前日期 年 - 月 - 日显示  //注册日期
-                                            string sql = string.Format("insert Ustable values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", Name, Phone, Uid, Pwd,Addtime,null);
+                                            string sql = string.Format("insert Ustable values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}',null)", Name, Phone, Uid, Pwd,Addtime,null);
                                             string sql2 = string.Format("select* from Ustable where Uid = {0}", Uid);
                                             string sql3 = string.Format("select* from Ustable where Phone = {0}", Phone);
                                             SqlDataReader dr1 = DBHelper.GDR(sql2);

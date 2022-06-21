@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kojiro_ordering_management_system.用户端;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -201,8 +202,18 @@ namespace Kojiro_ordering_management_system
 
         private void button3_Click(object sender, EventArgs e)
         {
-            My_information my_information = new My_information();
-            loadform(my_Information);
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                My_information my_information = new My_information();
+                AdminUser_side.adminUser_Side.AdminLoadform(my_Information);
+            }
+            else
+            {
+                My_information my_information = new My_information();
+                loadform(my_Information);
+
+            }
+           
             
          
             

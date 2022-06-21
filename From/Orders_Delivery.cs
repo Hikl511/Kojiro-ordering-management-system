@@ -203,8 +203,18 @@ namespace Kojiro_ordering_management_system
                 if (DBHelper.ENQ(DeleteSql))
                 {
 
-                    Orders_Delivery orders_Delivery = new Orders_Delivery();
-                    User_side.user_Side.loadform(orders_Delivery);
+                    if (AdminLogin.adminLogin.identity == "管理员")
+                    {
+                        Orders_Delivery orders_Delivery = new Orders_Delivery();
+                        AdminUser_side.adminUser_Side.AdminLoadform(orders_Delivery);
+
+                    }
+                    else
+                    {
+                        Orders_Delivery orders_Delivery = new Orders_Delivery();
+                        User_side.user_Side.loadform(orders_Delivery);
+                    }
+                 
                 }
 
             }

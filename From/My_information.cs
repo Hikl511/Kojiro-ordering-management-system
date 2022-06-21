@@ -37,6 +37,7 @@ namespace Kojiro_ordering_management_system
 	        {	        
 	        	 PicShow();//从数据库中查找图片路径并给控件赋值
                  UsName();
+                
 	        }
 	        catch (Exception)
 	        {
@@ -89,6 +90,7 @@ namespace Kojiro_ordering_management_system
                         {
                             da.Fill(ds);
                             photoname = ds.Tables[0].Rows[0][0].ToString();
+                          
                         }
                         catch (Exception)
                         {
@@ -122,6 +124,7 @@ namespace Kojiro_ordering_management_system
                         {
                             da.Fill(ds);
                             photoname = ds.Tables[0].Rows[0][0].ToString();
+                          
                         }
                         catch (Exception)
                         {

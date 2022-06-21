@@ -24,7 +24,7 @@ namespace Kojiro_ordering_management_system
             try
             {
 
-                if (Checkout.checkout.label6.Text == "1")//1是支付成功
+                if (Checkout.checkout.state == "1")//1是支付成功
                 {
                     string OrderNumber = Business.business.OrderNumber;//Business窗体里生成的订单编号
                     string updateOrder = string.Format("update Orders set State='{0}' where OrderNumber='{1}'", 1, OrderNumber);

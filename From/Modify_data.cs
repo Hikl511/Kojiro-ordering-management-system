@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kojiro_ordering_management_system
 {
     public partial class Modify_data : Form
     {
-        string photoname = "";
+        public string photoname = "";
         string Uid = Form1.form1.textBox1.Text;
         string Pwd = Form1.form1.textBox2.Text;
         public Modify_data()
@@ -35,22 +30,23 @@ namespace Kojiro_ordering_management_system
             SqlDataReader dr = DBHelper.GDR(cmdText);
             while (dr.Read())
             {
-                label1.Text = "账号:"+dr["Uid"].ToString();
+                label1.Text = "账号:" + dr["Uid"].ToString();
                 if (dr["UserImag"].ToString() != "")
                 {
                     conn.Open();
                     SqlDataAdapter da = new SqlDataAdapter(cmdText, conn);
-                    DataSet ds = new DataSet();
+                    DataTable dt=new  DataTable();
                     try
                     {
-                        da.Fill(ds);
-                        photoname = ds.Tables[0].Rows[0][0].ToString();
+                        da.Fill(dt);
+                        photoname = dt.Rows[0][0].ToString();
+                        pictureBox1.Image = Image.FromFile(photoname);
                     }
                     catch (Exception)
                     {
 
                     }
-                    pictureBox1.Image = Image.FromFile(photoname);
+                  
                 }
                 else
                 {
@@ -94,26 +90,26 @@ namespace Kojiro_ordering_management_system
             SqlDataReader dr = DBHelper.GDR(cmdText);
             while (dr.Read())
             {
-              textBox1.Text = dr["Name"].ToString();
-              textBox2.Text = dr["Phone"].ToString();
+                textBox1.Text = dr["Name"].ToString();
+                textBox2.Text = dr["Phone"].ToString();
             }
             dr.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length <=10)
+            if (textBox1.Text.Length <= 10)
             {
                 if (textBox2.Text.Length == 11)
                 {
                     string Name = textBox1.Text;
                     string Phone = textBox2.Text;
-                    string selectUs = string.Format("update Ustable set Name='{0}',Phone='{1}' where Uid={2} and Pwd='{3}'",Name,Phone, Uid, Pwd);
+                    string selectUs = string.Format("update Ustable set Name='{0}',Phone='{1}' where Uid={2} and Pwd='{3}'", Name, Phone, Uid, Pwd);
                     if (DBHelper.ENQ(selectUs))
                     {
                         MessageBox.Show("修改成功！", "修改资料", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Modify_data modify_Data = new Modify_data();
-                        User_side.user_Side.loadform(modify_Data);//刷新当前窗口
+                        My_information my_Information = new My_information();
+                        User_side.user_Side.loadform(my_Information);//刷新当前窗口
                     }
                     else
                     {
@@ -135,7 +131,7 @@ namespace Kojiro_ordering_management_system
                 textBox1.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
                 textBox2.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
             }
-          
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
