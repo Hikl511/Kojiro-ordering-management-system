@@ -74,36 +74,71 @@ namespace Kojiro_ordering_management_system
                     //label2.Text = State[i].ToString();
                     //获取状态信息并修改值   //支付状态 0已取消 1 已付款    3已接单 4派送中 5已完成
 
+                    if (AdminLogin.adminLogin.identity == "管理员")
+                    {
+                        if (State[i].Equals("0"))
+                        {
+                            State[i] = "已取消";
+                            btu1[i].Text = "删除";//已取消的订单可以删除
+                                                //   btu1[i].Click += new System.EventHandler(del_click);
+                        }
+                        else if (State[i] == "1")
+                        {
+                            State[i] = "已付款";
+                            btu1[i].Text = "接单";//已付款订单名字改成取消
+                                                //  btu1[i].Click += new System.EventHandler(Cancel_click);
+                        }
+                        else if (State[i] == "3")
+                        {
+                            State[i] = "已接单";
+                            btu1[i].Text = "待配送";//已接单改成确认收货
+                                                 //  btu1[i].Click += new System.EventHandler(Comple_click);
+                        }
+                        else if (State[i] == "4")
+                        {
+                            State[i] = "派送中";
+                            btu1[i].Text = "待收获";//派送中改确认收货
+                                                 //  btu1[i].Click += new System.EventHandler(Comple_click);
+                        }
+                        else if (State[i] == "5")
+                        {
+                            State[i] = "已完成";
+                            btu1[i].Text = "用户信息";//已付款订单名字改成待商家接单
+                                                  // btu1[i].Click += new System.EventHandler(Shops_click);
+
+                        }
+                    }
+                    else
+                    {
+
+                        if (State[i].Equals("0"))
+                        {
+                            State[i] = "已取消";
+                            btu1[i].Text = "删除";//已取消的订单可以删除
+                        }
+                        else if (State[i] == "1")
+                        {
+                            State[i] = "已付款";
+                            btu1[i].Text = "待接单";//已付款订单名字改成待商家接单
+                        }
+                        else if (State[i] == "3")
+                        {
+                            State[i] = "已接单";
+                            btu1[i].Text = "确认收货";//已接单改成待送达
+                        }
+                        else if (State[i] == "4")
+                        {
+                            State[i] = "派送中";
+                            btu1[i].Text = "确认收货";//已付款订单名字改成待商家接单
+                        }
+                        else if (State[i] == "5")
+                        {
+                            State[i] = "已完成";
+                            btu1[i].Text = "再来一单";//已付款订单名字改成待商家接单
+                        }
 
 
-                    if (State[i].Equals("0"))
-                    {
-                        State[i] = "已取消";
-                        btu1[i].Text = "删除";//已取消的订单可以删除
                     }
-                    else if (State[i] == "1")
-                    {
-                        State[i] = "已付款";
-                        btu1[i].Text = "待接单";//已付款订单名字改成待商家接单
-                    }
-                    else if (State[i] == "3")
-                    {
-                        State[i] = "已接单";
-                        btu1[i].Text = "确认收货";//已接单改成待送达
-                    }
-                    else if (State[i] == "4")
-                    {
-                        State[i] = "派送中";
-                        btu1[i].Text = "确认收货";//已付款订单名字改成待商家接单
-                    }
-                    else if (State[i] == "5")
-                    {
-                        State[i] = "已完成";
-                        btu1[i].Text = "再来一单";//已付款订单名字改成待商家接单
-                    }
-
-
-
 
 
 

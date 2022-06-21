@@ -80,6 +80,7 @@ namespace Kojiro_ordering_management_system
         }
         public void PicShow()//显示头像
         {
+
             if (AdminLogin.adminLogin.identity == "管理员")
             {
                 photoname = "";//清空图片路径
