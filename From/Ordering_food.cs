@@ -190,7 +190,7 @@ namespace Kojiro_ordering_management_system
                 if (DBHelper.ENQ(DeleteBusiness) && DBHelper.ENQ(DeleteDishes))
                 {
                     Ordering_food ordering_Food = new Ordering_food();
-                    User_side.user_Side.loadform(ordering_Food);
+                    AdminUser_side.adminUser_Side.AdminLoadform(ordering_Food);
                 }
             }
         }
