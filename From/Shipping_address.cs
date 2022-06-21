@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kojiro_ordering_management_system.用户端;
+using System;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
@@ -161,8 +162,8 @@ namespace Kojiro_ordering_management_system
 
         private void button5_Click(object sender, EventArgs e)
         {
-            UpdateDishes addUsAddress_My = new UpdateDishes();
-            User_side.user_Side.loadform(addUsAddress_My);//打开添加地址
+            AddUsAddress addUsAddress = new AddUsAddress();
+            User_side.user_Side.loadform(addUsAddress);//打开添加地址
         }
     }
 }

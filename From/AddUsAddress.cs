@@ -138,19 +138,19 @@ namespace Kojiro_ordering_management_system.用户端
                     else
                     {
                         label2.Text = "请输入详细地址！";
-                        label1.Visible = true;
+                        label2.Visible = true;
                     }
                 }
                 else
                 {
                     label2.Text = "手机号不正确！";
-                    label1.Visible = true;
+                    label2.Visible = true;
                 }
             }
             else
             {
                 label2.Text = "用户名不能为空！";
-                label1.Visible = true;
+                label2.Visible = true;
             }
             
         }

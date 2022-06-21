@@ -12,6 +12,7 @@ namespace Kojiro_ordering_management_system
         public static Ordering_food ordering_Food = new Ordering_food();
         public string name = "";
         public int ClassID;
+        int result;
         public Ordering_food()
         {
             ordering_Food = this;
@@ -32,8 +33,20 @@ namespace Kojiro_ordering_management_system
             PicLableShow();
             if (AdminLogin.adminLogin.identity == "管理员")//如果当前用户时管理员 就显示添加商家按钮
             {
+                
                 button5.Visible = true;
+                
                 PicLableShow();
+            }
+            else
+            {
+                if (result < 1)
+                {
+
+                    label1.Visible = true;
+                    label1.Text = "当前没有商家，请联系管理员添加！";
+
+                }
             }
         }
 
@@ -56,8 +69,10 @@ namespace Kojiro_ordering_management_system
         {//对pic1操作
             try
             {
+                label1.Visible = false;
                 string sqlcount = "select Count(Logo) from Business";//查询行数 
-                int result = (int)DBHelper.ES(sqlcount);
+                 result = (int)DBHelper.ES(sqlcount);
+               
                 string[] imag = new string[result];//商家logo
                 PictureBox[] pb = new PictureBox[result];
                 Label[] lbl = new Label[result];
