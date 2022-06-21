@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,6 +8,8 @@ namespace Kojiro_ordering_management_system
     public partial class Modify_data : Form
     {
         public string photoname = "";
+        public string UserID = "";
+        SqlDataReader dr=null;
         string Uid = Form1.form1.textBox1.Text;
         string Pwd = Form1.form1.textBox2.Text;
         public Modify_data()
@@ -18,44 +19,35 @@ namespace Kojiro_ordering_management_system
 
         private void Modify_data_Load(object sender, EventArgs e)
         {
+            
             PicShow();
             UsName();
         }
 
         public void PicShow()//显示头像 用户名
         {
-            string strconn = "server=.;database=Kojiror;uid=sa;pwd=1234";
-            SqlConnection conn = new SqlConnection(strconn);
             string cmdText = string.Format("select UserImag,Uid from Ustable where Uid='{0}' and Pwd='{1}'", Uid, Pwd);
-            SqlDataReader dr = DBHelper.GDR(cmdText);
+            dr = DBHelper.GDR(cmdText);
             while (dr.Read())
             {
-                label1.Text = "账号:" + dr["Uid"].ToString();
-                if (dr["UserImag"].ToString() != "")
-                {
-                    conn.Open();
-                    SqlDataAdapter da = new SqlDataAdapter(cmdText, conn);
-                    DataTable dt=new  DataTable();
-                    try
-                    {
-                        da.Fill(dt);
-                        photoname = dt.Rows[0][0].ToString();
-                        pictureBox1.Image = Image.FromFile(photoname);
-                    }
-                    catch (Exception)
-                    {
-
-                    }
-                  
-                }
-                else
-                {
-                    pictureBox1.Image = Image.FromFile(@"D:\XiaoCiLang\Resources\用户.png");
-                }
+                photoname = dr["UserImag"].ToString();
+                UserID = dr["Uid"].ToString();
             }
+            DBHelper.conn.Close();
             dr.Close();
-            conn.Close();
-
+            if (photoname != "")
+            {
+                label1.Text = "账号:" + UserID;
+                pictureBox1.Image = Image.FromFile(photoname);
+               // dr.Close();
+            }
+            else if (photoname == "")
+            {
+                label1.Text = "账号:" + UserID;
+                pictureBox1.Image = Image.FromFile(@"D:\XiaoCiLang\Resources\用户.png");
+               // dr.Close();
+            }
+          //  dr.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -87,13 +79,13 @@ namespace Kojiro_ordering_management_system
         public void UsName()//显示用户信息
         {
             string cmdText = string.Format("select Name,Phone from Ustable where Uid='{0}' and Pwd='{1}'", Uid, Pwd);
-            SqlDataReader dr = DBHelper.GDR(cmdText);
-            while (dr.Read())
+            SqlDataReader dr2 = DBHelper.GDR(cmdText);
+            while (dr2.Read())
             {
-                textBox1.Text = dr["Name"].ToString();
-                textBox2.Text = dr["Phone"].ToString();
+                textBox1.Text = dr2["Name"].ToString();
+                textBox2.Text = dr2["Phone"].ToString();
             }
-            dr.Close();
+            dr2.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -108,8 +100,8 @@ namespace Kojiro_ordering_management_system
                     if (DBHelper.ENQ(selectUs))
                     {
                         MessageBox.Show("修改成功！", "修改资料", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        My_information my_Information = new My_information();
-                        User_side.user_Side.loadform(my_Information);//刷新当前窗口
+                        Modify_data modify_Data = new Modify_data();
+                        User_side.user_Side.loadform(modify_Data);//刷新当前窗口
                     }
                     else
                     {

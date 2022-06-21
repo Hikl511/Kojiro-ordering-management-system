@@ -26,8 +26,10 @@ namespace Kojiro_ordering_management_system
            // Ordering_food.ordering_Food.a = "";
         }
         private void pictureBox1_Click_1(object sender, EventArgs e)
+            
         {
-            User_side.user_Side.loadform(My_information.my_Information);
+            My_information my_Information = new My_information();
+            User_side.user_Side.loadform(my_Information);
         }
 
         private void pictureBox2_Click_1(object sender, EventArgs e)

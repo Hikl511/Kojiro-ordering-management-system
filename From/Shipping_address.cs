@@ -16,7 +16,8 @@ namespace Kojiro_ordering_management_system
 
         public void pictureBox2_Click(object sender, EventArgs e)
         {
-            User_side.user_Side.loadform(My_information.my_Information);//打开窗体
+            My_information my_Information = new My_information();
+            User_side.user_Side.loadform(my_Information);//打开窗体
 
         }
 

@@ -1,13 +1,7 @@
 ﻿using Kojiro_ordering_management_system.用户端;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kojiro_ordering_management_system
@@ -22,12 +16,12 @@ namespace Kojiro_ordering_management_system
         //在函数外，命名空间内声明页面的变量，这样子我们可以做到重新加载页面的时候不会出现初始值
         //而是在打开上次切换前的页面
         //public Ordering_food  ordering_Food = new Ordering_food();
-     //   public Orders_Main orders_Main = new Orders_Main();
-        public My_information  my_Information = new My_information();
+        //   public Orders_Main orders_Main = new Orders_Main();
+        //My_information  my_Information = new My_information();
         public More more = new More();
         //public Main_interface main_interface = new Main_interface();
 
-       
+
         //窗体边框阴影动画效果移动改变大小
         const int CS_DropSHADOW = 0x20000;
         const int GCL_STYLE = (-26);
@@ -158,12 +152,12 @@ namespace Kojiro_ordering_management_system
             }
         }
 
-       
-      
+
+
 
         private void butClose_Click(object sender, EventArgs e)
         {
-                System.Environment.Exit(0);//完全退出 退出所有进程
+            System.Environment.Exit(0);//完全退出 退出所有进程
 
         }
 
@@ -190,14 +184,14 @@ namespace Kojiro_ordering_management_system
         {
             Ordering_food ordering_Food = new Ordering_food();
             loadform(ordering_Food);
-           
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Orders_Main orders_Main = new Orders_Main();
             loadform(orders_Main);
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -205,18 +199,18 @@ namespace Kojiro_ordering_management_system
             if (AdminLogin.adminLogin.identity == "管理员")
             {
                 My_information my_information = new My_information();
-                AdminUser_side.adminUser_Side.AdminLoadform(my_Information);
+                AdminUser_side.adminUser_Side.AdminLoadform(my_information);
             }
             else
             {
                 My_information my_information = new My_information();
-                loadform(my_Information);
+                loadform(my_information);
 
             }
-           
-            
-         
-            
+
+
+
+
         }
 
         private void button4_Click(object sender, EventArgs e)

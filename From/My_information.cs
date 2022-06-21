@@ -9,16 +9,16 @@ namespace Kojiro_ordering_management_system
 {
     public partial class My_information : Form
     {
-        string photoname = "";
+        string photoname ="";
+        string UserName = "";
         string Uid = Form1.form1.textBox1.Text;
         string Pwd = Form1.form1.textBox2.Text;
         string AdUid = AdminLogin.adminLogin.textBox1.Text;//管理员
         string AdPwd = AdminLogin.adminLogin.textBox1.Text;
-        public static My_information my_Information = new My_information();//实例化当前窗体 把值传进来 防止再打开的时候是空间原始值
+     //   public static My_information my_Information = new My_information();//实例化当前窗体 把值传进来 防止再打开的时候是空间原始值
         public My_information()
         {
             InitializeComponent();
-            my_Information = this;
         }
 
         private void My_information_Load(object sender, EventArgs e)
@@ -26,120 +26,98 @@ namespace Kojiro_ordering_management_system
             // Ordering_food.ordering_Food.a = "";
             if (AdminLogin.adminLogin.identity == "管理员")
             {
+                PicShow();//从数据库中查找图片路径并给控件赋值
+                UsName();
                 button5.Text = "退出程序";
                 button2.Visible = false;
                 button4.Visible = false;
                 button1.Location = new Point(344, 214);
                 button3.Location = new Point(144, 214);
             }
+            else
+            {
+                try
+                {
+                    PicShow();//从数据库中查找图片路径并给控件赋值
+                    UsName();
 
-            try 
-	        {	        
-	        	 PicShow();//从数据库中查找图片路径并给控件赋值
-                 UsName();
-                
-	        }
-	        catch (Exception)
-	        {
+                }
+                catch (Exception)
+                {
 
-	            //	throw;
-	        }
-            
+                    //	throw;
+                }
+            }
+
+          
+
         }
 
         public void UsName()//显示用户名
         {
             if (AdminLogin.adminLogin.identity == "管理员")
             {
-                string cmdText = string.Format("select * from Ustable where Uid='{0}' and Pwd='{1}'", AdUid, AdPwd);
+                string cmdText = string.Format("select [identity] from Ustable where Uid='{0}' and Pwd='{1}'", AdUid, AdPwd);
                 SqlDataReader dr = DBHelper.GDR(cmdText);
                 while (dr.Read())
                 {
-                    label1.Text = dr["Name"].ToString();
+                    label1.Text = dr["identity"].ToString();
                 }
                 dr.Close();
-            }
-
+                
+            } 
             else
             {
-                string cmdText = string.Format("select * from Ustable where Uid='{0}' and Pwd='{1}'", Uid, Pwd);
+                string cmdText = string.Format("select Name from Ustable where Uid='{0}' and Pwd='{1}'", Uid, Pwd);
                 SqlDataReader dr = DBHelper.GDR(cmdText);
                 while (dr.Read())
                 {
                     label1.Text = dr["Name"].ToString();
                 }
                 dr.Close();
+              //  label1.Text = UserName;
             }
         }
         public void PicShow()//显示头像
         {
             if (AdminLogin.adminLogin.identity == "管理员")
             {
-                string strconn = "server=.;database=Kojiror;uid=sa;pwd=1234";
-                SqlConnection conn = new SqlConnection(strconn);
+                photoname = "";//清空图片路径
                 string cmdText = string.Format("select UserImag from Ustable where Uid='{0}' and Pwd='{1}'", AdUid, AdPwd);
-                SqlDataReader dr = DBHelper.GDR(cmdText);
-                while (dr.Read())
+                SqlDataReader dr2 = DBHelper.GDR(cmdText);
+                while (dr2.Read())
                 {
-                    if (dr["UserImag"].ToString() != "")
-                    {
-                        conn.Open();
-                        SqlDataAdapter da = new SqlDataAdapter(cmdText, conn);
-                        DataSet ds = new DataSet();
-                        try
-                        {
-                            da.Fill(ds);
-                            photoname = ds.Tables[0].Rows[0][0].ToString();
-                          
-                        }
-                        catch (Exception)
-                        {
-
-                        }
-                        pictureBox1.Image = Image.FromFile(photoname);
-                    }
-                    else
-                    {
-                        pictureBox1.Image = Image.FromFile(@"D:\XiaoCiLang\Resources\用户.png");
-                    }
+                    photoname = dr2["UserImag"].ToString().Trim();
                 }
-                dr.Close();
-                DBHelper.conn.Close();
-                conn.Close();
+
+                dr2.Close();
+                if (photoname != "")
+                {
+                    pictureBox1.Image = Image.FromFile(photoname);
+                }
+                else
+                {
+                    pictureBox1.Image = Image.FromFile(@"D:\XiaoCiLang\Resources\用户.png");
+                }
             }
             else//用户
             {
-                string strconn = "server=.;database=Kojiror;uid=sa;pwd=1234";
-                SqlConnection conn = new SqlConnection(strconn);
+                photoname = "";//清空图片路径
                 string cmdText = string.Format("select UserImag from Ustable where Uid='{0}' and Pwd='{1}'", Uid, Pwd);
-                SqlDataReader dr = DBHelper.GDR(cmdText);
-                while (dr.Read())
+                SqlDataReader dr2 = DBHelper.GDR(cmdText);
+                while (dr2.Read())
                 {
-                    if (dr["UserImag"].ToString() != "")
-                    {
-                        conn.Open();
-                        SqlDataAdapter da = new SqlDataAdapter(cmdText, conn);
-                        DataSet ds = new DataSet();
-                        try
-                        {
-                            da.Fill(ds);
-                            photoname = ds.Tables[0].Rows[0][0].ToString();
-                          
-                        }
-                        catch (Exception)
-                        {
-
-                        }
-                        pictureBox1.Image = Image.FromFile(photoname);
-                    }
-                    else
-                    {
-                        pictureBox1.Image = Image.FromFile(@"D:\XiaoCiLang\Resources\用户.png");
-                    }
+                    photoname = dr2["UserImag"].ToString().Trim();
                 }
-                dr.Close();
-                DBHelper.conn.Close();
-                conn.Close();
+                dr2.Close();
+                if (photoname != "")
+                {
+                    pictureBox1.Image = Image.FromFile(photoname);
+                }
+                else
+                {
+                    pictureBox1.Image = Image.FromFile(@"D:\XiaoCiLang\Resources\用户.png");
+                }
             }
 
         }
@@ -148,46 +126,46 @@ namespace Kojiro_ordering_management_system
             Modify_data modify_Data = new Modify_data();
             User_side.user_Side.loadform(modify_Data);//打开界面
 
-           /* OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)//判断是否选择了图片
-            {
-                photoname = openFileDialog1.FileName;
-                //文件路径
-                //MessageBox.Show(photoname);
-                // pictureBox1.Image = Image.FromFile(photoname);
+            /* OpenFileDialog openFileDialog1 = new OpenFileDialog();
+             if (openFileDialog1.ShowDialog() == DialogResult.OK)//判断是否选择了图片
+             {
+                 photoname = openFileDialog1.FileName;
+                 //文件路径
+                 //MessageBox.Show(photoname);
+                 // pictureBox1.Image = Image.FromFile(photoname);
 
-                string strconn = "server=.;database=Kojiror;uid=sa;pwd=1234";
-                SqlConnection conn = new SqlConnection(strconn);
-                string sql = string.Format("update Ustable set UserImag ='" + photoname + "'where Uid='{0}' and Pwd='{1}'", Uid, Pwd);
-                try
-                {
-                    conn.Open();
-                    if (DBHelper.ENQ(sql))
-                    {
+                 string strconn = "server=.;database=Kojiror;uid=sa;pwd=1234";
+                 SqlConnection conn = new SqlConnection(strconn);
+                 string sql = string.Format("update Ustable set UserImag ='" + photoname + "'where Uid='{0}' and Pwd='{1}'", Uid, Pwd);
+                 try
+                 {
+                     conn.Open();
+                     if (DBHelper.ENQ(sql))
+                     {
 
-                        MessageBox.Show("成功！");
-                    }
-                }
-                catch (Exception)
-                {
+                         MessageBox.Show("成功！");
+                     }
+                 }
+                 catch (Exception)
+                 {
 
-                }
-                conn.Close();
-                pictureBox1.Image = Image.FromFile(photoname);
-            }*/
+                 }
+                 conn.Close();
+                 pictureBox1.Image = Image.FromFile(photoname);
+             }*/
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (AdminLogin.adminLogin.identity=="管理员")
+            if (AdminLogin.adminLogin.identity == "管理员")
             {
-               
+
                 System.Environment.Exit(0);//完全退出 退出所有进程
             }
             else
             {
-            User_side.user_Side.Hide();//隐藏父窗体
-            Form1.form1.Show();//打开登录页
+                User_side.user_Side.Hide();//隐藏父窗体
+                Form1.form1.Show();//打开登录页
 
             }
         }
@@ -218,7 +196,7 @@ namespace Kojiro_ordering_management_system
 
         }
 
-       
+
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
             if (AdminLogin.adminLogin.identity == "管理员")
@@ -231,7 +209,7 @@ namespace Kojiro_ordering_management_system
                 Main_interface main_Interface = new Main_interface();
                 User_side.user_Side.loadform(main_Interface);//回主界面
             }
-           
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -257,8 +235,8 @@ namespace Kojiro_ordering_management_system
             }
             else
             {
-            Change_Password change_Password = new Change_Password();
-            User_side.user_Side.loadform(change_Password);
+                Change_Password change_Password = new Change_Password();
+                User_side.user_Side.loadform(change_Password);
 
             }
         }
