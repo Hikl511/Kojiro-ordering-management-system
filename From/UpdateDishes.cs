@@ -37,8 +37,6 @@ namespace Kojiro_ordering_management_system
                 {
                     if (DBHelper.ENQ(sql))
                     {
-
-                        MessageBox.Show("图片修改成功！");
                         textBox2.Text = label7.Text;
                     }
                 }
@@ -121,9 +119,20 @@ namespace Kojiro_ordering_management_system
             {
                 if (DBHelper.ENQ(updaDis))
                 {
-                    MessageBox.Show("商品信息添加成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Business business = new Business();
-                    AdminUser_side.adminUser_Side.AdminLoadform(business);//商家界面
+                    DialogResult result =  MessageBox.Show("商品信息添加成功！是否继续添加？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (result == DialogResult.OK)
+                    {
+                        pictureBox1.Image = Image.FromFile(@"");
+                        textBox1.Text = "";
+                        textBox2.Text = "";
+                    }
+                    else
+                    {
+                        Business business = new Business();
+                        AdminUser_side.adminUser_Side.AdminLoadform(business);//商家界面
+                    }
+                  
+                    
                 }
                 else
                 {
@@ -132,7 +141,7 @@ namespace Kojiro_ordering_management_system
             }
             else
             {
-                MessageBox.Show("请将信息填写完成!");
+                MessageBox.Show("请将信息填写完整!");
             }
         }
     }

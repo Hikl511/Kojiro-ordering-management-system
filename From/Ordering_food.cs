@@ -194,6 +194,12 @@ namespace Kojiro_ordering_management_system
                 }
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AddBusiness addBusiness = new AddBusiness();
+            AdminUser_side.adminUser_Side.AdminLoadform(addBusiness);
+        }
     }
 }
 

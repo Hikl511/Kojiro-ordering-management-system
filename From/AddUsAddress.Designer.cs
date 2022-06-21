@@ -203,6 +203,7 @@
             this.comboBox_City.Name = "comboBox_City";
             this.comboBox_City.Size = new System.Drawing.Size(60, 20);
             this.comboBox_City.TabIndex = 6;
+            this.comboBox_City.SelectedIndexChanged += new System.EventHandler(this.comboBox_City_SelectedIndexChanged);
             // 
             // comboBox_Pro
             // 
@@ -212,6 +213,7 @@
             this.comboBox_Pro.Name = "comboBox_Pro";
             this.comboBox_Pro.Size = new System.Drawing.Size(110, 20);
             this.comboBox_Pro.TabIndex = 5;
+            this.comboBox_Pro.SelectedIndexChanged += new System.EventHandler(this.comboBox_Pro_SelectedIndexChanged_1);
             // 
             // label6
             // 

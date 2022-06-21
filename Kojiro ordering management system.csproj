@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="From\AddBusiness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From\AddBusiness.Designer.cs">
+      <DependentUpon>AddBusiness.cs</DependentUpon>
+    </Compile>
     <Compile Include="From\AdminUser_side.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     <Compile Include="From\User-side.Designer.cs">
       <DependentUpon>User-side.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="From\AddBusiness.resx">
+      <DependentUpon>AddBusiness.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="From\AdminUser_side.resx">
       <DependentUpon>AdminUser_side.cs</DependentUpon>
     </EmbeddedResource>
@@ -551,6 +560,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\派送.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\商家介绍.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

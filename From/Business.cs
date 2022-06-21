@@ -78,17 +78,17 @@ namespace Kojiro_ordering_management_system
             {
                 cmdText = string.Format("select introduce,Logo from Business where Name='{0}'", OrderCmpName);
             }
-            else if (OrderAllName != "")
+            else if (OrderAllName != "")//全部订单界面
             {
                 cmdText = string.Format("select introduce,Logo from Business where Name='{0}'", OrderAllName);
             }
-            else if (OrderMainName != "")
+            else if (OrderMainName != "")//主订单界面
             {
                 cmdText = string.Format("select introduce,Logo from Business where Name='{0}'", OrderMainName);
             }
             else
             {
-                cmdText = string.Format("select introduce,Logo from Business where Name='{0}'", name);
+                cmdText = string.Format("select introduce,Logo from Business where Name='{0}'", name);//商家界面获取二点名字
             }
             SqlDataReader dr = DBHelper.GDR(cmdText);
             int i = 0;
@@ -160,7 +160,14 @@ namespace Kojiro_ordering_management_system
                 else
                 {
                     cmdText = string.Format("select image,Name,dumoney,DishesID from Dishes where ClassID=(select id from Business Where Name='{0}')", name);
-
+                    //通过商家Id查询菜品表有没有商品
+                    string setDishes = string.Format("select count(Name) from Dishes where ClassID=(select id from Business Where Name='{0}')", name);
+                    int count = (int)DBHelper.ES(setDishes);
+                    if (count == 0)
+                    {
+                        //如果没有菜品就提示去添加
+                        button1.Visible = true;
+                    }
                 }
                 // string cmdText = string.Format("select Logo,Name,ID from Business");
                 SqlDataReader dr = DBHelper.GDR(cmdText);
@@ -396,6 +403,13 @@ namespace Kojiro_ordering_management_system
         {
             ShoppingCart shoppingCart = new ShoppingCart();
             User_side.user_Side.loadform(shoppingCart);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //打开菜品添加修改窗口
+            UpdateDishes updateDishes = new UpdateDishes();
+            AdminUser_side.adminUser_Side.AdminLoadform(updateDishes);
         }
     }
 }

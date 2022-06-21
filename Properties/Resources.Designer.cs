@@ -193,6 +193,16 @@ namespace Kojiro_ordering_management_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 商家介绍 {
+            get {
+                object obj = ResourceManager.GetObject("商家介绍", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 图片1 {
             get {
                 object obj = ResourceManager.GetObject("图片1", resourceCulture);

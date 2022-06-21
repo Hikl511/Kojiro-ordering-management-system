@@ -45,6 +45,11 @@ namespace Kojiro_ordering_management_system
                 string[] OrderName = new string[result];//查菜品名字
                 string[] OrdersImage = new string[result];//查订单表对应菜品物品图片
                 string[] SumCount = new string[result];//菜品数量
+                string[] UserName = new string[result];//用户名字
+                string[] UserPhone = new string[result];//用户电话
+                string[] UserAddress = new string[result];//用户收货地址
+
+
                 Label[] lbl1 = new Label[result];//商家名字 + 状态
                 PictureBox[] pic = new PictureBox[result];//商品图片
                 Label[] lbl2 = new Label[result];//下单时间
@@ -97,20 +102,19 @@ namespace Kojiro_ordering_management_system
                         else if (State[i] == "3")
                         {
                             State[i] = "已接单";
-                            btu1[i].Text = "待配送";//已接单改成确认收货
+                            btu1[i].Text = "派送";//已接单改成确认收货
                           //  btu1[i].Click += new System.EventHandler(Comple_click);
                         }
                         else if (State[i] == "4")
                         {
                             State[i] = "派送中";
-                            btu1[i].Text = "待收获";//派送中改确认收货
+                            btu1[i].Text = "待收货";//派送中改确认收货
                           //  btu1[i].Click += new System.EventHandler(Comple_click);
                         }
                         else if (State[i] == "5")
                         {
-                            State[i] = "已完成";
-                            btu1[i].Text = "用户信息";//已付款订单名字改成待商家接单
-                           // btu1[i].Click += new System.EventHandler(Shops_click);
+                            State[i] = "订单已完成";
+                            btu1[i].Text = "已完成";//已付款订单名字改成待商家接单
 
                         }
                     }
@@ -141,11 +145,10 @@ namespace Kojiro_ordering_management_system
                         }
                         else if (State[i] == "5")
                         {
-                            State[i] = "已完成";
+                            State[i] = "订单已完成";
                             btu1[i].Text = "再次购买";//已付款订单名字改成待商家接单
+                            btu1[i].Click += new System.EventHandler(Shops_click);
                         }
-
-
                     }
 
 
@@ -169,19 +172,19 @@ namespace Kojiro_ordering_management_system
                     Image img = Image.FromFile(OrdersImage[i]);
                     pic[i].Image = img;
                     lbl1[i].Name = "lbl3" + i;
-                    System.Drawing.Point p2 = new Point(80 * x, 110 + y);//x宽 y高
+                    System.Drawing.Point p2 = new Point(80 * x, 105 + y);//x宽 y高
                     lbl1[i].Location = p2;
-                    lbl1[i].Size = new Size(100, 20);
+                    lbl1[i].Size = new Size(100, 15);
                     lbl1[i].BorderStyle = BorderStyle.None;
                     lbl1[i].Font = new Font("微软雅黑", 9);
-                    lbl1[i].Text = "商家:" + BusinessName[i].Trim() + "订单状态:" + State[i].Trim();//商家名字 + 状态
+                    lbl1[i].Text = "商家:" + BusinessName[i].Trim() + "  状态:" + State[i].Trim();//商家名字 + 状态
                     lbl1[i].AutoEllipsis = true;//对超出lable宽度的文字自动处理//  事件 pb[i].Click += new System.EventHandler(btn_click);
 
 
                     lbl2[i].Name = "labe2" + i;
-                    System.Drawing.Point p3 = new Point(80 * x, 130 + y);//x宽 y高
+                    System.Drawing.Point p3 = new Point(80 * x, 118 + y);//x宽 y高
                     lbl2[i].Location = p3;
-                    lbl2[i].Size = new Size(100, 20);
+                    lbl2[i].Size = new Size(100, 13);
                     lbl2[i].BorderStyle = BorderStyle.None;
                     lbl2[i].Font = new Font("微软雅黑", 7);
                     lbl2[i].Text = "下单时间:" + ReturnTime[i].Substring(0, 9);//下单时间
@@ -189,25 +192,61 @@ namespace Kojiro_ordering_management_system
 
 
 
-                    lbl3[i].Name = "labe3" + i;
-                    System.Drawing.Point p4 = new Point(80 * x, 150 + y);//x宽 y高
-                    lbl3[i].Location = p4;
-                    lbl3[i].Size = new Size(100, 20);
-                    lbl3[i].BorderStyle = BorderStyle.None;
-                    lbl3[i].Font = new Font("微软雅黑", 7);
-                    lbl3[i].Text = "共 " + SumCount[i].Trim() + " 件 " + "合计 ￥ " + Price[i].Trim().Substring(0, 4);//数量 金额
-                    lbl3[i].ForeColor = Color.DimGray;
+                    if (AdminLogin.adminLogin.identity == "管理员")//如果是管理员端 就查询用户名字+电话+收货地址 并在界面显示
+                    {
+                        string SrtNamePhone = string.Format("select Name,Phone from Ustable where Uid='{0}' and Pwd='{1}'", Uid, Pwd);
+                        SqlDataReader dr3 = DBHelper.GDR(SrtNamePhone);
+                        while (dr3.Read())
+                        {
+                            UserName[i] = dr3["Name"].ToString().Trim();
+                            UserPhone[i] = dr3["Phone"].ToString();
+                        }
+                        dr3.Close();
+
+                        string SetUserAddress = string.Format("select Address from UserAddress where ClassID=(select ID from Ustable  where Uid='{0}' and Pwd='{1}')", Uid, Pwd);
+                        SqlDataReader dr4 = DBHelper.GDR(SetUserAddress);
+                        while (dr4.Read())
+                        {
+                            UserAddress[i] = dr4["Address"].ToString().Trim();
+                        }
+                        dr4.Close();
+                        lbl3[i].Name = "labe3" + i;
+                        System.Drawing.Point p4 = new Point(80 * x, 130 + y);//x宽 y高
+                        lbl3[i].Location = p4;
+                        lbl3[i].Size = new Size(100, 13);
+                        lbl3[i].BorderStyle = BorderStyle.None;
+                        lbl3[i].Font = new Font("微软雅黑", 7);
+                        lbl3[i].Text = "用户名字: " + UserName[i] + "  用户电话: " + UserPhone[i] + "\n" + "收货地址:" + UserAddress[i];
+                        lbl3[i].AutoEllipsis = true;//对超出lable宽度的文字自动处理//  事件 pb[i].Click += new System.EventHandler(btn_click);
+                        lbl3[i].ForeColor = Color.DimGray;
+                    }
+                    else
+                    {
+                        lbl3[i].Name = "labe3" + i;
+                        System.Drawing.Point p4 = new Point(80 * x, 130 + y);//x宽 y高
+                        lbl3[i].Location = p4;
+                        lbl3[i].Size = new Size(100, 13);
+                        lbl3[i].BorderStyle = BorderStyle.None;
+                        lbl3[i].Font = new Font("微软雅黑", 7);
+                        lbl3[i].Text = "共 " + SumCount[i].Trim() + " 件 " + "合计 ￥ " + Price[i].Trim().Substring(0, 4);//数量 金额
+                        lbl3[i].AutoEllipsis = true;//对超出lable宽度的文字自动处理//  事件 pb[i].Click += new System.EventHandler(btn_click);
+                        lbl3[i].ForeColor = Color.DimGray;
+                    }
+
+
 
 
                     btu1[i].Size = new Size(80, 20);
                     btu1[i].FlatAppearance.BorderSize = 0;//无边框 btu1[i].FlatStyle = FlatStyle.Flat;
-                    btu1[i].Name = BusinessName[i];
+                    btu1[i].Name = OrderNumber[i];
+                    btu1[i].Tag = BusinessName[i];//Tag 用户自定义绑定的值
                     btu1[i].Font = new Font("宋体", 9);
                     btu1[i].FlatStyle = FlatStyle.Flat;
-                    System.Drawing.Point p5 = new Point(80 * x, 170 + y);//x宽 y高
+                    System.Drawing.Point p5 = new Point(80 * x, 145 + y);//x宽 y高
                     btu1[i].Location = p5;
-                    btu1[i].Click += new System.EventHandler(Shops_click);
+                    //btu1[i].Click += new System.EventHandler(btn_click);
                     // btu1[i].Click += new System.EventHandler(checkout_click);
+
                     panel1.Controls.Add(pic[i]);
                     panel1.Controls.Add(lbl1[i]);
                     panel1.Controls.Add(lbl2[i]);
@@ -238,17 +277,18 @@ namespace Kojiro_ordering_management_system
         {
             if (AdminLogin.adminLogin.identity == "管理员")
             {
-                Order_Close order_Close = new Order_Close();
-                AdminUser_side.adminUser_Side.AdminLoadform(order_Close);
+                Orders_Delivery orders_Delivery = new Orders_Delivery();
+                AdminUser_side.adminUser_Side.AdminLoadform(orders_Delivery);
 
             }
             else
             {
                 Button b = (Button)sender;
-                OrderCmpName = b.Name.ToString(); //单击时把当前单机按钮的值传给变量 给删除语句窗口调用
+                OrderCmpName = b.Tag.ToString(); //单击时把当前单机按钮的值传给变量 给删除语句窗口调用
                 Business business = new Business();//打开商家窗口
                 User_side.user_Side.loadform(business);
             }
+
 
         }
 
