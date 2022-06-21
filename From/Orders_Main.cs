@@ -39,6 +39,10 @@ namespace Kojiro_ordering_management_system
 
                 // throw;
             }
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                label1.Text = "全部订单";
+            }
         }
 
         /// <summary>

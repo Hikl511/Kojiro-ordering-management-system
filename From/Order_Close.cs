@@ -26,6 +26,10 @@ namespace Kojiro_ordering_management_system
 
                 //throw;
             }
+            if (AdminLogin.adminLogin.identity == "管理员")
+            {
+                label1.Text = "已取消订单";
+            }
         }
         /// <summary>
         /// 已关闭
