@@ -19,7 +19,7 @@ namespace Kojiro_ordering_management_system
         /// </summary>
         [STAThread]
         static void Main()
-      {
+        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
@@ -53,7 +53,7 @@ namespace Kojiro_ordering_management_system
          *                                   `=---=`                                *
          * **************************************************************************
          * ********************                                  ********************
-         * ********************      				 ********************
+         * ********************      				             ********************
          * ********************         佛祖保佑 永远无BUG       ********************
          * ********************                                  ********************
          * **************************************************************************

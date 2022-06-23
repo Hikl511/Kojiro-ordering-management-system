@@ -65,7 +65,7 @@ namespace Kojiro_ordering_management_system
 
             Random random = new Random();
 
-            for (int i = 0; i < 4; i++)//产生4个随机数
+            for (int i = 0; i < 4; i++)//产生4个随机数 产生验证码
             {
                 number = random.Next();
 
@@ -85,10 +85,10 @@ namespace Kojiro_ordering_management_system
         /// </summary>
         /// <param name="checkCode"></param>
         /// <param name="context"></param>
-        private Bitmap CreateCheckCodeImage(string checkCode, int w = 54, int h = 22)
+        private Bitmap CreateCheckCodeImage(string checkCode, int w = 54, int h = 22)//验证码图片方法
         {
             System.Drawing.Bitmap image = new System.Drawing.Bitmap(w, h);
-            //新建GDI对象
+            //新建GDI对象 绘图
             Graphics g = Graphics.FromImage(image);
 
             g.Clear(Color.White);//清除背景色
@@ -104,7 +104,7 @@ namespace Kojiro_ordering_management_system
                 int x2 = rand.Next(image.Width);
                 int y1 = rand.Next(image.Height);
                 int y2 = rand.Next(image.Height);
-                g.DrawLine(new Pen(Color.LightGray, 2), x1, y1, x2, y2);//new一个pen 设置颜色然后根据随机坐标画线  
+                g.DrawLine(new Pen(Color.LightGray, 2), x1, y1, x2, y2);//new一个画笔  设置画笔颜色然后根据随机坐标画线  
             }
 
             for (int i = 0; i < checkCode.Length; i++)
@@ -121,7 +121,7 @@ namespace Kojiro_ordering_management_system
                 g.DrawString(checkCode.Substring(i, 1), f, b, 3 + (i * (14)), ii);//生成验证码 把code传进来 设置字体 颜色 
             }
             g.DrawRectangle(new Pen(Color.White, 0), 0, 0, image.Width - 1, image.Height - 1);//画一个矩形
-            return image;
+            return image;//返回图片
         }
         string code;
         private void label8_Click(object sender, EventArgs e)
@@ -132,8 +132,8 @@ namespace Kojiro_ordering_management_system
         private void pictureBox11_Click(object sender, EventArgs e)
         {
             code = GenerateCheckCode();//生成4位数字符串
-            Bitmap image = CreateCheckCodeImage(code, 64, 30);//生成图片
-            pictureBox11.Image = image;//给控件赋值
+            Bitmap image = CreateCheckCodeImage(code, 64, 30);//调用方法 给image变量赋值
+            pictureBox11.Image = image;//给图片控件赋值
         }
 
 
@@ -152,7 +152,7 @@ namespace Kojiro_ordering_management_system
         {
             mPoint.X = e.X;
             mPoint.Y = e.Y;
-        }
+        } 
 
         private void butMinimize_Click(object sender, EventArgs e)
         {
@@ -227,8 +227,8 @@ namespace Kojiro_ordering_management_system
                                             string Phone = textBox4.Text;//手机
                                             string Addtime = DateTime.Now.ToString("yyyy-MM-dd"); //获取当前日期 年 - 月 - 日显示  //注册日期
                                             string sql = string.Format("insert Ustable values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}',null)", Name, Phone, Uid, Pwd,Addtime,null);
-                                            string sql2 = string.Format("select* from Ustable where Uid = {0}", Uid);
-                                            string sql3 = string.Format("select* from Ustable where Phone = {0}", Phone);
+                                            string sql2 = string.Format("select* from Ustable where Uid = '{0}'", Uid);
+                                            string sql3 = string.Format("select* from Ustable where Phone = '{0}'", Phone);
                                             SqlDataReader dr1 = DBHelper.GDR(sql2);
                                             if (dr1.HasRows)//验证账户是否已注册
                                             {
@@ -377,6 +377,11 @@ namespace Kojiro_ordering_management_system
                 textBox2.PasswordChar = '*';
                 textBox3.PasswordChar = '*';
             }
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

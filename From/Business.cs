@@ -411,5 +411,10 @@ namespace Kojiro_ordering_management_system
             UpdateDishes updateDishes = new UpdateDishes();
             AdminUser_side.adminUser_Side.AdminLoadform(updateDishes);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

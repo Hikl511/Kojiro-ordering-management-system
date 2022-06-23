@@ -127,7 +127,7 @@ namespace Kojiro_ordering_management_system.用户端
                         string AddAsSql = string.Format("insert UserAddress values('{0}','{1}','{2}','{3}','{4}')", Usaddress, Name, sex, Phone, ClassID);
                         if (DBHelper.ENQ(AddAsSql))
                         {
-                            MessageBox.Show("添加成功！请返回购物车结算！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("添加成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -161,6 +161,10 @@ namespace Kojiro_ordering_management_system.用户端
             User_side.user_Side.loadform(shoppingCart);//返回购物车
         }
 
-       
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Shipping_address shipping_Address = new Shipping_address();
+            User_side.user_Side.loadform(shipping_Address);
+        }
     }
 }

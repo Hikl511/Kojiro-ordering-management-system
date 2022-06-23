@@ -29,9 +29,9 @@ namespace Kojiro_ordering_management_system
                 PicShow();//从数据库中查找图片路径并给控件赋值
                 UsName();
                 button5.Text = "退出程序";
-                button2.Visible = false;
+                button2.Visible = false;//如果是管理员 就隐藏掉一些管理员不必要的控件
                 button4.Visible = false;
-                button1.Location = new Point(344, 214);
+                button1.Location = new Point(344, 214);//并调整其他两个按钮的定位
                 button3.Location = new Point(144, 214);
             }
             else
