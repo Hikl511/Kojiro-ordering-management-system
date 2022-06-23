@@ -116,7 +116,7 @@ namespace Kojiro_ordering_management_system.用户端
             string out_trade_no = "";
             if (String.IsNullOrEmpty(WIDout_request_no.Text.Trim()))
             {
-                out_trade_no = System.DateTime.Now.ToString("yyyyMMddHHmmss") + "0000" + (new Random()).Next(1, 10000).ToString();
+                out_trade_no = System.DateTime.Now.ToString("yyyyMMddHHmmss") + "0000" + (new Random()).Next(1, 10000).ToString();//生成订单号
             }
             else
             {

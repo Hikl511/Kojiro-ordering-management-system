@@ -28,7 +28,7 @@ namespace Kojiro_ordering_management_system
         private void AddBusiness_Load(object sender, EventArgs e)
         {
             //进入窗口就加载
-            doc.Load("province.xml");//加载XML文件 
+            doc.Load("province.xml");//加载XML文件  在debug目录下
 
             allprovince = getProvince(doc);//调用getProvinc方法 给省级下拉框 赋值所有省份及自治区
 
@@ -115,7 +115,7 @@ namespace Kojiro_ordering_management_system
                             string BussName = textBox1.Text;
                             string BussPhone = textBox2.Text;
                             string BussAddress = comboBox_Pro.Text + comboBox_City.Text + comboBox_Dist.Text + textBox3.Text;//商家地址拼接
-                            string BussAddTime = DateTime.Now.ToString("yyyy-MM-dd");
+                            string BussAddTime = DateTime.Now.ToString("yyyy-MM-dd");//获取时间  2022-02-03
                             string BussIntroduce = textBox4.Text;
                             string InsertBuss = string.Format("insert Business values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",BussName, BusinessImage, BussAddress,BussPhone, BussAddTime,BussIntroduce,0);
                             if (DBHelper.ENQ(InsertBuss))

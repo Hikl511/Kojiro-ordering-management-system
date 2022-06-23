@@ -160,6 +160,7 @@ namespace Kojiro_ordering_management_system
                 else
                 {
                     cmdText = string.Format("select image,Name,dumoney,DishesID from Dishes where ClassID=(select id from Business Where Name='{0}')", name);
+
                     //通过商家Id查询菜品表有没有商品
                     string setDishes = string.Format("select count(Name) from Dishes where ClassID=(select id from Business Where Name='{0}')", name);
                     int count = (int)DBHelper.ES(setDishes);
@@ -169,6 +170,8 @@ namespace Kojiro_ordering_management_system
                         button1.Visible = true;
                     }
                 }
+
+
                 // string cmdText = string.Format("select Logo,Name,ID from Business");
                 SqlDataReader dr = DBHelper.GDR(cmdText);
                 int i = 0;
@@ -266,7 +269,7 @@ namespace Kojiro_ordering_management_system
             catch (Exception)
             {
 
-                //  throw;//抛出异常
+                //  throw;//不抛出异常
             }
             finally
             {
@@ -291,6 +294,8 @@ namespace Kojiro_ordering_management_system
                 }
             }
         }
+
+
 
         public object Price;
         /// <summary>
@@ -325,7 +330,7 @@ namespace Kojiro_ordering_management_system
                 if (i > 0)
                 {
                     OrderNumber = DateTime.Now.ToString("yyyyMMddHHmmss") + "0000" + (new Random()).Next(1, 10000).ToString().Trim(); ;//订单编号 当前时间+随机数生成
-                    i--;//只生成一次编号
+                    i--;//只生成一次订单编号
                 }
                 string setShopCart = string.Format("insert ShoppingCart values('{0}','{1}','{2}','{3}')", money, Name, image, 0);//加入购物车表
                 DBHelper.ENQ(setShopCart);
@@ -334,11 +339,14 @@ namespace Kojiro_ordering_management_system
             dr2.Dispose();
             string OrdersCount = string.Format("select count(Name) from ShoppingCart where Name='{0}'", b.Name.ToString());//查菜品数量
             string orCount = DBHelper.ES(OrdersCount).ToString();
+
             //加入订单对应菜品表
             string TemporaryMenu = string.Format("insert TemporaryMenu values('{0}','{1}','{2}','{3}','{4}')", money, Name, image, orCount, OrderNumber);
             DBHelper.ENQ(TemporaryMenu);
+
             string update = string.Format("update ShoppingCart set quantity+=1 where Name='{0}'", b.Name.ToString());
             DBHelper.ENQ(update);
+
             string Count = string.Format("select count(*) from ShoppingCart where Name='{0}'", b.Name.ToString());//查数量
             int quantity = (int)DBHelper.ES(Count);//数量
             string Sum = string.Format("select sum(quantity* money) from ShoppingCart");//查总价

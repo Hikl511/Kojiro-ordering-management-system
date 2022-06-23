@@ -17,7 +17,7 @@ namespace Kojiro_ordering_management_system
         //在函数外，命名空间内声明页面的变量，这样子我们可以做到重新加载页面的时候不会出现初始值
         //而是在打开上次切换前的页面
         //public Ordering_food  ordering_Food = new Ordering_food();
-        //   public Orders_Main orders_Main = new Orders_Main();
+        //public Orders_Main orders_Main = new Orders_Main();
       //  public My_information my_Information = new My_information();
       //  public More more = new More();
         //public Main_interface main_interface = new Main_interface();
@@ -142,7 +142,7 @@ namespace Kojiro_ordering_management_system
 
         private void AdminUser_side_Load(object sender, EventArgs e)
         {
-            this.Text = "小次郎点餐管理员客户端";
+            this.Text = "小次郎点餐管理员端";
             Ordering_food ordering_Food = new Ordering_food();
             AdminLoadform(ordering_Food);//加载时显示商家界面
             

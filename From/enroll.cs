@@ -85,7 +85,7 @@ namespace Kojiro_ordering_management_system
         /// </summary>
         /// <param name="checkCode"></param>
         /// <param name="context"></param>
-        private Bitmap CreateCheckCodeImage(string checkCode, int w = 54, int h = 22)//验证码图片方法
+        private Bitmap CreateCheckCodeImage(string checkCode, int w = 54, int h = 22)//验证码图片方法  返回的是一个位图
         {
             System.Drawing.Bitmap image = new System.Drawing.Bitmap(w, h);
             //新建GDI对象 绘图

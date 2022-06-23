@@ -9,7 +9,7 @@ namespace Kojiro_ordering_management_system.用户端
     public partial class AdminLogin : Form
     {
         public static AdminLogin adminLogin = new AdminLogin();
-        public string identity = "";
+        public string identity = "";//身份信息
         public AdminLogin()
         {
             InitializeComponent();

@@ -66,7 +66,7 @@ namespace Kojiro_ordering_management_system
                     textBox3.GotFocus += new EventHandler((obj, ex) => { label1.Visible = false; });//成为焦点时把错误文本隐藏
                 }
             }
-            else
+            else//用户端
             {
                 if (textBox2.Text != "" && textBox3.Text != "")
                 {
